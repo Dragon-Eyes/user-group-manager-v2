@@ -15,7 +15,7 @@ return [
 
     'name' => env('APP_NAME', 'Dragon Eyes Solution'),
     'version' => '2.0.0 dev',
-    'release' => 2,
+    'release' => 3,
 
     /*
     |--------------------------------------------------------------------------
