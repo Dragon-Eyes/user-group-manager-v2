@@ -19,7 +19,7 @@ class EventController extends Controller
         $events = Event::all();
 //        dd($events);
 
-        return view('events')->with('events', $events);
+        return view('legacy.index')->with('events', $events);
 
 
     }

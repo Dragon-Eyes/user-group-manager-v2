@@ -12,10 +12,32 @@ class RegistrationLegacyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public static function index() {
+        $eventIds = [
+            'Stammtisch 2021-02',
+            'Stammtisch 2021-03'
+        ];
+        // get registrations per event
+        // pass arrays to view
+    }
+
+    public static function pastevents() {
+        $eventIds = [
+            'Stammtisch 2021-01',
+            'Stammtisch 2020-11',
+            'Stammtisch 2020-08',
+            'Stammtisch 2020-05',
+            'Stammtisch 2020-04',
+            'Stammtisch 2020-02',
+            'Stammtisch 2020-01',
+            'Stammtisch 2019-12'
+        ];
+    }
+
+    private static function get_by_event(string $title) {
         //
     }
+
 
     /**
      * Show the form for creating a new resource.
