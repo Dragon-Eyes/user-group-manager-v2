@@ -22,6 +22,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 
+//Route::get('/events', function() {
+//    return 'yup from Route';
+//});
+
+
+Route::get('/events', 'App\Http\Controllers\EventController@index');
+
 /*
 |--------------------------------------------------------------------------
 | Legacy routes w/o auth

@@ -14,7 +14,14 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+//        return 'yup from Controller!';
+
+        $events = Event::all();
+//        dd($events);
+
+        return view('events')->with('events', $events);
+
+
     }
 
     /**
