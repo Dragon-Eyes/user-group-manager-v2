@@ -20,3 +20,19 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+/*
+|--------------------------------------------------------------------------
+| Legacy routes w/o auth
+|--------------------------------------------------------------------------
+*/
+Route::get('/legacy', function() {
+    return view('legacy.index');
+});
+Route::get('/pastevents', function() {
+    return view('legacy.pastevents');
+});
+Route::get('/statistics', function() {
+    return view('legacy.statistics');
+});
