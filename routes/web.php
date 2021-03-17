@@ -43,3 +43,5 @@ Route::get('/pastevents', function() {
 Route::get('/statistics', function() {
     return view('legacy.statistics');
 });
+
+Route::get('/testread', [\App\Http\Controllers\Controller::class, 'testread']);
