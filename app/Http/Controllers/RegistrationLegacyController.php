@@ -18,7 +18,11 @@ class RegistrationLegacyController extends Controller
             'Stammtisch 2021-03'
         ];
         // get registrations per event
+
         // pass arrays to view
+        $registrations = [];
+        $registrations['Stammtisch 2021-02'] = [];
+        return view('legacy.index', compact('registrations'));
     }
 
     public static function pastevents() {

@@ -1,20 +1,23 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.legacyapp')
 
-<p>Yup from View!</p>
+@section('content')
 
-@foreach($events as $event)
-    <h2>{{$event->title}}</h2>
-    <div style="background-color: #cbd5e0">{!!$event->description!!}</div>
-@endforeach
+    <div class="jumbotron jumbotron-fluid text-center" style="background-color: <?php echo getBackgroundColor(getRandomNumber(3)) ?>; color: white; margin-top: 10px;">
+        <div class="container-fluid">
+            <!--                <h1 class="display-4 animate__animated animate__rubberBand">FileMaker Zürich</h1>-->
+            <!--                <h1 class="display-4 animate__animated animate__swing">FileMaker Zürich</h1>-->
+            <h1 class="display-4 animate__animated animate__flip">FileMaker Zürich</h1>
+            <!--                <h1 class="display-4 animate__animated animate__heartBeat">FileMaker Zürich</h1>-->
+            <p>Entwickler-Community<br>Der neue Stammtisch</p>
+        </div>
+    </div>
 
-</body>
-</html>
+    <?php
+        $participants = $registrations['Stammtisch 2021-02'];
+    ?>
+
+        @foreach($participants as $participant)
+            <p>{{$participant->$participant_name}}</p>
+        @endforeach
+
+@endsection

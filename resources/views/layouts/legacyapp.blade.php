@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta name="robots" content="index, follow">
+    <title>FileMaker Zürich</title>
+    <meta name="description" content="Forum und Stammtisch zum Austausch unter FileMaker-Entwicklern."/>
+
+    <?php
+    $page = $_SERVER['REQUEST_URI'] === '/' ? 'index' : substr($_SERVER['REQUEST_URI'], 1);
+    ?>
+    <meta property="og:url" content="https://fmzuerich.ch/<?= $page ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Entwickler Stammtisch Zürich">
+    <meta property="og:description" content="Der neue FileMaker Stammtisch in / um Zürich. Jede / jeder FileMaker-Interessierte ist willkommen; die Neulinge bringen interessante Fragen und neue Ideen und die alten Hasen können mal zeigen, was sie (noch) können.">
+    <!-- 600x314 -->
+    <meta property="og:image" content="https://fmzuerich.ch/assets/fmzuerich_600x314_pic_2.png">
+    <meta property="og:image" content="https://fmzuerich.ch/assets/fmzuerich_600x314.png">
+
+    <link rel="canonical" href="https://fmzuerich.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="styles/bootstrap.min.css"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--    <link rel="stylesheet" href="styles/fmzuerich_bsoverride.css">-->
+    <!--    <link rel="stylesheet" href="styles/fmzuerich.css">-->
+    <link rel="stylesheet" href="styles/fmzurich.css">
+
+    <link rel="shortcut icon" href="assets/favicons/fmzuerich.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="assets/favicons/fmzuerich.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="assets/favicons/fmzuerich-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="assets/favicons/fmzuerich-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/fmzuerich-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/favicons/fmzuerich-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/fmzuerich-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/fmzuerich-16.png">
+    <link rel="apple-touch-icon" href="assets/favicons/fmzuerich-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/fmzuerich-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/fmzuerich-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/fmzuerich-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/fmzuerich-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicons/fmzuerich-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicons/fmzuerich-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/fmzuerich-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/fmzuerich-180.png">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+    />
+    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/124f92db94f3241542ea4942e/aeb4fca55c490992a439208d2.js");</script>
+</head>
+<?php
+// log
+function get_ip_address(){
+    foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key){
+        if (array_key_exists($key, $_SERVER) === true){
+            foreach (explode(',', $_SERVER[$key]) as $ip){
+                $ip = trim($ip); // just to be safe
+                if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false){
+                    return $ip;
+                }
+            }
+        }
+    }
+}
+$log = new Log(['event'=>'pageview','note'=>$page.','.get_ip_address()]);
+$log->save();
+?>
+<body>
+<div class="pagecontainer">
+    <div class="pagecontainerheader">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="https://fmzuerich.ch">FM Zürich</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stammtisch</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="https://fmzuerich.ch#eventsFuture">Zukünftige</a>
+                                <a class="dropdown-item" href="https://fmzuerich.ch/pastevents">Rückblick</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://eepurl.com/gIw6zf" target="_blank">Newsletter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://fmzuerich.ch/forum">Forum</a>
+                        </li>
+                        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Präsentationen, Demodateien etc.">
+                            <a class="nav-link" href="https://gasser2.diskstation.me:5011" target="_blank">Ressourcen</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>    </div>
+    <div class="pagecontainercontent">
+        <div class="container">
+
+            @yield('content')
+
+        </div> <!-- end bootstrap container -->
+    </div> <!-- end pagecontainercontent -->
+    <div class="pagecontainerfooter">
+        <div class="container mt-4">
+            <p>FM Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern.</p>
+        </div>
+    </div>
+</div> <!-- end pagecontainer -->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+<script src="scripts/bootstrap.bundle.js"></script>
+<script src="<?php echo ROOT_WWW; ?>/scripts/functions.js"></script>
+</body>
+</html>
