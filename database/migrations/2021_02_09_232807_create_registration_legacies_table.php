@@ -21,6 +21,7 @@ class CreateRegistrationLegaciesTable extends Migration
             $table->text('comment')->nullable();
             $table->boolean('virtual_flag');
             $table->boolean('deleted_flag')->default(false);
+//            $table->boolean('deleted_flag');
             $table->timestamps();
         });
     }

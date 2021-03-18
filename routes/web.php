@@ -45,3 +45,5 @@ Route::get('/statistics', function() {
 });
 
 Route::get('/testread', [\App\Http\Controllers\Controller::class, 'testread']);
+
+Route::get('/migrateregistrations', [\App\Http\Controllers\DatamigrationController::class, 'registrations']);
