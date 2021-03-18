@@ -34,9 +34,12 @@ Route::get('/events', 'App\Http\Controllers\EventController@index');
 | Legacy routes w/o auth
 |--------------------------------------------------------------------------
 */
-Route::get('/legacy', function() {
-    return view('legacy.index');
-});
+Route::get('/legacy', [\App\Http\Controllers\RegistrationLegacyController::class, 'index']);
+
+//Route::get('/legacy', function() {
+//    return 'index...';
+//});
+
 Route::get('/pastevents', function() {
     return view('legacy.pastevents');
 });
@@ -44,6 +47,6 @@ Route::get('/statistics', function() {
     return view('legacy.statistics');
 });
 
-Route::get('/testread', [\App\Http\Controllers\Controller::class, 'testread']);
+//Route::get('/testread', [\App\Http\Controllers\Controller::class, 'testread']);
 
-Route::get('/migrateregistrations', [\App\Http\Controllers\DatamigrationController::class, 'registrations']);
+//Route::get('/migrateregistrations', [\App\Http\Controllers\DatamigrationController::class, 'registrations']);

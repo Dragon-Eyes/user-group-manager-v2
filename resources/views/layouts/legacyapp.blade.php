@@ -15,8 +15,8 @@
     <meta property="og:title" content="Entwickler Stammtisch Zürich">
     <meta property="og:description" content="Der neue FileMaker Stammtisch in / um Zürich. Jede / jeder FileMaker-Interessierte ist willkommen; die Neulinge bringen interessante Fragen und neue Ideen und die alten Hasen können mal zeigen, was sie (noch) können.">
     <!-- 600x314 -->
-    <meta property="og:image" content="https://fmzuerich.ch/assets/fmzuerich_600x314_pic_2.png">
-    <meta property="og:image" content="https://fmzuerich.ch/assets/fmzuerich_600x314.png">
+    <meta property="og:image" content="https://cxo.ch/fmzurich_legacy_files/assets/fmzuerich_600x314_pic_2.png">
+    <meta property="og:image" content="https://cxo.ch/fmzurich_legacy_files/assets/fmzuerich_600x314.png">
 
     <link rel="canonical" href="https://fmzuerich.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
@@ -25,25 +25,25 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!--    <link rel="stylesheet" href="styles/fmzuerich_bsoverride.css">-->
     <!--    <link rel="stylesheet" href="styles/fmzuerich.css">-->
-    <link rel="stylesheet" href="styles/fmzurich.css">
+    <link rel="stylesheet" href="https://cxo.ch/fmzurich_legacy_files/styles/fmzurich.css">
 
-    <link rel="shortcut icon" href="assets/favicons/fmzuerich.ico">
-    <link rel="icon" sizes="16x16 32x32 64x64" href="assets/favicons/fmzuerich.ico">
-    <link rel="icon" type="image/png" sizes="196x196" href="assets/favicons/fmzuerich-192.png">
-    <link rel="icon" type="image/png" sizes="160x160" href="assets/favicons/fmzuerich-160.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicons/fmzuerich-96.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="assets/favicons/fmzuerich-64.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/fmzuerich-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/fmzuerich-16.png">
-    <link rel="apple-touch-icon" href="assets/favicons/fmzuerich-57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicons/fmzuerich-114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicons/fmzuerich-72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicons/fmzuerich-144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/fmzuerich-60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicons/fmzuerich-120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicons/fmzuerich-76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicons/fmzuerich-152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/fmzuerich-180.png">
+    <link rel="shortcut icon" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-16.png">
+    <link rel="apple-touch-icon" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-180.png">
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
@@ -65,8 +65,10 @@ function get_ip_address(){
     }
 }
 $log = new Log(['event'=>'pageview','note'=>$page.','.get_ip_address()]);
-$log->save();
+// TODO: reactivate
+//$log->save();
 ?>
+
 <body>
 <div class="pagecontainer">
     <div class="pagecontainerheader">
@@ -119,7 +121,7 @@ $log->save();
 <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
 <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
 <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
-<script src="scripts/bootstrap.bundle.js"></script>
-<script src="<?php echo ROOT_WWW; ?>/scripts/functions.js"></script>
+<script src="https://cxo.ch/fmzurich_legacy_files/scripts/bootstrap.bundle.js"></script>
+<script src="https://cxo.ch/fmzurich_legacy_files/scripts/functions.js"></script>
 </body>
 </html>

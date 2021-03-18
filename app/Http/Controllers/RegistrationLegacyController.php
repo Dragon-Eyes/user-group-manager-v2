@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\RegistrationLegacy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RegistrationLegacyController extends Controller
 {
@@ -14,19 +15,19 @@ class RegistrationLegacyController extends Controller
      */
     public static function index() {
         $eventIds = [
-            'Stammtisch 2021-02',
-            'Stammtisch 2021-03'
+            'Stammtisch 2021-03',
+            'Stammtisch 2021-04',
         ];
-        // get registrations per event
-
-        // pass arrays to view
         $registrations = [];
-        $registrations['Stammtisch 2021-02'] = [];
+        foreach($eventIds as $eventId) {
+            $registrations[$eventId] = DB::select('SELECT participant_name, comment, virtual_flag, deleted_flag FROM registration_legacies WHERE event = ? AND deleted_flag = ?', [$eventId, 0]) ?? [];
+        }
         return view('legacy.index', compact('registrations'));
     }
 
     public static function pastevents() {
         $eventIds = [
+            'Stammtisch 2021-02',
             'Stammtisch 2021-01',
             'Stammtisch 2020-11',
             'Stammtisch 2020-08',
