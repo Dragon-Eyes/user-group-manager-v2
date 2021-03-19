@@ -49,6 +49,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
     />
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/124f92db94f3241542ea4942e/aeb4fca55c490992a439208d2.js");</script>
+    <meta name="csrf-token" content="{{csrf_token()}}">
 </head>
 <?php
 // log

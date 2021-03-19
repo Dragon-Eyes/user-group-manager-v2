@@ -17,12 +17,27 @@ class RegistrationLegacyController extends Controller
         $eventIds = [
             'Stammtisch 2021-03',
             'Stammtisch 2021-04',
+            'Stammtisch 2021-05',
+            'Stammtisch 2021-06',
+            'Stammtisch 2021-08',
         ];
         $registrations = [];
         foreach($eventIds as $eventId) {
             $registrations[$eventId] = DB::select('SELECT participant_name, comment, virtual_flag, deleted_flag FROM registration_legacies WHERE event = ? AND deleted_flag = ?', [$eventId, 0]) ?? [];
         }
         return view('legacy.index', compact('registrations'));
+    }
+
+    public static function register(Request $request) {
+        $requestValidated = $request->validate([
+        ]);
+        $registrationData = $request->post()['registration'];
+        $registrationType = $registrationData['presence'] == 'onsite' ? 0 : 1;
+        $now = new \DateTime();
+        $registrationCreated = $now->format('Y-m-d H:i:s');
+        $registration = DB::insert('INSERT INTO registration_legacies (event, participant_name, participant_email, comment, virtual_flag, created_at) VALUES (?, ?, ?, ?, ?, ?)', [$registrationData['event'], $registrationData['participant_name'], $registrationData['participant_email'], $registrationData['comment'], $registrationType, $registrationCreated]);
+        header("Location: /legacy");
+        exit();
     }
 
     public static function pastevents() {

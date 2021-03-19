@@ -36,6 +36,8 @@ Route::get('/events', 'App\Http\Controllers\EventController@index');
 */
 Route::get('/legacy', [\App\Http\Controllers\RegistrationLegacyController::class, 'index']);
 
+Route::post('/legacyregister', [\App\Http\Controllers\RegistrationLegacyController::class, 'register']);
+
 //Route::get('/legacy', function() {
 //    return 'index...';
 //});

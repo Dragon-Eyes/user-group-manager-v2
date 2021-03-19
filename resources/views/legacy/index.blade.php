@@ -52,7 +52,7 @@
     }
 
     define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
-    define("ROOT_WWW", 'https://' . $_SERVER['HTTP_HOST']);
+    define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
 
 ?>
 
@@ -70,7 +70,7 @@
 
     <?php if(true) : ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        Jetzt anmelden zum virtuellen Stammtisch am <strong>24. März 2021</strong>!
+        Jetzt anmelden zum Stammtisch am <strong>23. April 2021</strong>!
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -101,10 +101,47 @@
             </ul>
             <h4>Ort</h4>
             Virtuell: Christian Sedlmeiers <a style="color: red; font-weight: bold;" href="https://meet.sedlmair.ch/FMZuerichStammtisch202103" target="_blank">Jitsi Server</a> @ meet.sedlmair.ch</p>
-            <?php if(false) : ?>
+            <h4>Bisher angemeldet (<?php echo count($registrations['Stammtisch 2021-03']); ?>)</h4>
+            <table><?php
+                // PARTICIPANTS
+                $registrationsEvent = $registrations['Stammtisch 2021-03']; ?>
+                <?php if($registrationsEvent) {
+                foreach ($registrationsEvent as $registrationEvent) { ?>
+                <tr>
+                    <td>
+                        <?php
+                            echo hsc($registrationEvent->participant_name);
+                        ?>
+                    </td>
+                    <td class="pl-2">
+                        <?php echo nl2br(hsc($registrationEvent->comment)); ?>
+                    </td>
+                    <td class="pl-3">
+                        <?= $registrationEvent->virtual_flag ? 'virtuell' : 'vor&nbsp;Ort'; ?>
+                    </td>
+                </tr>
+                <?php }
+                } ?>
+            </table>
+        </div>
+    </div>
+
+    <div class="card eventBoxDark" id="event202104">
+        <div class="card-body">
+            <h3 class="card-title">23.04.2021: FileMaker Stammtisch Zürich (Freitag)</h3>
+            <h4>Agenda</h4>
+            <ul>
+                <li>18:30 Uhr - Nutzung von Rest APIs am Beispiel FM Zürich (Abfrage Stammtisch Details und Anmeldung aus FileMaker Anwendung) mithilfe eines bereitgestellten Add-Ons [Christoph Dunkake]</li>
+                <li>19:30 Uhr - tbd</li>
+            </ul>
+            <h4>Ort</h4>
+            <p>Virtuell: Christian Sedlmeiers <a style="color: red; font-weight: bold;" href="https://meet.sedlmair.ch/FMZuerichStammtisch202104" target="_blank">Jitsi Server</a> @ meet.sedlmair.ch<br>
+                Physisch: CropFactory, <a href="https://www.cropfactory.ch/contact" target="_blank">Alte Bahnhofstrasse 27, 5612 Villmergen</a> (AG)</p>
+            <?php if(true) : ?>
             <h4>Anmelden</h4>
-            <form id="registrationNew" action="<?php echo ROOT_WWW ?>?action=registration" method="post" style="margin-bottom: 15px;">
-                <input type="hidden" name="registration[event]" value="Stammtisch 2021-03">
+            <form id="registrationNew" action="<?php echo ROOT_WWW ?>/legacyregister" method="post" style="margin-bottom: 15px;">
+                @csrf
+                <input type="hidden" name="registration[event]" value="Stammtisch 2021-04">
                 <div class="row">
                     <div class="col">
                         <input type="text" class="form-control" name="registration[participant_name]" placeholder="Name **" required>
@@ -117,8 +154,80 @@
                     <div class="col">
                         <input type="radio" id="virtual" name="registration[presence]" value="virtual" checked>
                         <label for="registration[presence]">virtuell</label>
-                        <!--                                    <input type="radio" id="onsite" name="registration[presence]" value="onsite">-->
-                        <!--                                    <label for="registration[presence]">vor Ort</label>-->
+                        <input type="radio" id="onsite" name="registration[presence]" value="onsite">
+                        <label for="registration[presence]">vor Ort</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="email" class="form-control" name="registration[participant_email]" placeholder="E-Mail Adresse">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <textarea class="form-control" name="registration[comment]" rows="3" placeholder="Bemerkungen, Themenvorschläge etc."></textarea>
+                    </div>
+                </div>
+            </form>
+            <p><a href="https://cxo.ch/fmzurich_legacy_files/assets/FileMaker_Stammtisch_202104.ics">ics download</a></p>
+            <?php endif; ?>
+            <h4>Bisher angemeldet (<?php echo count($registrations['Stammtisch 2021-04']); ?>)</h4>
+            <table><?php
+                // PARTICIPANTS
+                $registrationsEvent = $registrations['Stammtisch 2021-04']; ?>
+                <?php if($registrationsEvent) {
+                foreach ($registrationsEvent as $registrationEvent) { ?>
+                <tr>
+                    <td>
+                        <?php
+                        echo hsc($registrationEvent->participant_name);
+                        ?>
+                    </td>
+                    <td class="pl-2">
+                        <?php echo nl2br(hsc($registrationEvent->comment)); ?>
+                    </td>
+                    <td class="pl-3">
+                        <?= $registrationEvent->virtual_flag ? 'virtuell' : 'vor&nbsp;Ort'; ?>
+                    </td>
+                </tr>
+                <?php }
+                } ?>
+            </table>
+        </div>
+    </div>
+
+    <div class="card eventBoxLight" id="event202105">
+        <div class="card-body">
+            <h3 class="card-title">19.05.2021: FileMaker Stammtisch Zürich</h3>
+            <h4>Agenda</h4>
+            <ul>
+                <li>18:30 Uhr - [Diskusson] Fail early vs. fail silent<br>
+                    Fehler vor dem Kunde verstecken oder den Kunde zum Tester machen?<br>
+                    Am Beispiel "Fehleraufzeichnung setzen" ohne den Fehler auszuwerten.
+                </li>
+                <li>19:00 Uhr - tbd</li>
+            </ul>
+            <h4>Ort</h4>
+            <p>Virtuell: Christian Sedlmeiers <a style="color: red; font-weight: bold;" href="https://meet.sedlmair.ch/FMZuerichStammtisch202105" target="_blank">Jitsi Server</a> @ meet.sedlmair.ch<br>
+                Physisch: CropFactory, <a href="https://www.cropfactory.ch/contact" target="_blank">Alte Bahnhofstrasse 27, 5612 Villmergen</a> (AG)</p>
+            <?php if(false) : ?>
+            <h4>Anmelden</h4>
+            <form id="registrationNew" action="<?php echo ROOT_WWW ?>?action=registration" method="post" style="margin-bottom: 15px;">
+                <input type="hidden" name="registration[event]" value="Stammtisch 2021-05">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" name="registration[participant_name]" placeholder="Name **" required>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-danger">anmelden</button>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5px; margin-left: -6px; padding-left: 0;">
+                    <div class="col">
+                        <input type="radio" id="virtual" name="registration[presence]" value="virtual" checked>
+                        <label for="registration[presence]">virtuell</label>
+                        <!--                            <input type="radio" id="onsite" name="registration[presence]" value="onsite">-->
+                        <!--                            <label for="registration[presence]">vor Ort</label>-->
                     </div>
                 </div>
                 <div class="row">
@@ -134,16 +243,167 @@
             </form>
             <!--                    <p><a href="assets/FileMaker_Stammtisch_202011.ics">ics download</a></p>-->
             <?php endif; ?>
-            <h4>Bisher angemeldet (<?php echo count($registrations['Stammtisch 2021-03']); ?>)</h4>
+            <h4>Bisher angemeldet (<?php echo count($registrations['Stammtisch 2021-05']); ?>)</h4>
             <table><?php
                 // PARTICIPANTS
-                $registrationsEvent = $registrations['Stammtisch 2021-03']; ?>
+                $registrationsEvent = $registrations['Stammtisch 2021-05']; ?>
                 <?php if($registrationsEvent) {
                 foreach ($registrationsEvent as $registrationEvent) { ?>
                 <tr>
                     <td>
                         <?php
-                            echo hsc($registrationEvent->participant_name);
+                        echo hsc($registrationEvent->participant_name);
+                        ?>
+                    </td>
+                    <td class="pl-2">
+                        <?php echo nl2br(hsc($registrationEvent->comment)); ?>
+                    </td>
+                    <td class="pl-3">
+                        <?= $registrationEvent->virtual_flag ? 'virtuell' : 'vor&nbsp;Ort'; ?>
+                    </td>
+                </tr>
+                <?php }
+                } ?>
+            </table>
+        </div>
+    </div>
+
+    <div class="card eventBoxDark" id="event202106">
+        <div class="card-body">
+            <h3 class="card-title">23.06.2021: FileMaker Stammtisch Zürich</h3>
+            <h4>Agenda</h4>
+            <ul>
+                <li>18:30 Uhr - [Demo & Review] Claris Blog-Post: "<a href="https://www.claris.com/de/blog/2020/5-cool-open-source-javascript-libraries-to-refresh-your-custom-app" target="_blank">5 coole Open-Source-JavaScript-Bibliotheken, die Ihre eigene App aufpeppen</a>" (Christoph Dunkake)</li>
+                <li>19:30 Uhr - tbd</li>
+            </ul>
+            <h4>Ort</h4>
+            <p>Virtuell: Christian Sedlmeiers <a style="color: red; font-weight: bold;" href="https://meet.sedlmair.ch/FMZuerichStammtisch202106" target="_blank">Jitsi Server</a> @ meet.sedlmair.ch<br>
+                Physisch: CropFactory, <a href="https://www.cropfactory.ch/contact" target="_blank">Alte Bahnhofstrasse 27, 5612 Villmergen</a> (AG)</p>
+            <?php if(false) : ?>
+            <h4>Anmelden</h4>
+            <form id="registrationNew" action="<?php echo ROOT_WWW ?>?action=registration" method="post" style="margin-bottom: 15px;">
+                <input type="hidden" name="registration[event]" value="Stammtisch 2021-06">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" name="registration[participant_name]" placeholder="Name **" required>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-danger">anmelden</button>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5px; margin-left: -6px; padding-left: 0;">
+                    <div class="col">
+                        <input type="radio" id="virtual" name="registration[presence]" value="virtual" checked>
+                        <label for="registration[presence]">virtuell</label>
+                        <!--                            <input type="radio" id="onsite" name="registration[presence]" value="onsite">-->
+                        <!--                            <label for="registration[presence]">vor Ort</label>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="email" class="form-control" name="registration[participant_email]" placeholder="E-Mail Adresse">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <textarea class="form-control" name="registration[comment]" rows="3" placeholder="Bemerkungen, Themenvorschläge etc."></textarea>
+                    </div>
+                </div>
+            </form>
+            <!--                    <p><a href="assets/FileMaker_Stammtisch_202011.ics">ics download</a></p>-->
+            <?php endif; ?>
+            <h4>Bisher angemeldet (<?php echo count($registrations['Stammtisch 2021-06']); ?>)</h4>
+            <table><?php
+                // PARTICIPANTS
+                $registrationsEvent = $registrations['Stammtisch 2021-06']; ?>
+                <?php if($registrationsEvent) {
+                foreach ($registrationsEvent as $registrationEvent) { ?>
+                <tr>
+                    <td>
+                        <?php
+                        echo hsc($registrationEvent->participant_name);
+                        ?>
+                    </td>
+                    <td class="pl-2">
+                        <?php echo nl2br(hsc($registrationEvent->comment)); ?>
+                    </td>
+                    <td class="pl-3">
+                        <?= $registrationEvent->virtual_flag ? 'virtuell' : 'vor&nbsp;Ort'; ?>
+                    </td>
+                </tr>
+                <?php }
+                } ?>
+            </table>
+        </div>
+    </div>
+
+    <div class="card eventBoxLight">
+        <div class="card-body">
+            <h3 class="card-title" id="event2020fmk">22.-24.07.2021 (verschoben): FileMaker Konferenz</h3>
+            <h4>Veranstalter / Ort</h4>
+            <p><a href="https://www.filemaker-konferenz.com" target="_blank">FMK, Malbun</a></p>
+            <!--                <h4>Vorträge von FMZürich Mitgliedern</h4>-->
+            <!--                <ul>-->
+            <!--                    <li>30.10.2020, 09:00 Uhr: Reporting mit WebViewer und D3.js</li>-->
+            <!--                    <li>30.10.2020, 11:00 Uhr: FileMaker Fehler - wie damit umgehen</li>-->
+            <!--                    <li>31.10.2020, 09:00 Uhr: Rest APIs nutzen</li>-->
+            <!--                </ul>-->
+        </div>
+    </div>
+
+    <div class="card eventBoxDark" id="event202108">
+        <div class="card-body">
+            <h3 class="card-title">18.08.2021: FileMaker Stammtisch Zürich</h3>
+            <h4>Agenda</h4>
+            <ul>
+                <li>18:30 Uhr - tbd</li>
+            </ul>
+            <h4>Ort</h4>
+            <p>Virtuell: Christian Sedlmeiers <a style="color: red; font-weight: bold;" href="https://meet.sedlmair.ch/FMZuerichStammtisch202108" target="_blank">Jitsi Server</a> @ meet.sedlmair.ch<br>
+                Physisch: CropFactory, <a href="https://www.cropfactory.ch/contact" target="_blank">Alte Bahnhofstrasse 27, 5612 Villmergen</a> (AG)</p>
+            <?php if(false) : ?>
+            <h4>Anmelden</h4>
+            <form id="registrationNew" action="<?php echo ROOT_WWW ?>?action=registration" method="post" style="margin-bottom: 15px;">
+                <input type="hidden" name="registration[event]" value="Stammtisch 2021-08">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" name="registration[participant_name]" placeholder="Name **" required>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-danger">anmelden</button>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5px; margin-left: -6px; padding-left: 0;">
+                    <div class="col">
+                        <input type="radio" id="virtual" name="registration[presence]" value="virtual" checked>
+                        <label for="registration[presence]">virtuell</label>
+                        <!--                            <input type="radio" id="onsite" name="registration[presence]" value="onsite">-->
+                        <!--                            <label for="registration[presence]">vor Ort</label>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="email" class="form-control" name="registration[participant_email]" placeholder="E-Mail Adresse">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <textarea class="form-control" name="registration[comment]" rows="3" placeholder="Bemerkungen, Themenvorschläge etc."></textarea>
+                    </div>
+                </div>
+            </form>
+            <!--                    <p><a href="assets/FileMaker_Stammtisch_202011.ics">ics download</a></p>-->
+            <?php endif; ?>
+            <h4>Bisher angemeldet (<?php echo count($registrations['Stammtisch 2021-08']); ?>)</h4>
+            <table><?php
+                // PARTICIPANTS
+                $registrationsEvent = $registrations['Stammtisch 2021-08']; ?>
+                <?php if($registrationsEvent) {
+                foreach ($registrationsEvent as $registrationEvent) { ?>
+                <tr>
+                    <td>
+                        <?php
+                        echo hsc($registrationEvent->participant_name);
                         ?>
                     </td>
                     <td class="pl-2">
