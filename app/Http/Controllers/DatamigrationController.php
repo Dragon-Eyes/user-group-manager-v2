@@ -11,6 +11,9 @@ class DatamigrationController extends Controller {
     public static function registrations() {
         $registrations = DB::select('SELECT * FROM registrations_v1');
         foreach($registrations as $registration) {
+            if(!$registration->virtual_flag) {
+                $registration->virtual_flag = 0;
+            }
             if(!$registration->participant_email) {
                 $registration->participant_email = null;
             }
