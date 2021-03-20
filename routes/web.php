@@ -48,6 +48,9 @@ Route::get('/pastevents', function() {
 Route::get('/statistics', function() {
     return view('legacy.statistics');
 });
+Route::get('/forum', function() {
+    return view('legacy.forum');
+});
 
 //Route::get('/testread', [\App\Http\Controllers\Controller::class, 'testread']);
 

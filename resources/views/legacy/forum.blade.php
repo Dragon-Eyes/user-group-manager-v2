@@ -7,6 +7,6 @@
 
 @section('content')
 
-    <h2>Past Events</h2>
+    <h2>Forum</h2>
 
 @endsection

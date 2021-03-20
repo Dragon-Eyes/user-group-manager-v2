@@ -8,7 +8,10 @@
     <meta name="description" content="Forum und Stammtisch zum Austausch unter FileMaker-Entwicklern."/>
 
     <?php
-    use JetBrains\PhpStorm\Pure;$page = $_SERVER['REQUEST_URI'] === '/' ? 'index' : substr($_SERVER['REQUEST_URI'], 1);
+    use JetBrains\PhpStorm\Pure;
+    $page = $_SERVER['REQUEST_URI'] === '/' ? 'index' : substr($_SERVER['REQUEST_URI'], 1);
+//    define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
+//    define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
     ?>
     <meta property="og:url" content="https://fmzuerich.ch/<?= $page ?>">
     <meta property="og:type" content="website">
@@ -76,7 +79,7 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
     <div class="pagecontainerheader">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
             <div class="container">
-                <a class="navbar-brand" href="https://fmzuerich.ch">FM Zürich</a>
+                <a class="navbar-brand" href="<?= ROOT_WWW ?>">FM Zürich</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -85,8 +88,8 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stammtisch</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="https://fmzuerich.ch#eventsFuture">Zukünftige</a>
-                                <a class="dropdown-item" href="https://fmzuerich.ch/pastevents">Rückblick</a>
+                                <a class="dropdown-item" href="<?= ROOT_WWW ?>">Zukünftige</a>
+                                <a class="dropdown-item" href="<?= ROOT_WWW ?>/pastevents">Rückblick</a>
                             </div>
                         </li>
                     </ul>
@@ -95,7 +98,7 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
                             <a class="nav-link" href="http://eepurl.com/gIw6zf" target="_blank">Newsletter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://fmzuerich.ch/forum">Forum</a>
+                            <a class="nav-link" href="<?= ROOT_WWW ?>/forum">Forum</a>
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Präsentationen, Demodateien etc.">
                             <a class="nav-link" href="https://gasser2.diskstation.me:5011" target="_blank">Ressourcen</a>

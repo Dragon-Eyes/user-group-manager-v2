@@ -1,6 +1,9 @@
 @extends('layouts.legacyapp')
 
 <?php
+    define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
+    define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
+
     function ue($string = "") {
         return urlencode($string);
     }
@@ -50,14 +53,9 @@
             return 'rgb(0,0,0)';
         }
     }
-
-    define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
-    define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
-
 ?>
 
 @section('content')
-
     <div class="jumbotron jumbotron-fluid text-center" style="background-color: <?php echo getBackgroundColor(getRandomNumber(3)) ?>; color: white; margin-top: 10px;">
         <div class="container-fluid">
             <!--                <h1 class="display-4 animate__animated animate__rubberBand">FileMaker Zürich</h1>-->
@@ -139,7 +137,7 @@
                 Physisch: CropFactory, <a href="https://www.cropfactory.ch/contact" target="_blank">Alte Bahnhofstrasse 27, 5612 Villmergen</a> (AG)</p>
             <?php if(true) : ?>
             <h4>Anmelden</h4>
-            <form id="registrationNew" action="<?php echo ROOT_WWW ?>/legacyregister" method="post" style="margin-bottom: 15px;">
+            <form id="registrationNew" action="<?= ROOT_WWW ?>/legacyregister" method="post" style="margin-bottom: 15px;">
                 @csrf
                 <input type="hidden" name="registration[event]" value="Stammtisch 2021-04">
                 <div class="row">
@@ -418,5 +416,7 @@
             </table>
         </div>
     </div>
+
+    <p class="mt-3"><a href="<?= ROOT_WWW ?>/statistics">Site-Statistiken</a></p>
 
 @endsection
