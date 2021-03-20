@@ -99,7 +99,7 @@
             </ul>
             <h4>Ort</h4>
             Virtuell: Christian Sedlmeiers <a style="color: red; font-weight: bold;" href="https://meet.sedlmair.ch/FMZuerichStammtisch202103" target="_blank">Jitsi Server</a> @ meet.sedlmair.ch</p>
-            <h4>Bisher angemeldet (<?php echo count($registrations['Stammtisch 2021-03']); ?>)</h4>
+            <h4>Bisher angemeldet (<?= count($registrations['Stammtisch 2021-03']); ?>)</h4>
             <table><?php
                 // PARTICIPANTS
                 $registrationsEvent = $registrations['Stammtisch 2021-03']; ?>

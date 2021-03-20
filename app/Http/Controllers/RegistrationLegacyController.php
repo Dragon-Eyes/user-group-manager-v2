@@ -23,7 +23,7 @@ class RegistrationLegacyController extends Controller
         ];
         $registrations = [];
         foreach($eventIds as $eventId) {
-            $registrations[$eventId] = DB::select('SELECT participant_name, comment, virtual_flag, deleted_flag FROM registration_legacies WHERE event = ? AND deleted_flag = ?', [$eventId, 0]) ?? [];
+            $registrations[$eventId] = self::get_by_event($eventId);
         }
         return view('legacy.index', compact('registrations'));
     }
@@ -57,12 +57,23 @@ class RegistrationLegacyController extends Controller
             'Stammtisch 2020-01',
             'Stammtisch 2019-12'
         ];
+        $registrations = [];
+        foreach($eventIds as $eventId) {
+            $registrations[$eventId] = self::get_by_event($eventId);
+        }
+//        return $registrations;
+        return view('legacy.pastevents', compact('registrations'));
     }
 
-    private static function get_by_event(string $title) {
-        //
+    public static function statistics() {
+
+        $data = [];
+        return view('legacy.statistics', compact('data'));
     }
 
+    private static function get_by_event(string $title) :array {
+        return DB::select('SELECT participant_name, comment, virtual_flag, deleted_flag FROM registration_legacies WHERE event = ? AND deleted_flag = ?', [$title, 0]) ?? [];
+    }
 
     /**
      * Show the form for creating a new resource.

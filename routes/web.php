@@ -35,23 +35,14 @@ Route::get('/events', 'App\Http\Controllers\EventController@index');
 |--------------------------------------------------------------------------
 */
 Route::get('/', [\App\Http\Controllers\RegistrationLegacyController::class, 'index']);
-
 Route::post('/legacyregister', [\App\Http\Controllers\RegistrationLegacyController::class, 'register']);
 
-//Route::get('/legacy', function() {
-//    return 'index...';
-//});
+Route::get('/pastevents', [\App\Http\Controllers\RegistrationLegacyController::class, 'pastevents']);
 
-Route::get('/pastevents', function() {
-    return view('legacy.pastevents');
-});
-Route::get('/statistics', function() {
-    return view('legacy.statistics');
-});
+Route::get('/statistics', [\App\Http\Controllers\RegistrationLegacyController::class, 'statistics']);
+
 Route::get('/forum', function() {
     return view('legacy.forum');
 });
-
-//Route::get('/testread', [\App\Http\Controllers\Controller::class, 'testread']);
 
 //Route::get('/migrateregistrations', [\App\Http\Controllers\DatamigrationController::class, 'registrations']);

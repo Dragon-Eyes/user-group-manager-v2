@@ -8,5 +8,8 @@
 @section('content')
 
     <h2>Past Events</h2>
+    <pre>
+        <?php print_r($registrations); ?>
+    </pre>
 
 @endsection
