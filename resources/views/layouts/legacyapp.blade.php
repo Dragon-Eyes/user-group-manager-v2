@@ -8,7 +8,7 @@
     <meta name="description" content="Forum und Stammtisch zum Austausch unter FileMaker-Entwicklern."/>
 
     <?php
-    $page = $_SERVER['REQUEST_URI'] === '/' ? 'index' : substr($_SERVER['REQUEST_URI'], 1);
+    use JetBrains\PhpStorm\Pure;$page = $_SERVER['REQUEST_URI'] === '/' ? 'index' : substr($_SERVER['REQUEST_URI'], 1);
     ?>
     <meta property="og:url" content="https://fmzuerich.ch/<?= $page ?>">
     <meta property="og:type" content="website">
@@ -53,8 +53,8 @@
 </head>
 <?php
 // log
-function get_ip_address(){
-    foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key){
+#[Pure] function get_ip_address() :string {
+/*    foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key) {
         if (array_key_exists($key, $_SERVER) === true){
             foreach (explode(',', $_SERVER[$key]) as $ip){
                 $ip = trim($ip); // just to be safe
@@ -63,11 +63,12 @@ function get_ip_address(){
                 }
             }
         }
-    }
+    }*/
 }
-$log = new Log(['event'=>'pageview','note'=>$page.','.get_ip_address()]);
-// TODO: reactivate
+//$log = new Log(['event'=>'pageview','note'=>$page.','.get_ip_address()]);
 //$log->save();
+//$log = \App\Http\Controllers\LogLegacyController::write('pageview', $page . ',' . get_ip_address());
+$log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
 ?>
 
 <body>
