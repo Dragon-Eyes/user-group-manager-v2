@@ -75,6 +75,37 @@ class RegistrationLegacyController extends Controller
         return DB::select('SELECT participant_name, comment, virtual_flag, deleted_flag FROM registration_legacies WHERE event = ? AND deleted_flag = ?', [$title, 0]) ?? [];
     }
 
+    public static function getEventnameParticipantCountForAll() :array {
+        $events = self::getEventNames();
+        foreach($events as $event) {
+            $eventObject = new \stdClass();
+            $eventObject->event = substr($event->event, 11);
+            $count = self::getCountForEvent($event->event);
+            $eventObject->participants = self::getCountForEvent($event->event);
+            $eventArray[] = $eventObject;
+        }
+        return $eventArray;
+    }
+
+    private static function getEventNames() :array {
+        $sql = "SELECT DISTINCT event FROM registration_legacies";
+        $sql .= " WHERE deleted_flag = ?";
+        $sql .= " ORDER BY event ASC";
+        return DB::select($sql, [0]) ?? [];
+    }
+
+    private static function getCountForEvent(string $event) :int {
+        $sql = "SELECT COUNT(*) AS COUNT FROM registration_legacies";
+        $sql .= " WHERE deleted_flag = ?";
+        $sql .= " AND event = ?";
+        $result = DB::select($sql, [0, $event]) ?? 0;
+        return $result[0]->COUNT;
+    }
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
