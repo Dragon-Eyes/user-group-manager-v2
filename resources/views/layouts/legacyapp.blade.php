@@ -13,7 +13,7 @@
 //    define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
 //    define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
     ?>
-    <meta property="og:url" content="https://fmzuerich.ch/<?= $page ?>">
+    <meta property="og:url" content="https://fmzuerich.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Entwickler Stammtisch Zürich">
     <meta property="og:description" content="Der neue FileMaker Stammtisch in / um Zürich. Jede / jeder FileMaker-Interessierte ist willkommen; die Neulinge bringen interessante Fragen und neue Ideen und die alten Hasen können mal zeigen, was sie (noch) können.">
