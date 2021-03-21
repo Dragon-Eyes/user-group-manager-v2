@@ -22,7 +22,7 @@
     <p>Wenn Du einem Beitrag Bildschirmfotos o.ä. hinzufügen möchtest, musst Du dafür jeweils einen Kommentar anlegen (nur Foto oder Text und Foto).</p>
     <p>Wer den Zugang nicht wünscht, kann einfach die Einladungsmail ignorieren.</p>
     <p>Sollten wir vergessen jemanden einzuladen, kontaktiert uns bitte.<br><strong>Es ist nicht möglich dem Forum selbstständig / ohne Einladung beizutreten.</strong></p>
-    <p>Für die Nutzung benötigst Du eine halbwegs modernen Browser und nein, der Internet Exporer war schon vor 6 Jahren, als Microsoft die Weiterentwicklung eingestellt hat, kein moderner Browser mehr.<br>
-        Wer es ganz genau wissen will, <a href="https://caniuse.com/?search=fetch" target="_blank">CanIuse</a> für eine vom System stark verwendete Funktion bzw. API.</p>
+    <p>Für die Nutzung benötigst Du eine halbwegs modernen Browser und nein, der Internet Exporer war schon vor 6 Jahren, als Microsoft die Weiterentwicklung eingestellt hat, kein moderner Browser mehr.<!--<br>
+        Wer es ganz genau wissen will, <a href="https://caniuse.com/?search=fetch" target="_blank">CanIuse</a> für eine vom System stark verwendete Funktion bzw. API.--></p>
 
 @endsection

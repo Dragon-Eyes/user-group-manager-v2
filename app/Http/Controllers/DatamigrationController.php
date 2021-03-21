@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class DatamigrationController extends Controller {
 
+    /*
     public static function registrations() {
         $registrations = DB::select('SELECT * FROM registrations_v1');
         foreach($registrations as $registration) {
@@ -21,4 +22,5 @@ class DatamigrationController extends Controller {
 //            echo $registrationNew . '<br>';
         }
     }
+    */
 }

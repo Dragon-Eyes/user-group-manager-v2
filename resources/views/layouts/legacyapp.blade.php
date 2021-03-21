@@ -116,8 +116,9 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
     </div> <!-- end pagecontainercontent -->
     <div class="pagecontainerfooter">
         <div class="container mt-4">
-            <p>FM Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern.<br>
-            fmzürich.ch basiert auf <a href="https://github.com/Dragon-Eyes/user-group-manager-v2" target="_blank">User-Group-Manager-v2</a> entwickelt von Dragon Eyes und lizensiert unter MIT License.</p>
+            <p>FM Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern.</p>
+            <p>fmzürich.ch basiert auf <a href="https://github.com/Dragon-Eyes/user-group-manager-v2" target="_blank">User-Group-Manager-v2</a> entwickelt von Dragon Eyes und lizensiert unter MIT License<br>
+                {mit Liebe, PHP {{ PHP_VERSION }}, Laravel {{ Illuminate\Foundation\Application::VERSION }}, Jetstream und Livewire}.</p>
         </div>
     </div>
 </div> <!-- end pagecontainer -->
