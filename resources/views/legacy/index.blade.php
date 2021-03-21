@@ -207,7 +207,6 @@
                 </div>
             </form>
             <!--                    <p><a href="assets/FileMaker_Stammtisch_202011.ics">ics download</a></p>-->
-            <?php endif; ?>
             <h4>Bisher angemeldet (<?php echo count($registrations['Stammtisch 2021-05']); ?>)</h4>
             <table><?php
                 // PARTICIPANTS
@@ -230,6 +229,7 @@
                 <?php }
                 } ?>
             </table>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -276,7 +276,6 @@
                 </div>
             </form>
             <!--                    <p><a href="assets/FileMaker_Stammtisch_202011.ics">ics download</a></p>-->
-            <?php endif; ?>
             <h4>Bisher angemeldet (<?php echo count($registrations['Stammtisch 2021-06']); ?>)</h4>
             <table><?php
                 // PARTICIPANTS
@@ -299,6 +298,7 @@
                 <?php }
                 } ?>
             </table>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -358,7 +358,6 @@
                 </div>
             </form>
             <!--                    <p><a href="assets/FileMaker_Stammtisch_202011.ics">ics download</a></p>-->
-            <?php endif; ?>
             <h4>Bisher angemeldet (<?php echo count($registrations['Stammtisch 2021-08']); ?>)</h4>
             <table><?php
                 // PARTICIPANTS
@@ -381,6 +380,7 @@
                 <?php }
                 } ?>
             </table>
+            <?php endif; ?>
         </div>
     </div>
 

@@ -137,7 +137,7 @@
 
         rectsPageviews.enter()
             .append('rect')
-            .attr('width', 6)
+            .attr('width', 5)
             .attr('height', 0)
             .attr('fill','blue')
             .attr('x', d => xPageviews(new Date(d.day)) - 2)
