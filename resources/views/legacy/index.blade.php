@@ -68,6 +68,7 @@
 
     <?php if(true) : ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Leider kann der Stammtisch am 24.03.2021 nicht stattfinden.<br>
         Jetzt anmelden zum Stammtisch am <strong>23. April 2021</strong>!
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -89,40 +90,6 @@
     <p>Fragen, Anregungen o.ä.? <a class="e-l" data-ep1="stammtisch" data-ep2="fmzuerich" data-ep3="ch" href="#">Kontakt</a></p>
 
     <h2 id="eventsFuture">Treffen</h2>
-
-    <div class="card eventBoxLight" id="event202103">
-        <div class="card-body">
-            <h3 class="card-title">24.03.2021: FileMaker Stammtisch Zürich</h3>
-            <h4>Agenda</h4>
-            <ul>
-                <li>18:30 Uhr - tbd</li>
-            </ul>
-            <h4>Ort</h4>
-            Virtuell: Christian Sedlmeiers <a style="color: red; font-weight: bold;" href="https://meet.sedlmair.ch/FMZuerichStammtisch202103" target="_blank">Jitsi Server</a> @ meet.sedlmair.ch</p>
-            <h4>Bisher angemeldet (<?= count($registrations['Stammtisch 2021-03']); ?>)</h4>
-            <table><?php
-                // PARTICIPANTS
-                $registrationsEvent = $registrations['Stammtisch 2021-03']; ?>
-                <?php if($registrationsEvent) {
-                foreach ($registrationsEvent as $registrationEvent) { ?>
-                <tr>
-                    <td>
-                        <?php
-                            echo hsc($registrationEvent->participant_name);
-                        ?>
-                    </td>
-                    <td class="pl-2">
-                        <?php echo nl2br(hsc($registrationEvent->comment)); ?>
-                    </td>
-                    <td class="pl-3">
-                        <?= $registrationEvent->virtual_flag ? 'virtuell' : 'vor&nbsp;Ort'; ?>
-                    </td>
-                </tr>
-                <?php }
-                } ?>
-            </table>
-        </div>
-    </div>
 
     <div class="card eventBoxDark" id="event202104">
         <div class="card-body">
