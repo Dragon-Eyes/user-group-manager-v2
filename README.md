@@ -1,4 +1,4 @@
-<p align="center""><a href="https://dragoneyes.software/de" target="_blank"><img src="https://dragoneyes.software/assets/DragonEyes_v2-5_logo_cbs.svg" width="350"></a></p>
+<p align="center"><a href="https://dragoneyes.software/de" target="_blank"><img src="https://dragoneyes.software/assets/DragonEyes_v2-5_logo_cbs.svg" width="350"></a></p>
 
 ## User Group Manager v2
 Simple but helpful site to get details about upcoming events.
