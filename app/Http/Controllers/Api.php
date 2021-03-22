@@ -9,13 +9,13 @@ class Api extends Controller
     public static function get_api_info() {
         return [
             "Application" => "User Group Manager v2",
+            "User group" => "FileMaker Zürich",
             "Available endpoints" => [
                 "info",
                 "next (soon)",
                 "upcoming (soon)",
                 "register (soon)"
-            ],
-            "User group" => "FileMaker Zürich"
+            ]
         ];
     }
 }
