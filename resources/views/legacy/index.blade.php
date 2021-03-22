@@ -2,7 +2,7 @@
 
 <?php
     define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
-    define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
+    define("ROOT_WWW", 'https://' . $_SERVER['HTTP_HOST']);
 
     function ue($string = "") {
         return urlencode($string);
