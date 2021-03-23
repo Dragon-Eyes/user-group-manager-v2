@@ -1,11 +1,21 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://dragoneyes.software/de" target="_blank"><img src="https://dragoneyes.software/assets/DragonEyes_v2-5_logo_cbs.svg" width="350"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## User Group Manager v2
+Simple but helpful site to get details about upcoming events.
+
+### Planned extensions
+- Rest API to get event details and register
+- Admin options to create and edit events / modify and delete registrations (no-shows)
+- new page structure and re-build with Livewire
+
+### Originally for "FileMaker Zürich"
+UGMv2 is build but not limited to the FileMaker Zürich user group meetings.
+
+----------------
+
+This rebuild is made possible by some great open souce technologies: HTML 5, CSS 3, Tailwind, JavaScript ES6, PHP 8, Laravel 8, Jetstream, Livewire and MariaDB. To all the contributors of these repositories: you are our heros! What would we do without your tireless dedication..!
+
+----------------
 
 ## About Laravel
 

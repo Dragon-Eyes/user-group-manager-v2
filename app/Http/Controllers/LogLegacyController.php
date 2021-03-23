@@ -42,7 +42,7 @@ class LogLegacyController extends Controller
         return $result[0]->COUNT;
     }
 
-    public static function get_pageviews($dateStart = '2020-10-26') {
+    public static function get_pageviews($dateStart = '2020-10-26') :array {
         $dateFocus = $dateStart;
         $logObjectArray = [];
         while(strtotime($dateFocus) <= strtotime(date('Y-m-d'))) {
