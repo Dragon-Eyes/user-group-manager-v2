@@ -23,7 +23,8 @@ class RegistrationLegacyController extends Controller
         foreach($eventIds as $eventId) {
             $registrations[$eventId] = self::get_by_event($eventId);
         }
-        return view('legacy.index', compact('registrations'));
+        $eventsFuture = DB::select('SELECT * FROM events');
+        return view('legacy.indexcomponents', compact('registrations', 'eventsFuture'));
     }
 
     /**
