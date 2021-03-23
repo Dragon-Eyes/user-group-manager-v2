@@ -67,15 +67,9 @@ function getBackgroundColor($choice) {
     </div>
 
     <h2 id="eventsFuture">Treffen</h2>
-
     @foreach($eventsFuture as $event)
-
         <x-event-legacy :event="$event"></x-event-legacy>
-
     @endforeach
 
-
-
     <p class="mt-3"><a href="<?= ROOT_WWW ?>/statistics">Site-Statistiken</a></p>
-
 @endsection
