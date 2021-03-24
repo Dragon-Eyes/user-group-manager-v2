@@ -66,6 +66,11 @@ function getBackgroundColor($choice) {
         </div>
     </div>
 
+    <pre>
+            <?php print_r($registrations); ?>
+        </pre>
+
+
     <h2 id="eventsFuture">Treffen</h2>
     @foreach($eventsFuture as $event)
         <x-event-legacy :event="$event"></x-event-legacy>
