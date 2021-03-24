@@ -62,14 +62,9 @@ function getBackgroundColor($choice) {
             <!--                <h1 class="display-4 animate__animated animate__swing">FileMaker Zürich</h1>-->
             <h1 class="display-4 animate__animated animate__flip">FileMaker Zürich</h1>
             <!--                <h1 class="display-4 animate__animated animate__heartBeat">FileMaker Zürich</h1>-->
-            <p>Entwickler-Community<br>Der neue Stammtisch</p>
+            <p>Entwickler-Community<br>Der neue Stammtisch !!!</p>
         </div>
     </div>
-
-    <pre>
-            <?php print_r($registrations); ?>
-        </pre>
-
 
     <h2 id="eventsFuture">Treffen</h2>
     @foreach($eventsFuture as $event)

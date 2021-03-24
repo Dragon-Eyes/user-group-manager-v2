@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::get('/welcome', function () {
+Route::get('/welcome', function () {
     return view('welcome');
-});*/
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -27,7 +27,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //});
 
 
-//Route::get('/events', 'App\Http\Controllers\EventController@index');
+Route::get('/events', 'App\Http\Controllers\EventController@index');
 
 /*
 |--------------------------------------------------------------------------
