@@ -68,7 +68,6 @@
 
     <?php if(true) : ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        Leider kann der Stammtisch am 24.03.2021 nicht stattfinden.<br>
         Jetzt anmelden zum Stammtisch am <strong>23. April 2021</strong>!
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
