@@ -38,6 +38,7 @@ Route::get('/', [\App\Http\Controllers\RegistrationLegacyController::class, 'ind
 Route::post('/legacyregister', [\App\Http\Controllers\RegistrationLegacyController::class, 'register']);
 
 Route::get('/pastevents', [\App\Http\Controllers\RegistrationLegacyController::class, 'pastevents']);
+Route::get('/pasteventsnew', [\App\Http\Controllers\EventController::class, 'pasteventsnew']);
 
 Route::get('/statistics', [\App\Http\Controllers\RegistrationLegacyController::class, 'statistics']);
 
