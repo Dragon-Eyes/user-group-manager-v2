@@ -68,7 +68,7 @@ function getBackgroundColor($choice) {
 
     <h2 id="eventsFuture">Treffen</h2>
     @foreach($eventsFuture as $event)
-        <x-event-legacy :event="$event"></x-event-legacy>
+        <x-event :event="$event"></x-event>
     @endforeach
 
     <p class="mt-3"><a href="<?= ROOT_WWW ?>/statistics">Site-Statistiken</a></p>
