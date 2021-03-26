@@ -12,7 +12,7 @@ class RegistrationLegacyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public static function index() {
-        $eventIds = [
+/*        $eventIds = [
             'Stammtisch 2021-03',
             'Stammtisch 2021-04',
             'Stammtisch 2021-05',
@@ -21,9 +21,18 @@ class RegistrationLegacyController extends Controller
         ];
         $registrations = [];
         foreach($eventIds as $eventId) {
-            $registrations[$eventId] = self::get_by_event($eventId);
+            $registrations[$eventId] = self::get_by_event_title($eventId);
+        }*/
+        $eventsFuture = DB::select('SELECT * FROM events WHERE date > (SELECT DATE_ADD(CURRENT_DATE, INTERVAL -1 DAY ))');
+        $registrations = [];
+        foreach($eventsFuture as $event) {
+            if($event->isOwnEvent) {
+                $registrations[$event->id] = self::get_by_event_id($event->id);
+            }
         }
-        return view('legacy.index', compact('registrations'));
+
+
+        return view('legacy.indexcomponents', compact('registrations', 'eventsFuture'));
     }
 
     /**
@@ -38,7 +47,8 @@ class RegistrationLegacyController extends Controller
         $registrationType = $registrationData['presence'] == 'onsite' ? 0 : 1;
         $now = new \DateTime();
         $registrationCreated = $now->format('Y-m-d H:i:s');
-        $registration = DB::insert('INSERT INTO registration_legacies (event, participant_name, participant_email, comment, virtual_flag, created_at) VALUES (?, ?, ?, ?, ?, ?)', [$registrationData['event'], $registrationData['participant_name'], $registrationData['participant_email'], $registrationData['comment'], $registrationType, $registrationCreated]);
+//        $registrationOld = DB::insert('INSERT INTO registration_legacies (event, participant_name, participant_email, comment, virtual_flag, created_at) VALUES (?, ?, ?, ?, ?, ?)', [$registrationData['event'], $registrationData['participant_name'], $registrationData['participant_email'], $registrationData['comment'], $registrationType, $registrationCreated]);
+        $registration = DB::insert('INSERT INTO registrations (event_id, name, email, comment, is_virtual, created_at) VALUES (?, ?, ?, ?, ?, ?)', [$registrationData['event_id'], $registrationData['participant_name'], $registrationData['participant_email'], $registrationData['comment'], $registrationType, $registrationCreated]);
         header("Location: /");
         exit();
     }
@@ -57,7 +67,7 @@ class RegistrationLegacyController extends Controller
         ];
         $registrations = [];
         foreach($eventIds as $eventId) {
-            $registrations[$eventId] = self::get_by_event($eventId);
+            $registrations[$eventId] = self::get_by_event_title($eventId);
         }
         return view('legacy.pastevents', compact('registrations'));
     }
@@ -68,8 +78,13 @@ class RegistrationLegacyController extends Controller
         return view('legacy.statistics', compact('data'));
     }
 
-    private static function get_by_event(string $title) :array {
+    private static function get_by_event_title(string $title) :array {
         return DB::select('SELECT participant_name, comment, virtual_flag, deleted_flag FROM registration_legacies WHERE event = ? AND deleted_flag = ? ORDER BY created_at DESC', [$title, 0]) ?? [];
+    }
+
+    private static function get_by_event_id(int|string $id) :array {
+        // TODO: switch to event_id
+        return DB::select('SELECT participant_name, comment, virtual_flag, deleted_flag FROM registration_legacies WHERE id = ? AND deleted_flag = ? ORDER BY created_at DESC', [$id, 0]) ?? [];
     }
 
     public static function getEventnameParticipantCountForAll() :array {
