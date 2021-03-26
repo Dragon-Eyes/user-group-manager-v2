@@ -17,7 +17,7 @@
                 <label for="registration[presence]">virtuell</label>
             @endif
             <?php if($optionOnsite->toHtml() == 1) : ?>
-                <input type="radio" id="onsite" name="registration[presence]" value="onsite">
+                <input type="radio" id="onsite" name="registration[presence]" value="onsite" <?php if(!$optionVirtual->toHtml()) {echo ' checked';}; ?>>
                 <label for="registration[presence]">vor Ort</label>
             <?php endif; ?>
         </div>

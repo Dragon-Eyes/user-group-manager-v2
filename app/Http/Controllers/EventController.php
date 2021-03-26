@@ -30,6 +30,9 @@ class EventController extends Controller {
             $date = new \DateTime($event->date);
             $event->dateText = $date->format('d.m.Y');
             $event->registrations = DB::select('SELECT * FROM registrations WHERE event_id = ?', [$event->id]);
+            foreach($event->registrations as $registration) {
+                $registration->placeText = $registration->is_virtual ? 'virtuell' : 'vor Ort';
+            }
         }
         return view('legacy.indexcomponents', compact('eventsFuture'));
     }

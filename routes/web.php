@@ -36,7 +36,7 @@ use Illuminate\Support\Facades\Route;
 */
 //Route::get('/', [\App\Http\Controllers\RegistrationLegacyController::class, 'index']);
 Route::get('/', [\App\Http\Controllers\EventController::class, 'index']);
-//Route::post('/legacyregister', [\App\Http\Controllers\RegistrationLegacyController::class, 'register']);
+Route::post('/legacyregister', [\App\Http\Controllers\RegistrationLegacyController::class, 'register']);
 
 Route::get('/pastevents', [\App\Http\Controllers\EventController::class, 'pasteventsnew']);
 //Route::get('/pasteventsnew', [\App\Http\Controllers\EventController::class, 'pasteventsnew']);

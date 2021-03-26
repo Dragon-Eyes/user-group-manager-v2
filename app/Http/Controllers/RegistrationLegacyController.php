@@ -47,7 +47,8 @@ class RegistrationLegacyController extends Controller
         $registrationType = $registrationData['presence'] == 'onsite' ? 0 : 1;
         $now = new \DateTime();
         $registrationCreated = $now->format('Y-m-d H:i:s');
-        $registration = DB::insert('INSERT INTO registration_legacies (event, participant_name, participant_email, comment, virtual_flag, created_at) VALUES (?, ?, ?, ?, ?, ?)', [$registrationData['event'], $registrationData['participant_name'], $registrationData['participant_email'], $registrationData['comment'], $registrationType, $registrationCreated]);
+//        $registrationOld = DB::insert('INSERT INTO registration_legacies (event, participant_name, participant_email, comment, virtual_flag, created_at) VALUES (?, ?, ?, ?, ?, ?)', [$registrationData['event'], $registrationData['participant_name'], $registrationData['participant_email'], $registrationData['comment'], $registrationType, $registrationCreated]);
+        $registration = DB::insert('INSERT INTO registrations (event_id, name, email, comment, is_virtual, created_at) VALUES (?, ?, ?, ?, ?, ?)', [$registrationData['event_id'], $registrationData['participant_name'], $registrationData['participant_email'], $registrationData['comment'], $registrationType, $registrationCreated]);
         header("Location: /");
         exit();
     }

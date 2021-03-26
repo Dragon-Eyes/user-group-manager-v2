@@ -7,16 +7,11 @@
             @foreach($event->registrations as $registration)
                 <tr>
                     <td>{{$registration->name}}</td>
-                    <td>{{$registration->comment}}</td>
+                    <td class="pl-2">{{$registration->comment}}</td>
+                    <td class="pl-3">{{$registration->placeText}}</td>
                 </tr>
             @endforeach
         </table>
-
-
-
-
-
-
         @if($event->registrationOpen)
             @component('components.registration')
                 @slot('eventId')
