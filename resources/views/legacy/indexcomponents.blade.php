@@ -58,11 +58,11 @@ function getBackgroundColor($choice) {
 @section('content')
     <div class="jumbotron jumbotron-fluid text-center" style="background-color: <?php echo getBackgroundColor(getRandomNumber(3)) ?>; color: white; margin-top: 10px;">
         <div class="container-fluid">
-            <!--                <h1 class="display-4 animate__animated animate__rubberBand">FileMaker Zürich</h1>-->
-            <!--                <h1 class="display-4 animate__animated animate__swing">FileMaker Zürich</h1>-->
-            <h1 class="display-4 animate__animated animate__flip">FileMaker Zürich</h1>
-            <!--                <h1 class="display-4 animate__animated animate__heartBeat">FileMaker Zürich</h1>-->
-            <p>Entwickler-Community<br>Der neue Stammtisch !!!</p>
+            <h1 class="display-4 animate__animated animate__rubberBand">FileMaker Zürich</h1>
+{{--            <h1 class="display-4 animate__animated animate__swing">FileMaker Zürich</h1>--}}
+{{--            <h1 class="display-4 animate__animated animate__flip">FileMaker Zürich</h1>--}}
+{{--            <h1 class="display-4 animate__animated animate__heartBeat">FileMaker Zürich</h1>--}}
+            <p>Entwickler-Community<br>Der neue Stammtisch</p>
         </div>
     </div>
 
@@ -75,7 +75,7 @@ function getBackgroundColor($choice) {
     </div>
     <?php endif; ?>
 
-    <blockquote>FileMaker ist ein grossartiges Tool um mit geringem Aufwand überzeugende Software-Systeme zu kreieren.<br>
+    <blockquote>FileMaker ist ein grossartiges Tool um mit geringem Aufwand überzeugende Software-Systeme zu erarbeiten.<br>
         Im mittlerweile jährlichen Versionsrhythmus stellt Claris Entwicklern neue Möglichkeiten zur Verfügung. Um diese Möglichkeiten zu nutzen und obsolete Praktiken auszumerzen, ist es jedoch unerlässlich permanent an seinen Fähigkeiten zu arbeiten.<br>
         Deshalb haben wir den Zürcher FileMaker Stammtisch, nach mehreren Jahren des Dornröschenschlafes, 2020 wiederauferstehen lassen.</blockquote>
     <p>Für alle FileMaker-Interessierten</p>

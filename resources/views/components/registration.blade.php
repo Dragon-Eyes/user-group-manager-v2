@@ -1,5 +1,5 @@
 <h4>Anmelden</h4>
-<form action="<?= ROOT_WWW ?>/legacyregister" method="post" style="margin-bottom: 15px;">
+<form action="<?= ROOT_WWW ?>/legacyregister" method="post">
     @csrf
     <input type="hidden" name="registration[event_id]" value="{{$eventId}}">
     <div class="row">

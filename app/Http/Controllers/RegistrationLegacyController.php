@@ -11,18 +11,18 @@ class RegistrationLegacyController extends Controller
     /**
      * @return \Illuminate\Http\Response
      */
-    public static function index() {
-/*        $eventIds = [
-            'Stammtisch 2021-03',
-            'Stammtisch 2021-04',
-            'Stammtisch 2021-05',
-            'Stammtisch 2021-06',
-            'Stammtisch 2021-08',
-        ];
-        $registrations = [];
-        foreach($eventIds as $eventId) {
-            $registrations[$eventId] = self::get_by_event_title($eventId);
-        }*/
+    /*    public static function index() {
+            $eventIds = [
+                'Stammtisch 2021-03',
+                'Stammtisch 2021-04',
+                'Stammtisch 2021-05',
+                'Stammtisch 2021-06',
+                'Stammtisch 2021-08',
+            ];
+            $registrations = [];
+            foreach($eventIds as $eventId) {
+                $registrations[$eventId] = self::get_by_event_title($eventId);
+            }
         $eventsFuture = DB::select('SELECT * FROM events WHERE date > (SELECT DATE_ADD(CURRENT_DATE, INTERVAL -1 DAY ))');
         $registrations = [];
         foreach($eventsFuture as $event) {
@@ -30,10 +30,8 @@ class RegistrationLegacyController extends Controller
                 $registrations[$event->id] = self::get_by_event_id($event->id);
             }
         }
-
-
         return view('legacy.indexcomponents', compact('registrations', 'eventsFuture'));
-    }
+    }*/
 
     /**
      * Store a new event registration in database and reload page.
@@ -53,7 +51,7 @@ class RegistrationLegacyController extends Controller
         exit();
     }
 
-    public static function pastevents() {
+/*    public static function pastevents() {
         $eventIds = [
             'Stammtisch 2021-02',
             'Stammtisch 2021-01',
@@ -70,10 +68,9 @@ class RegistrationLegacyController extends Controller
             $registrations[$eventId] = self::get_by_event_title($eventId);
         }
         return view('legacy.pastevents', compact('registrations'));
-    }
+    }*/
 
     public static function statistics() {
-
         $data = [];
         return view('legacy.statistics', compact('data'));
     }
