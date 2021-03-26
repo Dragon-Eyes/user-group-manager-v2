@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
+/*Route::get('/welcome', function () {
     return view('welcome');
-});
+});*/
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+/*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard');*/
 
 
 //Route::get('/events', function() {
@@ -27,18 +27,19 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //});
 
 
-Route::get('/events', 'App\Http\Controllers\EventController@index');
+//Route::get('/events', 'App\Http\Controllers\EventController@index');
 
 /*
 |--------------------------------------------------------------------------
 | Legacy routes w/o auth
 |--------------------------------------------------------------------------
 */
-Route::get('/', [\App\Http\Controllers\RegistrationLegacyController::class, 'index']);
-Route::post('/legacyregister', [\App\Http\Controllers\RegistrationLegacyController::class, 'register']);
+//Route::get('/', [\App\Http\Controllers\RegistrationLegacyController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\EventController::class, 'index']);
+//Route::post('/legacyregister', [\App\Http\Controllers\RegistrationLegacyController::class, 'register']);
 
-Route::get('/pastevents', [\App\Http\Controllers\RegistrationLegacyController::class, 'pastevents']);
-Route::get('/pasteventsnew', [\App\Http\Controllers\EventController::class, 'pasteventsnew']);
+Route::get('/pastevents', [\App\Http\Controllers\EventController::class, 'pasteventsnew']);
+//Route::get('/pasteventsnew', [\App\Http\Controllers\EventController::class, 'pasteventsnew']);
 
 Route::get('/statistics', [\App\Http\Controllers\RegistrationLegacyController::class, 'statistics']);
 
@@ -46,4 +47,4 @@ Route::get('/forum', function() {
     return view('legacy.forum');
 });
 
-Route::get('/migrateregistrations', [\App\Http\Controllers\DatamigrationController::class, 'registrations']);
+//Route::get('/migrateregistrations', [\App\Http\Controllers\DatamigrationController::class, 'registrations']);

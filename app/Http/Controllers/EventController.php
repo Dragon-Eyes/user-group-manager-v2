@@ -6,8 +6,7 @@ use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class EventController extends Controller
-{
+class EventController extends Controller {
 
     public function pasteventsnew() {
         $eventsPast = DB::select('SELECT * FROM events WHERE isOwnEvent = 1 AND date < (SELECT DATE_ADD(CURRENT_DATE, INTERVAL 0 DAY ))');
@@ -17,11 +16,6 @@ class EventController extends Controller
             $event->attachments = DB::select('SELECT * FROM attachments WHERE event_id = ?', [$event->id]);
             $event->registrations = DB::select('SELECT * FROM registrations WHERE event_id = ?', [$event->id]);
         }
-        // TODO: get Attachments
-
-
-        // TODO: get Registrations
-
         return view('legacy.pasteventsnew', compact('eventsPast'));
     }
 
@@ -30,16 +24,14 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-//        return 'yup from Controller!';
-
-        $events = Event::all();
-//        dd($events);
-
-        return view('legacy.index')->with('events', $events);
-
-
+    public function index() {
+        $eventsFuture = DB::select('SELECT * FROM events WHERE date > (SELECT DATE_ADD(CURRENT_DATE, INTERVAL -1 DAY ))');
+        foreach($eventsFuture as $event) {
+            $date = new \DateTime($event->date);
+            $event->dateText = $date->format('d.m.Y');
+            $event->registrations = DB::select('SELECT * FROM registrations WHERE event_id = ?', [$event->id]);
+        }
+        return view('legacy.indexcomponents', compact('eventsFuture'));
     }
 
     /**

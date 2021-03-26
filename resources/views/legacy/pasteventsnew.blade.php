@@ -12,7 +12,7 @@ define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
             <div class="card-body">
                 <h3>{{$event->dateText}}: {{$event->title}}</h3>
                 {!!$event->description!!}
-                <h4>Teilnehmer</h4>
+                <h4>Teilnehmer (<?= count($event->registrations); ?>)</h4>
                 <table>
                     @foreach($event->registrations as $registration)
                         <tr>
