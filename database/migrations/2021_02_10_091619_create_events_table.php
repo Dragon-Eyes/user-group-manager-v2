@@ -21,6 +21,7 @@ class CreateEventsTable extends Migration
             $table->boolean('isOwnEvent')->default(true);
             $table->boolean('isOnline')->default(true);
             $table->boolean('isOnsite')->default(true);
+            $table->boolean('registrationOpen')->default(false);
             $table->timestamps();
             $table->bigInteger('created_by')->unsigned()->nullable();
             $table->bigInteger('updated_by')->unsigned()->nullable();

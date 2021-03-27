@@ -20,3 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/info', [Api::class, 'get_api_info']);
+Route::get('/next', [Api::class, 'get_next_own_event']);
+Route::get('/upcoming', [Api::class, 'get_list_future_event']);
+Route::post('/register', [Api::class, 'register']);
+Route::get('register', function() {
+    return [
+        "Error" => "You have to use the POST method."
+    ];
+});
