@@ -39,17 +39,38 @@ class DatamigrationController extends Controller {
             $registrationObject->updated_at = $registration->updated_at;
 
             switch($registration->event) {
-                case 'Stammtisch 2021-01':
-                    $registrationObject->event_id = 4;
+                case 'Stammtisch 2019-12':
+                    $registrationObject->event_id = 1;
                     break;
-                case 'Stammtisch 2021-02':
-                    $registrationObject->event_id = 3;
-                    break;
-                case 'Stammtisch 2021-03':
+                case 'Stammtisch 2020-01':
                     $registrationObject->event_id = 2;
                     break;
+                case 'Stammtisch 2020-02':
+                    $registrationObject->event_id = 3;
+                    break;
+                case 'Stammtisch 2020-04':
+                    $registrationObject->event_id = 4;
+                    break;
+                case 'Stammtisch 2020-05':
+                    $registrationObject->event_id = 5;
+                    break;
+                case 'Stammtisch 2020-08':
+                    $registrationObject->event_id = 6;
+                    break;
+                case 'Stammtisch 2020-11':
+                    $registrationObject->event_id = 7;
+                    break;
+                case 'Stammtisch 2021-01':
+                    $registrationObject->event_id = 8;
+                    break;
+                case 'Stammtisch 2021-02':
+                    $registrationObject->event_id = 9;
+                    break;
                 case 'Stammtisch 2021-04':
-                    $registrationObject->event_id = 1;
+                    $registrationObject->event_id = 10;
+                    break;
+                case 'Stammtisch 2021-05':
+                    $registrationObject->event_id = 11;
                     break;
             }
             $query = 'INSERT INTO registrations';

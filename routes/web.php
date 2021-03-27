@@ -47,4 +47,4 @@ Route::get('/forum', function() {
     return view('legacy.forum');
 });
 
-//Route::get('/migrateregistrations', [\App\Http\Controllers\DatamigrationController::class, 'registrations']);
+Route::get('/migrateregistrations', [\App\Http\Controllers\DatamigrationController::class, 'registrations']);
