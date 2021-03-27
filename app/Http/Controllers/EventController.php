@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class EventController extends Controller {
 
     public function pasteventsnew() {
-        $eventsPast = DB::select('SELECT * FROM events WHERE isOwnEvent = 1 AND date < (SELECT DATE_ADD(CURRENT_DATE, INTERVAL 0 DAY ))');
+        $eventsPast = DB::select('SELECT * FROM events WHERE isOwnEvent = 1 AND date < (SELECT DATE_ADD(CURRENT_DATE, INTERVAL 0 DAY )) ORDER BY date DESC');
         foreach($eventsPast as $event) {
             $date = new \DateTime($event->date);
             $event->dateText = $date->format('d.m.Y');
@@ -25,7 +25,7 @@ class EventController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $eventsFuture = DB::select('SELECT * FROM events WHERE date > (SELECT DATE_ADD(CURRENT_DATE, INTERVAL -1 DAY ))');
+        $eventsFuture = DB::select('SELECT * FROM events WHERE date > (SELECT DATE_ADD(CURRENT_DATE, INTERVAL -1 DAY )) ORDER BY date ASC');
         foreach($eventsFuture as $event) {
             $date = new \DateTime($event->date);
             $event->dateText = $date->format('d.m.Y');
