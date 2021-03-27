@@ -72,6 +72,8 @@ class DatamigrationController extends Controller {
                 case 'Stammtisch 2021-05':
                     $registrationObject->event_id = 11;
                     break;
+                default:
+                    $registrationObject->event_id = 0;
             }
             $query = 'INSERT INTO registrations';
             $query .= ' (name, email, comment, is_virtual, is_deleted, created_at, updated_at, event_id)';
