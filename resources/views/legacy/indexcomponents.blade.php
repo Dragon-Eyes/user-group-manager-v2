@@ -2,7 +2,8 @@
 
 <?php
 define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
-define("ROOT_WWW", 'https://' . $_SERVER['HTTP_HOST']);
+$requestProtocol = $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ? 'http://' : 'https://';
+define("ROOT_WWW", $requestProtocol  . $_SERVER['HTTP_HOST']);
 
 function ue($string = "") {
     return urlencode($string);

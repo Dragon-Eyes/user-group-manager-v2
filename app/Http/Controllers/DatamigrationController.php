@@ -27,6 +27,7 @@ class DatamigrationController extends Controller {
     */
 
     public static function registrations() {
+        exit();
         $registrations = DB::select('SELECT * FROM registration_legacies');
         foreach($registrations as $registration) {
             $registrationObject = new Registration();
