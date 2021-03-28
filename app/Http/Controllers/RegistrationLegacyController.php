@@ -84,7 +84,7 @@ class RegistrationLegacyController extends Controller
         return DB::select('SELECT participant_name, comment, virtual_flag, deleted_flag FROM registration_legacies WHERE id = ? AND deleted_flag = ? ORDER BY created_at DESC', [$id, 0]) ?? [];
     }
 
-    public static function getEventnameParticipantCountForAll() :array {
+/*    public static function getEventnameParticipantCountForAll() :array {
         $events = self::getEventNames();
         foreach($events as $event) {
             $eventObject = new \stdClass();
@@ -94,7 +94,7 @@ class RegistrationLegacyController extends Controller
             $eventArray[] = $eventObject;
         }
         return $eventArray;
-    }
+    }*/
 
     private static function getEventNames() :array {
         $sql = "SELECT DISTINCT event FROM registration_legacies";
@@ -103,11 +103,11 @@ class RegistrationLegacyController extends Controller
         return DB::select($sql, [0]) ?? [];
     }
 
-    private static function getCountForEvent(string $event) :int {
+/*    private static function getCountForEvent(string $event) :int {
         $sql = "SELECT COUNT(*) AS COUNT FROM registration_legacies";
         $sql .= " WHERE deleted_flag = ?";
         $sql .= " AND event = ?";
         $result = DB::select($sql, [0, $event]) ?? 0;
         return $result[0]->COUNT;
-    }
+    }*/
 }
