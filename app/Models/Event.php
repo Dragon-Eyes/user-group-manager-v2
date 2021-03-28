@@ -15,6 +15,11 @@ class Event extends Model
         'description',
         'isOwnEvent',
         'isOnline',
-        'isOnsite'
+        'isOnsite',
+        'registrationOpen'
     ];
+
+    public static function get_events_own() {
+        return Event::all();
+    }
 }

@@ -2,11 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class RegistrationController extends Controller
-{
+class RegistrationController extends Controller {
+
+    public static function getEventnameParticipantCountForAll() :array|object {
+        $events = Event::where('isOwnEvent', 1)->orderBy('date', 'asc')->get();
+        foreach($events as $event) {
+            $name = new \DateTime($event->date);
+            $event->event = $name->format('Y-m');
+            $event->participants = Registration::where('event_id', $event->id)->count();
+        }
+        return $events;
+    }
+
+    private static function getCountForEvent(int|string $event_id) :int {
+        $sql = "SELECT COUNT(*) AS COUNT FROM registrations";
+        $sql .= " WHERE is_deleted = ?";
+        $sql .= " AND event_id = ?";
+        $result = DB::select($sql, [0, $event_id]) ?? 0;
+        return $result[0]->COUNT;
+    }
+
     /**
      * Display a listing of the resource.
      *

@@ -2,7 +2,8 @@
 
 <?php
     define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
-    define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
+    $requestProtocol = $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ? 'http://' : 'https://';
+    define("ROOT_WWW", $requestProtocol  . $_SERVER['HTTP_HOST']);
 ?>
 
 @section('content')
@@ -11,7 +12,8 @@
     <!-- PARTICIPANTS -->
 
     <?php
-        $data = \App\Http\Controllers\RegistrationLegacyController::getEventnameParticipantCountForAll();
+//        $data = \App\Http\Controllers\RegistrationLegacyController::getEventnameParticipantCountForAll();
+        $data = \App\Http\Controllers\RegistrationController::getEventnameParticipantCountForAll();
         $data_json = json_encode($data);
     ?>
 
@@ -22,6 +24,8 @@
     <script>
 
         const datasource = <?= $data_json ?>;
+        // console.log(datasource);
+        // console.log(datasource[2].participants);
 
         const svg = d3.select('#participants')
             .append('svg')
