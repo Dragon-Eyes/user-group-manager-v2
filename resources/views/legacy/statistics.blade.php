@@ -24,6 +24,8 @@
     <script>
 
         const datasource = <?= $data_json ?>;
+        // console.log(datasource);
+        // console.log(datasource[2].participants);
 
         const svg = d3.select('#participants')
             .append('svg')

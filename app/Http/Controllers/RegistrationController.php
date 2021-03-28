@@ -9,20 +9,14 @@ use Illuminate\Support\Facades\DB;
 
 class RegistrationController extends Controller {
 
-    public static function getEventnameParticipantCountForAll() :array {
-
-        // TODO: fix eloquent query
-
-
-        $events = Event::where('isOwnEvent', 1)->get();
-//        $events = self::getEventNames();
-        foreach($events['items'] as $event) {
-            $eventObject = new \stdClass();
-            $eventObject->id = $event->attributes['id'];
-            $eventObject->participants = self::getCountForEvent($eventObject->id);
-            $eventArray[] = $eventObject;
+    public static function getEventnameParticipantCountForAll() :array|object {
+        $events = Event::where('isOwnEvent', 1)->orderBy('date', 'asc')->get();
+        foreach($events as $event) {
+            $name = new \DateTime($event->date);
+            $event->event = $name->format('Y-m');
+            $event->participants = Registration::where('event_id', $event->id)->count();
         }
-        return $eventArray;
+        return $events;
     }
 
     private static function getCountForEvent(int|string $event_id) :int {
