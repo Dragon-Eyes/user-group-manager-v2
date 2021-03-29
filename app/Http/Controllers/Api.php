@@ -12,7 +12,7 @@ class Api extends Controller
             "User group" => "FileMaker Zürich",
             "Available endpoints" => [
                 "info",
-                "next (soon)",
+                "next",
                 "upcoming (soon)",
                 "register (soon)"
             ]

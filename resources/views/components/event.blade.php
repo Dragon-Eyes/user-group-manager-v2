@@ -16,16 +16,16 @@
         </table>
         @endif
 
-        @if($event->registrationOpen)
+        @if($event->is_registration_open)
             @component('components.registration')
                 @slot('eventId')
                     {{$event->id}}
                 @endslot
                 @slot('optionVirtual')
-                    {{$event->isOnline}}
+                    {{$event->is_online}}
                 @endslot
                 @slot('optionOnsite')
-                    {{$event->isOnsite}}
+                    {{$event->is_onsite}}
                 @endslot
             @endcomponent
         @endif
