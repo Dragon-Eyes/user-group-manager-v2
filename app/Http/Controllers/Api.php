@@ -15,6 +15,10 @@ class Api extends Controller
                 "next",
                 "upcoming (soon)",
                 "register (soon)"
+            ],
+            "Templates" => [
+                "Postman collection" => "https://test.fmzuerich.ch/api_vorlagen/UserGroupManager.postman_collection.json",
+                "FileMaker file" => ""
             ]
         ];
     }

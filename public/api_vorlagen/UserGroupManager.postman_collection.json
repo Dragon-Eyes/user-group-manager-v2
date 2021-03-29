@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "2fd9a640-1cff-48b3-8fed-4a9acd990bac",
+		"name": "UserGroupManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://test.fmzuerich.ch/api/info",
+							"protocol": "https",
+							"host": [
+								"test",
+								"fmzuerich",
+								"ch"
+							],
+							"path": [
+								"api",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "next event",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://test.fmzuerich.ch/api/next",
+							"protocol": "https",
+							"host": [
+								"test",
+								"fmzuerich",
+								"ch"
+							],
+							"path": [
+								"api",
+								"next"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upcoming events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://test.fmzuerich.ch/api/upcoming",
+							"protocol": "https",
+							"host": [
+								"test",
+								"fmzuerich",
+								"ch"
+							],
+							"path": [
+								"api",
+								"upcoming"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://test.fmzuerich.ch/api/register",
+							"protocol": "https",
+							"host": [
+								"test",
+								"fmzuerich",
+								"ch"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
