@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class EventController extends Controller {
 
     public function pasteventsnew() {
-        $eventsPast = DB::select('SELECT * FROM events WHERE isOwnEvent = 1 AND date < (SELECT DATE_ADD(CURRENT_DATE, INTERVAL 0 DAY )) ORDER BY date DESC');
+        $eventsPast = DB::select('SELECT * FROM events WHERE is_own_event = 1 AND date < (SELECT DATE_ADD(CURRENT_DATE, INTERVAL 0 DAY )) ORDER BY date DESC');
         foreach($eventsPast as $event) {
             $date = new \DateTime($event->date);
             $event->dateText = $date->format('d.m.Y');
@@ -35,6 +35,18 @@ class EventController extends Controller {
             }
         }
         return view('legacy.indexcomponents', compact('eventsFuture'));
+    }
+
+    public static function get_next_own_event() :object {
+        $today = new \DateTime();
+        $todayText = $today->format('Y-m-d');
+        $event = Event::select('date', 'title', 'description', 'is_onsite', 'is_online', 'is_registration_open', 'updated_at')
+            ->where('is_own_event', 1)
+            ->where('date', '>', $todayText)
+            ->orderBy('date', 'asc')
+            ->take(1)
+            ->get();
+        return $event;
     }
 
     /**

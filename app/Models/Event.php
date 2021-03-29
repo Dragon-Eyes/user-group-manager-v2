@@ -13,10 +13,10 @@ class Event extends Model
         'date',
         'title',
         'description',
-        'isOwnEvent',
-        'isOnline',
-        'isOnsite',
-        'registrationOpen'
+        'is_own_event',
+        'is_online',
+        'is_onsite',
+        'is_registration_open'
     ];
 
 /*    public static function get_events_own() {

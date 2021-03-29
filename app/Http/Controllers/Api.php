@@ -20,9 +20,8 @@ class Api extends Controller
     }
 
     public static function get_next_own_event() {
-        return [
-            "Info" => "coming soon"
-        ];
+        $event = EventController::get_next_own_event();
+        return $event;
     }
 
     public static function get_list_future_event() {
