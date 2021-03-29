@@ -17,6 +17,7 @@ class CreateContentsTable extends Migration
             $table->id();
             $table->string('alert');
             $table->text('intro');
+            $table->text('forum');
             $table->timestamps();
         });
     }
