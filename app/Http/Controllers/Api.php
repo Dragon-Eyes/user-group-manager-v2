@@ -12,17 +12,20 @@ class Api extends Controller
             "User group" => "FileMaker Zürich",
             "Available endpoints" => [
                 "info",
-                "next (soon)",
+                "next",
                 "upcoming (soon)",
                 "register (soon)"
+            ],
+            "Templates" => [
+                "Postman collection" => "https://test.fmzuerich.ch/api_vorlagen/UserGroupManager.postman_collection.json",
+                "FileMaker file" => "https://test.fmzuerich.ch/api_vorlagen/UserGroupManager_API_Client.fmp12"
             ]
         ];
     }
 
     public static function get_next_own_event() {
-        return [
-            "Info" => "coming soon"
-        ];
+        $event = EventController::get_next_own_event();
+        return $event;
     }
 
     public static function get_list_future_event() {

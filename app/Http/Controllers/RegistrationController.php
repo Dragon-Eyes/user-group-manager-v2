@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class RegistrationController extends Controller {
 
     public static function getEventnameParticipantCountForAll() :array|object {
-        $events = Event::where('isOwnEvent', 1)->orderBy('date', 'asc')->get();
+        $events = Event::where('is_own_event', 1)->orderBy('date', 'asc')->get();
         foreach($events as $event) {
             $name = new \DateTime($event->date);
             $event->event = $name->format('Y-m');
