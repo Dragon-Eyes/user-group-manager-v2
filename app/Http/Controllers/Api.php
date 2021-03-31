@@ -18,7 +18,7 @@ class Api extends Controller
             ],
             "Templates" => [
                 "Postman collection" => "https://test.fmzuerich.ch/api_vorlagen/UserGroupManager.postman_collection.json",
-                "FileMaker file" => ""
+                "FileMaker file" => "https://test.fmzuerich.ch/api_vorlagen/UserGroupManager_API_Client.fmp12"
             ]
         ];
     }
