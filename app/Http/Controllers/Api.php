@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Registration;
 
 class Api extends Controller
 {
@@ -34,9 +35,26 @@ class Api extends Controller
         ];
     }
 
-    public static function register() {
+    public static function register(Request $request) {
+        if(!$request->event_id || !$request->name) {
+            return [
+                "result" => "error",
+                "message" => "required parameter(s) missing; event_id and name are required"
+            ];
+        }
+
+        $registration = new Registration();
+        $registration->id = $request->event_id;
+        $registration->name = $request->name;
+        $registration->email = $request->email;
+        $registration->comment = $request->comment;
+        $registration->is_virtual = $request->is_virtual;
+
+        // TODO: check if event_id is valid event with registration_open
+
         return [
-            "Info" => "coming soon"
+            "Info" => "coming soon / work in progress",
+            "Name" => $registration->name
         ];
     }
 }
