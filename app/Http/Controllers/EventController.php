@@ -40,7 +40,7 @@ class EventController extends Controller {
     public static function get_next_own_event() :object {
         $today = new \DateTime();
         $todayText = $today->format('Y-m-d');
-        $event = Event::select('date', 'title', 'description', 'is_onsite', 'is_online', 'is_registration_open', 'updated_at')
+        $event = Event::select('id', 'date', 'title', 'description', 'is_onsite', 'is_online', 'is_registration_open', 'updated_at')
             ->where('is_own_event', 1)
             ->where('date', '>', $todayText)
             ->orderBy('date', 'asc')

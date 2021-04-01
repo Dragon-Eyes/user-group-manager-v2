@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\Registration;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class Api extends Controller
 {
@@ -42,19 +44,35 @@ class Api extends Controller
                 "message" => "required parameter(s) missing; event_id and name are required"
             ];
         }
-
+        $event = Event::find((int)$request->event_id);
+        if(!$event) {
+            return [
+                "result" => "error",
+                "message" => "invalid event_id"
+            ];
+        } elseif(!$event->is_registration_open) {
+            return [
+                "result" => "error",
+                "message" => "registration not possible for this event"
+            ];
+        }
         $registration = new Registration();
-        $registration->id = $request->event_id;
+        $registration->event_id = $request->event_id;
         $registration->name = $request->name;
         $registration->email = $request->email;
         $registration->comment = $request->comment;
-        $registration->is_virtual = $request->is_virtual;
-
-        // TODO: check if event_id is valid event with registration_open
-
-        return [
-            "Info" => "coming soon / work in progress",
-            "Name" => $registration->name
-        ];
+        $registration->is_virtual = $request->boolean('is_virtual');
+        $result = $registration->save();
+        if($result === true) {
+            return [
+                "result" => "success",
+                "message" => "registration saved"
+            ];
+        } else {
+            return [
+                "result" => "error",
+                "message" => "something went wrong"
+            ];
+        }
     }
 }

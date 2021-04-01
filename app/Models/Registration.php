@@ -17,4 +17,5 @@ class Registration extends Model
         'is_virtual',
         'is_deleted'
     ];
+
 }
