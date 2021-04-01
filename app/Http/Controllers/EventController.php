@@ -37,7 +37,7 @@ class EventController extends Controller {
         return view('legacy.indexcomponents', compact('eventsFuture'));
     }
 
-    public static function get_next_own_event() :object {
+    public static function get_next_own_event() :object|bool {
         $today = new \DateTime();
         $todayText = $today->format('Y-m-d');
         $event = Event::select('id', 'date', 'title', 'description', 'is_onsite', 'is_online', 'is_registration_open', 'updated_at')
@@ -47,6 +47,16 @@ class EventController extends Controller {
             ->take(1)
             ->get();
         return $event;
+    }
+
+    public static function get_future_events() :object|bool {
+        $today = new \DateTime();
+        $todayText = $today->format('Y-m-d');
+        $events = Event::select('id', 'date', 'title', 'is_online', 'is_online')
+                ->where('date', '>', $todayText)
+                ->orderBy('date', 'asc')
+                ->get();
+        return $events;
     }
 
     /**

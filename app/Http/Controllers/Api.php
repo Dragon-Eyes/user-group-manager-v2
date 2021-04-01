@@ -16,8 +16,8 @@ class Api extends Controller
             "Available endpoints" => [
                 "info",
                 "next",
-                "upcoming (soon)",
-                "register (soon)"
+                "upcoming",
+                "register"
             ],
             "Templates" => [
                 "Postman collection" => "https://test.fmzuerich.ch/api_vorlagen/UserGroupManager.postman_collection.json",
@@ -32,9 +32,8 @@ class Api extends Controller
     }
 
     public static function get_list_future_event() {
-        return [
-            "Info" => "coming soon"
-        ];
+        $events = EventController::get_future_events();
+        return $events;
     }
 
     public static function register(Request $request) {
