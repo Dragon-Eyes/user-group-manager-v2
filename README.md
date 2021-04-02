@@ -1,10 +1,13 @@
-<p align="center"><a href="https://dragoneyes.software/de" target="_blank"><img src="https://dragoneyes.software/assets/DragonEyes_v2-5_logo_cbs.svg" width="350"></a></p>
+[comment]: <> (<p align="center"><a href="https://dragoneyes.software/de" target="_blank"><img src="https://dragoneyes.software/assets/DragonEyes_v2-5_logo_cbs.svg" width="350"></a></p>)
 
 ## User Group Manager v2
 Simple but helpful site to get details about upcoming events.
 
-### Planned extensions
+### Services
+- Static web pages for humans
 - Rest API to get event details and register
+
+### Planned extensions
 - Admin options to create and edit events / modify and delete registrations (no-shows)
 - new page structure and re-build with Livewire
 
