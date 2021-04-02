@@ -41,4 +41,9 @@ class AdminController extends Controller
         EventController::update($request);
         return redirect()->route('admin');
     }
+
+    public function contentsave(Request $request) {
+        ContentController::update($request);
+        return redirect()->route('admin');
+    }
 }

@@ -26,4 +26,17 @@ class ContentController extends Controller
         $html = Content::select(['forum'])->find(1);
         return $html;
     }
+
+    /**
+     * @return bool
+     */
+    public static function update(Request $request)
+    {
+        $content = Content::find(1);
+        $content->alert = $request->input('alert');
+        $content->intro = $request->input('intro');
+        $content->forum = $request->input('forum');
+        return $content->save();
+    }
+
 }

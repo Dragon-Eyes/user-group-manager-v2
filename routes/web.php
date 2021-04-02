@@ -22,6 +22,7 @@ Route::get('/eventcreate', [\App\Http\Controllers\AdminController::class, 'event
 Route::post('/eventcreate', [\App\Http\Controllers\AdminController::class, 'eventsavenew'])->name('eventsavenew');
 Route::get('/eventedit/{id}', [\App\Http\Controllers\AdminController::class, 'eventedit'])->name('eventedit');
 Route::post('/eventsave', [\App\Http\Controllers\AdminController::class, 'eventsave'])->name('eventsave');
+Route::post('/contentsave', [\App\Http\Controllers\AdminController::class, 'contentsave'])->name('contentsave');
 
 
 
