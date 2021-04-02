@@ -15,7 +15,7 @@ class CreateContentsTable extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->id();
-            $table->string('alert');
+            $table->string('alert')->nullable();
             $table->text('intro');
             $table->text('forum');
             $table->timestamps();

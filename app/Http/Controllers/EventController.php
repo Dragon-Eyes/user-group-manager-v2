@@ -64,14 +64,33 @@ class EventController extends Controller {
         return $events;
     }
 
+    public static function get_by_id($id) {
+        $event = Event::find($id);
+        return $event;
+    }
+
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return bool
      */
-    public function create()
+    public static function create(Request $request)
     {
-        //
+        $event = new Event();
+        $event->date = $request->input('date');
+        $event->title = $request->input('title');
+        $event->description = $request->input('description');
+        return $event->save();
+    }
+
+    /**
+     * @return bool
+     */
+    public static function update(Request $request)
+    {
+        $event = Event::find($request->input('event_id'));
+        $event->date = $request->input('date');
+        $event->title = $request->input('title');
+        $event->description = $request->input('description');
+        return $event->save();
     }
 
     /**
@@ -103,18 +122,6 @@ class EventController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit(Event $event)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Event $event)
     {
         //
     }

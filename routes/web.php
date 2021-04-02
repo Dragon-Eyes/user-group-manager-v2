@@ -18,6 +18,10 @@ Route::group(['middleware' => 'auth'], function() {
 });*/
 
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin');
+Route::get('/eventcreate', [\App\Http\Controllers\AdminController::class, 'eventcreate'])->name('eventcreate');
+Route::post('/eventcreate', [\App\Http\Controllers\AdminController::class, 'eventsavenew'])->name('eventsavenew');
+Route::get('/eventedit/{id}', [\App\Http\Controllers\AdminController::class, 'eventedit'])->name('eventedit');
+Route::post('/eventsave', [\App\Http\Controllers\AdminController::class, 'eventsave'])->name('eventsave');
 
 
 
