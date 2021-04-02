@@ -78,6 +78,10 @@ class EventController extends Controller {
         $event->date = $request->input('date');
         $event->title = $request->input('title');
         $event->description = $request->input('description');
+        $event->is_own_event = $request->has('is_own_event') ? 1 : 0;
+        $event->is_online = $request->has('is_online') ? 1 : 0;
+        $event->is_onsite = $request->has('is_onsite') ? 1 : 0;
+        $event->is_registration_open = $request->has('is_registration_open') ? 1 : 0;
         return $event->save();
     }
 
@@ -90,6 +94,10 @@ class EventController extends Controller {
         $event->date = $request->input('date');
         $event->title = $request->input('title');
         $event->description = $request->input('description');
+        $event->is_own_event = $request->has('is_own_event') ? 1 : 0;
+        $event->is_online = $request->has('is_online') ? 1 : 0;
+        $event->is_onsite = $request->has('is_onsite') ? 1 : 0;
+        $event->is_registration_open = $request->has('is_registration_open') ? 1 : 0;
         return $event->save();
     }
 

@@ -20,6 +20,11 @@
                     </div>
 
                     <div class="mt-4">
+                        <x-jet-label for="is_own_event" value="{{ __('FM Zürich Event') }}" />
+                        <input type="checkbox" id="is_own_event" name="is_own_event" value="{{$event->is_own_event}}" @if($event->is_own_event) checked @endif>
+                    </div>
+
+                    <div class="mt-4">
                         <x-jet-label for="title" value="{{ __('Titel') }}" />
                         <x-jet-input id="title" class="block mt-1 w-full" type="text" name="title" value="{{$event->title}}" required />
                     </div>
@@ -29,9 +34,18 @@
                         <textarea id="description" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" name="description">{{$event->description}}</textarea>
                     </div>
 
-                    <?php // TODO: add checkboxes for virtual / onsite & isown ?>
+                    <div class="mt-4">
+                        <x-jet-label for="is_online" value="{{ __('virtuell') }}" />
+                        <input type="checkbox" id="is_online" name="is_online" value="{{$event->is_online}}" @if($event->is_online) checked @endif>
+                        <x-jet-label for="is_onsite" value="{{ __('vor Ort') }}" />
+                        <input type="checkbox" id="is_onsite" name="is_onsite" value="{{$event->is_onsite}}" @if($event->is_onsite) checked @endif>
+                    </div>
 
-                    <?php // TODO: add checkbox for registration open ?>
+                    <div class="mt-4">
+                        <x-jet-label for="is_registration_open" value="{{ __('Registration offen') }}" />
+                        <input type="checkbox" id="is_registration_open" name="is_registration_open" value="{{$event->is_registration_open}}" @if($event->is_registration_open) checked @endif>
+                        <?= $event->is_registration_open; ?>
+                    </div>
 
                     <div class="flex items-center justify-end mt-4">
                         <x-jet-button class="ml-4">
