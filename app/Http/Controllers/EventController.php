@@ -59,6 +59,11 @@ class EventController extends Controller {
         return $events;
     }
 
+    public static function get_active_events() :array {
+        $events = DB::select('SELECT * FROM events WHERE date > (SELECT DATE_ADD(CURRENT_DATE, INTERVAL -1 DAY )) ORDER BY date ASC');
+        return $events;
+    }
+
     /**
      * Show the form for creating a new resource.
      *

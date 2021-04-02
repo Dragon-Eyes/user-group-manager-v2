@@ -12,10 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'dashboard']);
-});
+});*/
+
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin');
+
 
 
 /*Route::get('/welcome', function () {
@@ -25,6 +28,10 @@ Route::group(['middleware' => 'auth'], function() {
 /*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');*/
+
+Route::get('/dashboard', function() {
+    return view('dashboard');
+})->name('dashboard');
 
 
 //Route::get('/events', function() {
