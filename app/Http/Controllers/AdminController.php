@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+//use Illuminate\Http\RedirectResponse;
 
 class AdminController extends Controller
 {
     public function dashboard() {
+        if(!self::is_admin()) {
+            return redirect('/');
+        }
         $events = EventController::get_active_events();
         foreach($events as $event) {
             $date = new \DateTime($event->date);
@@ -45,5 +50,13 @@ class AdminController extends Controller
     public function contentsave(Request $request) {
         ContentController::update($request);
         return redirect()->route('admin');
+    }
+
+    public static function is_admin() :bool {
+        if(Auth::user()->is_admin) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

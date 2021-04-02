@@ -12,18 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
+
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'dashboard']);
-});*/
-
-Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin');
-Route::get('/eventcreate', [\App\Http\Controllers\AdminController::class, 'eventcreate'])->name('eventcreate');
-Route::post('/eventcreate', [\App\Http\Controllers\AdminController::class, 'eventsavenew'])->name('eventsavenew');
-Route::get('/eventedit/{id}', [\App\Http\Controllers\AdminController::class, 'eventedit'])->name('eventedit');
-Route::post('/eventsave', [\App\Http\Controllers\AdminController::class, 'eventsave'])->name('eventsave');
-Route::post('/contentsave', [\App\Http\Controllers\AdminController::class, 'contentsave'])->name('contentsave');
-
+    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin');
+    Route::get('/eventcreate', [\App\Http\Controllers\AdminController::class, 'eventcreate'])->name('eventcreate');
+    Route::post('/eventcreate', [\App\Http\Controllers\AdminController::class, 'eventsavenew'])->name('eventsavenew');
+    Route::get('/eventedit/{id}', [\App\Http\Controllers\AdminController::class, 'eventedit'])->name('eventedit');
+    Route::post('/eventsave', [\App\Http\Controllers\AdminController::class, 'eventsave'])->name('eventsave');
+    Route::post('/contentsave', [\App\Http\Controllers\AdminController::class, 'contentsave'])->name('contentsave');
+});
 
 
 /*Route::get('/welcome', function () {
@@ -52,7 +49,7 @@ Route::get('/dashboard', function() {
 |--------------------------------------------------------------------------
 */
 //Route::get('/', [\App\Http\Controllers\RegistrationLegacyController::class, 'index']);
-Route::get('/', [\App\Http\Controllers\EventController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\EventController::class, 'index'])->name('index');
 Route::post('/legacyregister', [\App\Http\Controllers\RegistrationLegacyController::class, 'register']);
 
 Route::get('/pastevents', [\App\Http\Controllers\EventController::class, 'pasteventsnew']);
