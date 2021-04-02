@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'dashboard']);
+});
+
+
 /*Route::get('/welcome', function () {
     return view('welcome');
 });*/

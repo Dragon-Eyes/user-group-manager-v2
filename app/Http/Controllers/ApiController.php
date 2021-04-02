@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Registration;
 use phpDocumentor\Reflection\Types\Boolean;
 
-class Api extends Controller
+class ApiController extends Controller
 {
     public static function get_api_info() {
         return [
