@@ -11,15 +11,34 @@ class Api extends Controller
 {
     public static function get_api_info() {
         return [
-            "Application" => "User Group Manager v2",
-            "User group" => "FileMaker Zürich",
-            "Available endpoints" => [
+            "title" => "User Group Manager v2",
+            "description" => "API of the user group FileMaker Zürich",
+            "contact" => [
+                "name" => "FM Zürich",
+                "email" => "stammtisch@fmzuerich.ch"
+            ],
+            "license" => [
+                "name" => "MIT",
+                "url" => "https://github.com/Dragon-Eyes/user-group-manager-v2/blob/main/LICENSE"
+            ],
+            "version" => "0.9.0",
+            "servers" => [
+                [
+                    "url" => "https://test.fmzuerich.ch/api/",
+                    "description" => "Test server"
+                ],
+                [
+                    "url" => "https://fmzuerich.ch/api/",
+                    "description" => "Production server"
+                ]
+            ],
+            "available endpoints" => [
                 "info",
                 "next",
                 "upcoming",
                 "register"
             ],
-            "Templates" => [
+            "templates" => [
                 "Postman collection" => "https://test.fmzuerich.ch/api_vorlagen/UserGroupManager.postman_collection.json",
                 "FileMaker file" => "https://test.fmzuerich.ch/api_vorlagen/UserGroupManager_API_Client.fmp12"
             ]
