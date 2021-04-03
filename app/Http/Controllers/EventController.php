@@ -59,14 +59,46 @@ class EventController extends Controller {
         return $events;
     }
 
+    public static function get_active_events() :array {
+        $events = DB::select('SELECT * FROM events WHERE date > (SELECT DATE_ADD(CURRENT_DATE, INTERVAL -1 DAY )) ORDER BY date ASC');
+        return $events;
+    }
+
+    public static function get_by_id($id) {
+        $event = Event::find($id);
+        return $event;
+    }
+
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return bool
      */
-    public function create()
+    public static function create(Request $request)
     {
-        //
+        $event = new Event();
+        $event->date = $request->input('date');
+        $event->title = $request->input('title');
+        $event->description = $request->input('description');
+        $event->is_own_event = $request->has('is_own_event') ? 1 : 0;
+        $event->is_online = $request->has('is_online') ? 1 : 0;
+        $event->is_onsite = $request->has('is_onsite') ? 1 : 0;
+        $event->is_registration_open = $request->has('is_registration_open') ? 1 : 0;
+        return $event->save();
+    }
+
+    /**
+     * @return bool
+     */
+    public static function update(Request $request)
+    {
+        $event = Event::find($request->input('event_id'));
+        $event->date = $request->input('date');
+        $event->title = $request->input('title');
+        $event->description = $request->input('description');
+        $event->is_own_event = $request->has('is_own_event') ? 1 : 0;
+        $event->is_online = $request->has('is_online') ? 1 : 0;
+        $event->is_onsite = $request->has('is_onsite') ? 1 : 0;
+        $event->is_registration_open = $request->has('is_registration_open') ? 1 : 0;
+        return $event->save();
     }
 
     /**
@@ -98,18 +130,6 @@ class EventController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit(Event $event)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Event $event)
     {
         //
     }
