@@ -44,7 +44,6 @@
                     <div class="mt-4">
                         <x-jet-label for="is_registration_open" value="{{ __('Registration offen') }}" />
                         <input type="checkbox" id="is_registration_open" name="is_registration_open" value="{{$event->is_registration_open}}" @if($event->is_registration_open) checked @endif>
-                        <?= $event->is_registration_open; ?>
                     </div>
 
                     <div class="flex items-center justify-end mt-4">
