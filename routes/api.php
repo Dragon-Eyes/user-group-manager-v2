@@ -19,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/', [ApiController::class, 'get_api_info']);
 Route::get('/info', [ApiController::class, 'get_api_info']);
 Route::get('/next', [ApiController::class, 'get_next_own_event']);
 Route::get('/upcoming', [ApiController::class, 'get_list_future_event']);
