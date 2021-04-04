@@ -37,10 +37,10 @@ class EventController extends Controller {
         return view('legacy.indexcomponents', compact('eventsFuture'));
     }
 
-    public static function get_next_own_event() :object {
+    public static function get_next_own_event() :object|bool {
         $today = new \DateTime();
         $todayText = $today->format('Y-m-d');
-        $event = Event::select('date', 'title', 'description', 'is_onsite', 'is_online', 'is_registration_open', 'updated_at')
+        $event = Event::select('id', 'date', 'title', 'description', 'is_onsite', 'is_online', 'is_registration_open', 'updated_at')
             ->where('is_own_event', 1)
             ->where('date', '>', $todayText)
             ->orderBy('date', 'asc')
@@ -49,14 +49,56 @@ class EventController extends Controller {
         return $event;
     }
 
+    public static function get_future_events() :object|bool {
+        $today = new \DateTime();
+        $todayText = $today->format('Y-m-d');
+        $events = Event::select('id', 'date', 'title', 'is_online', 'is_online')
+                ->where('date', '>', $todayText)
+                ->orderBy('date', 'asc')
+                ->get();
+        return $events;
+    }
+
+    public static function get_active_events() :array {
+        $events = DB::select('SELECT * FROM events WHERE date > (SELECT DATE_ADD(CURRENT_DATE, INTERVAL -1 DAY )) ORDER BY date ASC');
+        return $events;
+    }
+
+    public static function get_by_id($id) {
+        $event = Event::find($id);
+        return $event;
+    }
+
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return bool
      */
-    public function create()
+    public static function create(Request $request)
     {
-        //
+        $event = new Event();
+        $event->date = $request->input('date');
+        $event->title = $request->input('title');
+        $event->description = $request->input('description');
+        $event->is_own_event = $request->has('is_own_event') ? 1 : 0;
+        $event->is_online = $request->has('is_online') ? 1 : 0;
+        $event->is_onsite = $request->has('is_onsite') ? 1 : 0;
+        $event->is_registration_open = $request->has('is_registration_open') ? 1 : 0;
+        return $event->save();
+    }
+
+    /**
+     * @return bool
+     */
+    public static function update(Request $request)
+    {
+        $event = Event::find($request->input('event_id'));
+        $event->date = $request->input('date');
+        $event->title = $request->input('title');
+        $event->description = $request->input('description');
+        $event->is_own_event = $request->has('is_own_event') ? 1 : 0;
+        $event->is_online = $request->has('is_online') ? 1 : 0;
+        $event->is_onsite = $request->has('is_onsite') ? 1 : 0;
+        $event->is_registration_open = $request->has('is_registration_open') ? 1 : 0;
+        return $event->save();
     }
 
     /**
@@ -88,18 +130,6 @@ class EventController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit(Event $event)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Event $event)
     {
         //
     }

@@ -94,14 +94,20 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Newsletter mit Stammtisch-Ankündigungen etc.">
                             <a class="nav-link" href="http://eepurl.com/gIw6zf" target="_blank">Newsletter</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Geschlossenes Forum für regelmässige Teilnehmer">
                             <a class="nav-link" href="<?= ROOT_WWW ?>/forum">Forum</a>
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Präsentationen, Demodateien etc.">
                             <a class="nav-link" href="https://gasser2.diskstation.me:5011" target="_blank">Ressourcen</a>
+                        </li>
+                        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Rest API">
+                            <a class="nav-link" href="<?= ROOT_WWW ?>/api/info" target="_blank">API</a>
+                        </li>
+                        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Admin Login">
+                            <a class="nav-link" href="<?= ROOT_WWW ?>/admin" target="_blank">Orga</a>
                         </li>
                     </ul>
                 </div>

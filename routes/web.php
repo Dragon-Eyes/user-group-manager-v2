@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'dashboard'])->name('admin');
+    Route::get('/eventcreate', [\App\Http\Controllers\AdminController::class, 'eventcreate'])->name('eventcreate');
+    Route::post('/eventcreate', [\App\Http\Controllers\AdminController::class, 'eventsavenew'])->name('eventsavenew');
+    Route::get('/eventedit/{id}', [\App\Http\Controllers\AdminController::class, 'eventedit'])->name('eventedit');
+    Route::post('/eventsave', [\App\Http\Controllers\AdminController::class, 'eventsave'])->name('eventsave');
+    Route::post('/contentsave', [\App\Http\Controllers\AdminController::class, 'contentsave'])->name('contentsave');
+});
+
+
 /*Route::get('/welcome', function () {
     return view('welcome');
 });*/
@@ -20,6 +30,10 @@ use Illuminate\Support\Facades\Route;
 /*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');*/
+
+Route::get('/dashboard', function() {
+    return view('dashboard');
+})->name('dashboard');
 
 
 //Route::get('/events', function() {
@@ -35,7 +49,7 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 //Route::get('/', [\App\Http\Controllers\RegistrationLegacyController::class, 'index']);
-Route::get('/', [\App\Http\Controllers\EventController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\EventController::class, 'index'])->name('index');
 Route::post('/legacyregister', [\App\Http\Controllers\RegistrationLegacyController::class, 'register']);
 
 Route::get('/pastevents', [\App\Http\Controllers\EventController::class, 'pasteventsnew']);

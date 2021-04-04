@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +19,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/info', [Api::class, 'get_api_info']);
-Route::get('/next', [Api::class, 'get_next_own_event']);
-Route::get('/upcoming', [Api::class, 'get_list_future_event']);
-Route::post('/register', [Api::class, 'register']);
+Route::get('/', [ApiController::class, 'get_api_info']);
+Route::get('/info', [ApiController::class, 'get_api_info']);
+Route::get('/next', [ApiController::class, 'get_next_own_event']);
+Route::get('/upcoming', [ApiController::class, 'get_list_future_event']);
+Route::post('/register', [ApiController::class, 'register']);
 Route::get('register', function() {
     return [
         "Error" => "You have to use the POST method."
