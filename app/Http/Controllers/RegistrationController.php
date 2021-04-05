@@ -95,11 +95,14 @@ class RegistrationController extends Controller {
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Registration  $registration
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Registration $registration)
+    public static function destroy(int|string $event_id)
     {
-        //
+        $registration = Registration::find($event_id);
+        if($registration) {
+            $registration->delete();
+        }
+        return redirect()->route('admin');
     }
 }

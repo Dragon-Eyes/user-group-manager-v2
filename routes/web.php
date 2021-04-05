@@ -20,6 +20,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/eventedit/{id}', [\App\Http\Controllers\AdminController::class, 'eventedit'])->name('eventedit');
     Route::post('/eventsave', [\App\Http\Controllers\AdminController::class, 'eventsave'])->name('eventsave');
     Route::post('/contentsave', [\App\Http\Controllers\AdminController::class, 'contentsave'])->name('contentsave');
+    Route::get('/registration/{id}/delete', [\App\Http\Controllers\RegistrationController::class, 'destroy']);
 });
 
 
