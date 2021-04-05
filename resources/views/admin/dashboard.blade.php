@@ -12,25 +12,26 @@
                 <table class="text-left w-full">
                     <thead class="font-semibold, text-gray-800">
                         <tr>
-                            <th>Datum</th>
-                            <th>Titel</th>
+                            <th class="py-1">Datum</th>
+                            <th class="py-1">Titel</th>
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($events as $event)
-                            <tr>
-                                <td>{{$event->dateText}}</td>
-                                <td>{{$event->title}}</td>
+                            <tr class="py-1">
+                                <td class="py-1">{{$event->dateText}}</td>
+                                <td class="py-1">{{$event->title}}</td>
                                 <td>
-                                    <a href="/eventedit/{{$event->id}}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">{{__('Bearbeiten')}}</a>
+{{--                                    <a href="/eventedit/{{$event->id}}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">{{__('Bearbeiten')}}</a>--}}
+                                    <a href="/eventedit/{{$event->id}}" class="inline-flex items-center px-2 py-1 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-800 tracking-widest hover:bg-gray-800 hover:text-gray-100 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">{{__('Bearbeiten')}}</a>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+                <a href="{{route('eventcreate')}}" class="inline-flex items-center px-4 py-2 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-800 tracking-widest hover:bg-gray-800 hover:text-gray-100 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 mt-4">{{__('Neues Event')}}</a>
             </div>
-            <a href="{{route('eventcreate')}}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 mt-4 ml-4">{{__('Neues Event')}}</a>
         </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
@@ -53,12 +54,12 @@
                             <th>&nbsp;</th>
                         </tr>
                         @foreach($event->registrations as $registration)
-                            <tr class="hover:bg-indigo-100">
+                            <tr class="hover:bg-gray-100">
                                 <th>&nbsp;</th>
                                 <td>{{$registration->name}}</td>
                                 <td>{{$registration->comment}}</td>
                                 <td>
-                                    <a href="/registration/{{$registration->id}}/delete" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">{{__('Löschen')}}</a>
+                                    <a href="/registration/{{$registration->id}}/delete" class="inline-flex items-center px-2 py-1 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-800 tracking-widest hover:bg-gray-800 hover:text-gray-100 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">{{__('Löschen')}}</a>
                                 </td>
                             </tr>
                         @endforeach
