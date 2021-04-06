@@ -10,6 +10,7 @@ use phpDocumentor\Reflection\Types\Boolean;
 class ApiController extends Controller
 {
     public static function get_api_info() {
+        $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/info");
         return [
             "title" => "User Group Manager v2",
             "description" => "API of the user group FileMaker Zürich",

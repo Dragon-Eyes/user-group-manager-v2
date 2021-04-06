@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRegistrationRequest;
 use App\Models\Event;
 use App\Models\RegistrationLegacy;
 use Illuminate\Http\Request;
+use Illuminate\Session\Store;
 use Illuminate\Support\Facades\DB;
 
 class RegistrationLegacyController extends Controller
@@ -14,10 +16,9 @@ class RegistrationLegacyController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      */
-    public static function register(Request $request) {
-        $requestValidated = $request->validate([
-        ]);
-        $registrationData = $request->post()['registration'];
+    public static function register(StoreRegistrationRequest $request) {
+//        $registrationData = $request->post()['registration'];
+        $registrationData = $request->post();
         $event = Event::find((int)$registrationData['event_id']);
         if(!$event || !$event->is_registration_open) {
             header("Location: /");
@@ -27,7 +28,7 @@ class RegistrationLegacyController extends Controller
         $now = new \DateTime();
         $registrationCreated = $now->format('Y-m-d H:i:s');
 //        $registrationOld = DB::insert('INSERT INTO registration_legacies (event, participant_name, participant_email, comment, virtual_flag, created_at) VALUES (?, ?, ?, ?, ?, ?)', [$registrationData['event'], $registrationData['participant_name'], $registrationData['participant_email'], $registrationData['comment'], $registrationType, $registrationCreated]);
-        $registration = DB::insert('INSERT INTO registrations (event_id, name, email, comment, is_virtual, created_at) VALUES (?, ?, ?, ?, ?, ?)', [$registrationData['event_id'], $registrationData['participant_name'], $registrationData['participant_email'], $registrationData['comment'], $registrationType, $registrationCreated]);
+        $registration = DB::insert('INSERT INTO registrations (event_id, name, email, comment, is_virtual, created_at) VALUES (?, ?, ?, ?, ?, ?)', [$registrationData['event_id'], $registrationData['name'], $registrationData['email'], $registrationData['comment'], $registrationType, $registrationCreated]);
         header("Location: /");
         exit();
     }
