@@ -25,7 +25,8 @@ class StoreRegistrationRequest extends FormRequest
     {
         return [
             'event_id' => 'required',
-            'name' => 'required'
+            'name' => 'required',
+            'email' => 'nullable'
         ];
     }
 }
