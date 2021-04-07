@@ -4,7 +4,7 @@
         {!!$event->description!!}
 
         @if(count($event->registrations) > 0 || $event->is_registration_open)
-            <livewire:registration :event="$event">
+            <livewire:registration :eventId="$event->id">
         @endif
 
 

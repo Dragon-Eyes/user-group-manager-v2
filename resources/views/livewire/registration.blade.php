@@ -1,6 +1,7 @@
 <div>
 
     <p>Livewire component here</p>
-    <p>{{$event->title}}</p>
-
+    <pre>
+        <?php print_r($eventId); ?>
+    </pre>
 </div>
