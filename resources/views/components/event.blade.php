@@ -3,6 +3,11 @@
         <h3 class="card-title">{{$event->dateText}}: {{$event->title}}</h3>
         {!!$event->description!!}
 
+        @if(count($event->registrations) > 0 || $event->is_registration_open)
+            <livewire:registration :event="$event">
+        @endif
+
+
         @if(count($event->registrations) > 0)
         <h4>Bisher angemeldet (<?= count($event->registrations); ?>)</h4>
         <table>

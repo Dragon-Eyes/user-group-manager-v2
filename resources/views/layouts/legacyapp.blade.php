@@ -53,6 +53,7 @@
     />
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/124f92db94f3241542ea4942e/aeb4fca55c490992a439208d2.js");</script>
     <meta name="csrf-token" content="{{csrf_token()}}">
+    @livewireStyles
 </head>
 <?php
 // log
@@ -136,5 +137,6 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
 <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
 <script src="https://cxo.ch/fmzurich_legacy_files/scripts/bootstrap.bundle.js"></script>
 <script src="https://cxo.ch/fmzurich_legacy_files/scripts/functions.js"></script>
+@livewireScript
 </body>
 </html>
