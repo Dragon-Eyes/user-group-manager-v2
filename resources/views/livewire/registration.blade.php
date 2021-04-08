@@ -15,8 +15,8 @@
         </table>
     @endif
 
-    @if($event->is_registration_open)
-        <h4>Anmelden</h4>
+    @if($event->is_registration_open && !$registered)
+        <h4 style="margin-top: 20px;">Anmelden</h4>
 
         <form wire:submit.prevent="submit">
             @csrf
@@ -57,6 +57,7 @@
             </div>
         </form>
     @endif
-
-
+    @if($registered)
+        <p style="margin-top: 20px;"><strong>Super, dass Du kommst!</strong><br>Wie wäre es mit einem Vortrag von Dir?  ;-)</p>
+    @endif
 </div>

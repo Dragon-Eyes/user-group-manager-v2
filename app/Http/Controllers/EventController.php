@@ -29,6 +29,7 @@ class EventController extends Controller {
         foreach($eventsFuture as $event) {
             $date = new \DateTime($event->date);
             $event->dateText = $date->format('d.m.Y');
+            $event->presence = $event->is_onsite ? 'onsite' : 'virtual';
             $event->registrations = DB::select('SELECT * FROM registrations WHERE event_id = ? ORDER BY created_at DESC', [$event->id]);
             foreach($event->registrations as $registration) {
                 $registration->placeText = $registration->is_virtual ? 'virtuell' : 'vor Ort';
