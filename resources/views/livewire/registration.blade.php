@@ -1,7 +1,4 @@
 <div>
-
-    <p>Livewire component here</p>
-
     @if($registrationCount > 0)
         <h4>Bisher angemeldet ({{$registrationCount}})</h4>
         <table>
