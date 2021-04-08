@@ -14,6 +14,7 @@ class AddCreatedByToRegistrationsTable extends Migration
     public function up()
     {
         Schema::table('registrations', function (Blueprint $table) {
+//            $table->foreignId('created_by');
             $table->bigInteger('created_by')->unsigned()->nullable();
             $table->bigInteger('updated_by')->unsigned()->nullable();
         });
