@@ -47,13 +47,13 @@ class EventController extends Controller {
             ->orderBy('date', 'asc')
             ->take(1)
             ->get();
-        return $event;
+        return $event[0];
     }
 
     public static function get_future_events() :object|bool {
         $today = new \DateTime();
         $todayText = $today->format('Y-m-d');
-        $events = Event::select('id', 'date', 'title', 'is_online', 'is_online')
+        $events = Event::select('id', 'date', 'title', 'is_onsite', 'is_online')
                 ->where('date', '>', $todayText)
                 ->orderBy('date', 'asc')
                 ->get();

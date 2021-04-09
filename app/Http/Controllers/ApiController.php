@@ -22,7 +22,7 @@ class ApiController extends Controller
                 "name" => "MIT",
                 "url" => "https://github.com/Dragon-Eyes/user-group-manager-v2/blob/main/LICENSE"
             ],
-            "version" => "0.9.1",
+            "version" => "0.9.2",
             "servers" => [
                 [
                     "url" => "https://test.fmzuerich.ch/api/",
