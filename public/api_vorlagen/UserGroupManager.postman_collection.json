@@ -9,21 +9,12 @@
 			"name": "local",
 			"item": [
 				{
-					"name": "register",
+					"name": "info",
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"event_id\":5,\n    \"name\":\"Tom Tailor\",\n    \"email\":\"tom@taylor.com\",\n    \"comment\":\"\",\n    \"is_virtual\":true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/register",
+							"raw": "http://127.0.0.1:8000/api/info",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -34,7 +25,65 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"register"
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "next event",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/next",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"next"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "event/id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/event/13",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"event",
+								"13"
 							]
 						}
 					},
@@ -64,6 +113,38 @@
 							"path": [
 								"api",
 								"upcoming"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"event_id\":14,\n    \"name\":\"Tom Tailor\",\n    \"email\":\"tom@taylor.com\",\n    \"comment\":\"from Postman\",\n    \"is_virtual\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
 							]
 						}
 					},
@@ -106,7 +187,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://test.fmzuerich.ch/api/next",
+							"raw": "https://test.fmzuerich.ch/api/event/5",
 							"protocol": "https",
 							"host": [
 								"test",
@@ -115,7 +196,35 @@
 							],
 							"path": [
 								"api",
-								"next"
+								"event",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "event/id",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://test.fmzuerich.ch/api/event/5",
+							"protocol": "https",
+							"host": [
+								"test",
+								"fmzuerich",
+								"ch"
+							],
+							"path": [
+								"api",
+								"event",
+								"5"
 							]
 						}
 					},

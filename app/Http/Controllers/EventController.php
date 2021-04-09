@@ -29,6 +29,7 @@ class EventController extends Controller {
         foreach($eventsFuture as $event) {
             $date = new \DateTime($event->date);
             $event->dateText = $date->format('d.m.Y');
+            $event->presence = $event->is_onsite ? 'onsite' : 'virtual';
             $event->registrations = DB::select('SELECT * FROM registrations WHERE event_id = ? ORDER BY created_at DESC', [$event->id]);
             foreach($event->registrations as $registration) {
                 $registration->placeText = $registration->is_virtual ? 'virtuell' : 'vor Ort';
@@ -82,6 +83,7 @@ class EventController extends Controller {
         $event->is_online = $request->has('is_online') ? 1 : 0;
         $event->is_onsite = $request->has('is_onsite') ? 1 : 0;
         $event->is_registration_open = $request->has('is_registration_open') ? 1 : 0;
+        $event->created_by = auth()->id();
         return $event->save();
     }
 
@@ -98,6 +100,7 @@ class EventController extends Controller {
         $event->is_online = $request->has('is_online') ? 1 : 0;
         $event->is_onsite = $request->has('is_onsite') ? 1 : 0;
         $event->is_registration_open = $request->has('is_registration_open') ? 1 : 0;
+        $event->updated_by = auth()->id();
         return $event->save();
     }
 

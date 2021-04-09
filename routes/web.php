@@ -63,3 +63,7 @@ Route::get('/forum', function() {
 });
 
 //Route::get('/migrateregistrations', [\App\Http\Controllers\DatamigrationController::class, 'registrations']);
+
+Route::get('livewire', function() {
+    return view('legacy.livewiretest');
+});

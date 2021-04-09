@@ -22,7 +22,11 @@ class EventFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'date' => $this->faker->dateTimeBetween('-2 months', '+1 year')->format('Y-m-d'),
+            'title' => $this->faker->text(35),
+            'description' => $this->faker->text(250),
+            'is_online' => rand(0, 1),
+            'is_registration_open' => rand(0, 1)
         ];
     }
 }

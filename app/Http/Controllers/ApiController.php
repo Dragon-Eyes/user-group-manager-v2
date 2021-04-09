@@ -10,6 +10,7 @@ use phpDocumentor\Reflection\Types\Boolean;
 class ApiController extends Controller
 {
     public static function get_api_info() {
+        $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/info");
         return [
             "title" => "User Group Manager v2",
             "description" => "API of the user group FileMaker Zürich",
@@ -35,6 +36,7 @@ class ApiController extends Controller
             "available endpoints" => [
                 "info",
                 "next",
+                "event/{id}",
                 "upcoming",
                 "register"
             ],
@@ -53,6 +55,17 @@ class ApiController extends Controller
     public static function get_list_future_event() {
         $events = EventController::get_future_events();
         return $events;
+    }
+
+    public static function get_by_id($id) {
+        $event = Event::find((int)$id);
+        if(!$event) {
+            return [
+                "result" => "error",
+                "message" => "event not found"
+            ];
+        }
+        return $event;
     }
 
     public static function register(Request $request) {
