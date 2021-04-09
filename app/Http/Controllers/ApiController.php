@@ -22,7 +22,7 @@ class ApiController extends Controller
                 "name" => "MIT",
                 "url" => "https://github.com/Dragon-Eyes/user-group-manager-v2/blob/main/LICENSE"
             ],
-            "version" => "0.9.0",
+            "version" => "0.9.1",
             "servers" => [
                 [
                     "url" => "https://test.fmzuerich.ch/api/",
@@ -94,10 +94,12 @@ class ApiController extends Controller
         $registration->comment = $request->comment;
         $registration->is_virtual = $request->boolean('is_virtual');
         $result = $registration->save();
+        $new_id = $registration->id;
         if($result === true) {
             return [
                 "result" => "success",
-                "message" => "registration saved"
+                "message" => "registration saved",
+                "registration_id" => $new_id
             ];
         } else {
             return [
