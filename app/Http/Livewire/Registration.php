@@ -8,11 +8,11 @@ use Livewire\Component;
 
 class Registration extends Component
 {
-    public $eventId;
+    public $eventId; // from parent
     public $name;
 //    public $isOnline;
 //    public $isOnsite;
-    public $presence;
+    public $presence; // from parent
     public $email;
     public $comment;
     public $registered = false;
