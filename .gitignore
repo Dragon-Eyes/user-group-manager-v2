@@ -3,6 +3,7 @@
 /public/hot
 /public/storage
 /public/api_vorlagen/Import.log
+/public/api_vorlagen/Recover.log
 /storage/*.key
 /vendor
 /.idea
