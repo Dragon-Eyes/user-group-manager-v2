@@ -69,24 +69,26 @@ function getBackgroundColor($choice) {
 
     <?php if(true) : ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        Jetzt anmelden zum Stammtisch am <strong>23. April 2021</strong>!
+        {!! $content->alert !!}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <?php endif; ?>
 
-    <blockquote>FileMaker ist ein grossartiges Tool um mit geringem Aufwand überzeugende Software-Systeme zu erarbeiten.<br>
-        Im mittlerweile jährlichen Versionsrhythmus stellt Claris Entwicklern neue Möglichkeiten zur Verfügung. Um diese Möglichkeiten zu nutzen und obsolete Praktiken auszumerzen, ist es jedoch unerlässlich permanent an seinen Fähigkeiten zu arbeiten.<br>
-        Deshalb haben wir den Zürcher FileMaker Stammtisch, nach mehreren Jahren des Dornröschenschlafes, 2020 wiederauferstehen lassen.</blockquote>
-    <p>Für alle FileMaker-Interessierten</p>
-    <ul>
-        <li>Low Code Neulinge</li>
-        <li>Hobby-Programmierer</li>
-        <li>Indie Hacker</li>
-        <li>Inhouse-Entwickler</li>
-        <li>Berater / Agentur-Entwickler</li>
-    </ul>
+    {!! $content->intro !!}
+
+{{--    <blockquote>FileMaker ist ein grossartiges Tool um mit geringem Aufwand überzeugende Software-Systeme zu erarbeiten.<br>--}}
+{{--        Im mittlerweile jährlichen Versionsrhythmus stellt Claris Entwicklern neue Möglichkeiten zur Verfügung. Um diese Möglichkeiten zu nutzen und obsolete Praktiken auszumerzen, ist es jedoch unerlässlich permanent an seinen Fähigkeiten zu arbeiten.<br>--}}
+{{--        Deshalb haben wir den Zürcher FileMaker Stammtisch, nach mehreren Jahren des Dornröschenschlafes, 2020 wiederauferstehen lassen.</blockquote>--}}
+{{--    <p>Für alle FileMaker-Interessierten</p>--}}
+{{--    <ul>--}}
+{{--        <li>Low Code Neulinge</li>--}}
+{{--        <li>Hobby-Programmierer</li>--}}
+{{--        <li>Indie Hacker</li>--}}
+{{--        <li>Inhouse-Entwickler</li>--}}
+{{--        <li>Berater / Agentur-Entwickler</li>--}}
+{{--    </ul>--}}
     <p>Fragen, Anregungen o.ä.? <a class="e-l" data-ep1="stammtisch" data-ep2="fmzuerich" data-ep3="ch" href="#">Kontakt</a></p>
 
     <h2 id="eventsFuture">Treffen</h2>

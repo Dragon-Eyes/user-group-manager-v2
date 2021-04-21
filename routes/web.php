@@ -59,7 +59,8 @@ Route::get('/pastevents', [\App\Http\Controllers\EventController::class, 'pastev
 Route::get('/statistics', [\App\Http\Controllers\RegistrationLegacyController::class, 'statistics']);
 
 Route::get('/forum', function() {
-    return view('legacy.forum');
+    $content = \App\Http\Controllers\ContentController::get_forum_html();
+    return view('legacy.forum', ['content' => $content]);
 });
 
 //Route::get('/migrateregistrations', [\App\Http\Controllers\DatamigrationController::class, 'registrations']);

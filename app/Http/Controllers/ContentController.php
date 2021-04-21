@@ -12,7 +12,7 @@ class ContentController extends Controller
         return $content;
     }
 
-    public static function get_alert_text() {
+    public static function get_alert_html() {
         $html = Content::select(['alert'])->find(1);
         return $html;
     }
