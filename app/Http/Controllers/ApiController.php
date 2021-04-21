@@ -48,16 +48,19 @@ class ApiController extends Controller
     }
 
     public static function get_next_own_event() {
+        $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/next-event");
         $event = EventController::get_next_own_event();
         return $event;
     }
 
     public static function get_list_future_event() {
+        $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/upcoming-events");
         $events = EventController::get_future_events();
         return $events;
     }
 
     public static function get_by_id($id) {
+        $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/event/" . $id);
         $event = Event::find((int)$id);
         if(!$event) {
             return [
@@ -69,6 +72,7 @@ class ApiController extends Controller
     }
 
     public static function register(Request $request) {
+        $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/register | " . $request->event_id . " | " . $request->name);
         if(!$request->event_id || !$request->name) {
             return [
                 "result" => "error",
