@@ -25,6 +25,7 @@ class EventController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+        $content = ContentController::get_all();
         $eventsFuture = DB::select('SELECT * FROM events WHERE date > (SELECT DATE_ADD(CURRENT_DATE, INTERVAL -1 DAY )) ORDER BY date ASC');
         foreach($eventsFuture as $event) {
             $date = new \DateTime($event->date);
@@ -35,7 +36,7 @@ class EventController extends Controller {
                 $registration->placeText = $registration->is_virtual ? 'virtuell' : 'vor Ort';
             }
         }
-        return view('legacy.indexcomponents', compact('eventsFuture'));
+        return view('legacy.indexcomponents', compact('eventsFuture', 'content'));
     }
 
     public static function get_next_own_event() :object|bool {
@@ -47,13 +48,13 @@ class EventController extends Controller {
             ->orderBy('date', 'asc')
             ->take(1)
             ->get();
-        return $event;
+        return $event[0];
     }
 
     public static function get_future_events() :object|bool {
         $today = new \DateTime();
         $todayText = $today->format('Y-m-d');
-        $events = Event::select('id', 'date', 'title', 'is_online', 'is_online')
+        $events = Event::select('id', 'date', 'title', 'is_onsite', 'is_online')
                 ->where('date', '>', $todayText)
                 ->orderBy('date', 'asc')
                 ->get();

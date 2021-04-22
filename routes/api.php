@@ -22,7 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/', [ApiController::class, 'get_api_info']);
 Route::get('/info', [ApiController::class, 'get_api_info']);
 Route::get('/next', [ApiController::class, 'get_next_own_event']);
+Route::get('/next-event', [ApiController::class, 'get_next_own_event']);
 Route::get('/upcoming', [ApiController::class, 'get_list_future_event']);
+Route::get('/upcoming-events', [ApiController::class, 'get_list_future_event']);
 Route::get('/event/{id}', [ApiController::class, 'get_by_id']);
 Route::post('/register', [ApiController::class, 'register']);
 Route::get('register', function() {

@@ -42,7 +42,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/next",
+							"raw": "http://127.0.0.1:8000/api/next-event",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -53,7 +53,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"next"
+								"next-event"
 							]
 						}
 					},
@@ -101,7 +101,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/upcoming",
+							"raw": "http://127.0.0.1:8000/api/upcoming-events",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -112,7 +112,7 @@
 							"port": "8000",
 							"path": [
 								"api",
-								"upcoming"
+								"upcoming-events"
 							]
 						}
 					},
@@ -125,7 +125,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"event_id\":14,\n    \"name\":\"Tom Tailor\",\n    \"email\":\"tom@taylor.com\",\n    \"comment\":\"from Postman\",\n    \"is_virtual\":true\n}",
+							"raw": "{\n    \"event_id\":13,\n    \"name\":\"Tom Tailor\",\n    \"email\":\"tom@taylor.com\",\n    \"comment\":\"from Postman\",\n    \"is_virtual\":true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -187,7 +187,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://test.fmzuerich.ch/api/event/5",
+							"raw": "https://test.fmzuerich.ch/api/next-event",
 							"protocol": "https",
 							"host": [
 								"test",
@@ -196,8 +196,7 @@
 							],
 							"path": [
 								"api",
-								"event",
-								"5"
+								"next-event"
 							]
 						}
 					},
@@ -236,7 +235,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://test.fmzuerich.ch/api/upcoming",
+							"raw": "https://test.fmzuerich.ch/api/upcoming-events",
 							"protocol": "https",
 							"host": [
 								"test",
@@ -245,7 +244,7 @@
 							],
 							"path": [
 								"api",
-								"upcoming"
+								"upcoming-events"
 							]
 						}
 					},

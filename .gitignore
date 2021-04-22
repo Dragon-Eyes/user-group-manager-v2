@@ -3,6 +3,7 @@
 /public/hot
 /public/storage
 /public/api_vorlagen/Import.log
+/public/api_vorlagen/Recover.log
 /storage/*.key
 /vendor
 /.idea
@@ -15,3 +16,9 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+composer.lock
+package-lock.json
+public/css/app.css
+public/js/app.js
+public/js/app.js.LICENSE.txt
+public/mix-manifest.json

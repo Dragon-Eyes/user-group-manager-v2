@@ -22,7 +22,7 @@ class ApiController extends Controller
                 "name" => "MIT",
                 "url" => "https://github.com/Dragon-Eyes/user-group-manager-v2/blob/main/LICENSE"
             ],
-            "version" => "0.9.0",
+            "version" => "0.9.3",
             "servers" => [
                 [
                     "url" => "https://test.fmzuerich.ch/api/",
@@ -35,9 +35,9 @@ class ApiController extends Controller
             ],
             "available endpoints" => [
                 "info",
-                "next",
+                "next-event",
                 "event/{id}",
-                "upcoming",
+                "upcoming-events",
                 "register"
             ],
             "templates" => [
@@ -48,16 +48,19 @@ class ApiController extends Controller
     }
 
     public static function get_next_own_event() {
+        $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/next-event");
         $event = EventController::get_next_own_event();
         return $event;
     }
 
     public static function get_list_future_event() {
+        $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/upcoming-events");
         $events = EventController::get_future_events();
         return $events;
     }
 
     public static function get_by_id($id) {
+        $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/event/" . $id);
         $event = Event::find((int)$id);
         if(!$event) {
             return [
@@ -69,6 +72,7 @@ class ApiController extends Controller
     }
 
     public static function register(Request $request) {
+        $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/register | " . $request->event_id . " | " . $request->name);
         if(!$request->event_id || !$request->name) {
             return [
                 "result" => "error",
@@ -94,10 +98,12 @@ class ApiController extends Controller
         $registration->comment = $request->comment;
         $registration->is_virtual = $request->boolean('is_virtual');
         $result = $registration->save();
+        $new_id = $registration->id;
         if($result === true) {
             return [
                 "result" => "success",
-                "message" => "registration saved"
+                "message" => "registration saved",
+                "registration_id" => $new_id
             ];
         } else {
             return [

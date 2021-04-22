@@ -2,33 +2,37 @@
 
 namespace Tests\Feature;
 
-use App\Providers\RouteServiceProvider;
+use App\Models\Event;
+use App\Models\Registration;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Laravel\Jetstream\Jetstream;
+use Livewire\Livewire;
 use Tests\TestCase;
 
 class RegistrationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_registration_screen_can_be_rendered()
+    /**
+     * @test
+     */
+    function can_register()
     {
-        $response = $this->get('/register');
+        $event = new Event();
+        $event->id = 77;
+        $event->date = '2022-01-01';
+        $event->title = 'test event';
+        $event->is_registration_open = 1;
+        $event->save();
 
-        $response->assertStatus(200);
+        Livewire::test(\App\Http\Livewire\Registration::class)
+            ->set('event_id', 77)
+            ->set('name', 'Test Registration')
+            ->set('is_virtual', 0)
+            ->call('submit');
+
+        $this->assertTrue(Registration::select('*')->where('name', 'Test Registration')->exists());
+
     }
 
-    public function test_new_users_can_register()
-    {
-        $response = $this->post('/register', [
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => 'password',
-            'password_confirmation' => 'password',
-            'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature(),
-        ]);
 
-        $this->assertAuthenticated();
-        $response->assertRedirect(RouteServiceProvider::HOME);
-    }
 }

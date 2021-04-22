@@ -69,30 +69,54 @@ function getBackgroundColor($choice) {
 
     <?php if(true) : ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        Jetzt anmelden zum Stammtisch am <strong>23. April 2021</strong>!
+        {!! $content->alert !!}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <?php endif; ?>
 
-    <blockquote>FileMaker ist ein grossartiges Tool um mit geringem Aufwand überzeugende Software-Systeme zu erarbeiten.<br>
-        Im mittlerweile jährlichen Versionsrhythmus stellt Claris Entwicklern neue Möglichkeiten zur Verfügung. Um diese Möglichkeiten zu nutzen und obsolete Praktiken auszumerzen, ist es jedoch unerlässlich permanent an seinen Fähigkeiten zu arbeiten.<br>
-        Deshalb haben wir den Zürcher FileMaker Stammtisch, nach mehreren Jahren des Dornröschenschlafes, 2020 wiederauferstehen lassen.</blockquote>
-    <p>Für alle FileMaker-Interessierten</p>
-    <ul>
-        <li>Low Code Neulinge</li>
-        <li>Hobby-Programmierer</li>
-        <li>Indie Hacker</li>
-        <li>Inhouse-Entwickler</li>
-        <li>Berater / Agentur-Entwickler</li>
-    </ul>
+    {!! $content->intro !!}
+
+{{--    <blockquote>FileMaker ist ein grossartiges Tool um mit geringem Aufwand überzeugende Software-Systeme zu erarbeiten.<br>--}}
+{{--        Im mittlerweile jährlichen Versionsrhythmus stellt Claris Entwicklern neue Möglichkeiten zur Verfügung. Um diese Möglichkeiten zu nutzen und obsolete Praktiken auszumerzen, ist es jedoch unerlässlich permanent an seinen Fähigkeiten zu arbeiten.<br>--}}
+{{--        Deshalb haben wir den Zürcher FileMaker Stammtisch, nach mehreren Jahren des Dornröschenschlafes, 2020 wiederauferstehen lassen.</blockquote>--}}
+{{--    <p>Für alle FileMaker-Interessierten</p>--}}
+{{--    <ul>--}}
+{{--        <li>Low Code Neulinge</li>--}}
+{{--        <li>Hobby-Programmierer</li>--}}
+{{--        <li>Indie Hacker</li>--}}
+{{--        <li>Inhouse-Entwickler</li>--}}
+{{--        <li>Berater / Agentur-Entwickler</li>--}}
+{{--    </ul>--}}
     <p>Fragen, Anregungen o.ä.? <a class="e-l" data-ep1="stammtisch" data-ep2="fmzuerich" data-ep3="ch" href="#">Kontakt</a></p>
 
     <h2 id="eventsFuture">Treffen</h2>
     @foreach($eventsFuture as $event)
         <x-event :event="$event"></x-event>
     @endforeach
+
+    <!-- Begin Mailchimp Signup Form -->
+    <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    </style>
+
+    <div id="mc_embed_signup" class="mt-4">
+        <form action="https://fmzuerich.us5.list-manage.com/subscribe/post?u=124f92db94f3241542ea4942e&amp;id=733ebf3b0f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+                <label for="mce-EMAIL">Stammtisch-Einladungen</label>
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Adresse" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_124f92db94f3241542ea4942e_733ebf3b0f" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="abonnieren" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+        </form>
+    </div>
+
+    <!--End mc_embed_signup-->
 
     <p class="mt-3"><a href="<?= ROOT_WWW ?>/statistics">Site-Statistiken</a></p>
 @endsection
