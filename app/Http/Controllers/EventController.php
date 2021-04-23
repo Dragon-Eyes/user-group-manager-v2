@@ -44,7 +44,7 @@ class EventController extends Controller {
         $todayText = $today->format('Y-m-d');
         $event = Event::select('id', 'date', 'title', 'description', 'is_onsite', 'is_online', 'is_registration_open', 'updated_at')
             ->where('is_own_event', 1)
-            ->where('date', '>', $todayText)
+            ->where('date', '>=', $todayText)
             ->orderBy('date', 'asc')
             ->take(1)
             ->get();
@@ -55,7 +55,7 @@ class EventController extends Controller {
         $today = new \DateTime();
         $todayText = $today->format('Y-m-d');
         $events = Event::select('id', 'date', 'title', 'is_onsite', 'is_online')
-                ->where('date', '>', $todayText)
+                ->where('date', '>=', $todayText)
                 ->orderBy('date', 'asc')
                 ->get();
         return $events;

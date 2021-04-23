@@ -71,7 +71,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/event/13",
+							"raw": "http://127.0.0.1:8000/api/event/79",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -83,7 +83,7 @@
 							"path": [
 								"api",
 								"event",
-								"13"
+								"79"
 							]
 						}
 					},
@@ -213,7 +213,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://test.fmzuerich.ch/api/event/5",
+							"raw": "https://test.fmzuerich.ch/api/event/4",
 							"protocol": "https",
 							"host": [
 								"test",
@@ -223,7 +223,7 @@
 							"path": [
 								"api",
 								"event",
-								"5"
+								"4"
 							]
 						}
 					},
@@ -257,7 +257,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"event_id\":5,\n    \"name\":\"Tom Tailor\",\n    \"email\":\"tom@taylor.com\",\n    \"comment\":\"from Postman\",\n    \"is_virtual\":true\n}",
+							"raw": "{\n    \"event_id\":4,\n    \"name\":\"Tom Tailor\",\n    \"email\":\"tom@taylor.com\",\n    \"comment\":\"from Postman\",\n    \"is_virtual\":true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
