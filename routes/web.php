@@ -53,7 +53,7 @@ Route::get('/dashboard', function() {
 Route::get('/', [\App\Http\Controllers\EventController::class, 'index'])->name('index');
 Route::post('/legacyregister', [\App\Http\Controllers\RegistrationLegacyController::class, 'register']);
 
-Route::get('/pastevents', [\App\Http\Controllers\EventController::class, 'pasteventsnew']);
+Route::get('/pastevents', [\App\Http\Controllers\EventController::class, 'pastevents']);
 //Route::get('/pasteventsnew', [\App\Http\Controllers\EventController::class, 'pasteventsnew']);
 
 Route::get('/statistics', [\App\Http\Controllers\RegistrationLegacyController::class, 'statistics']);

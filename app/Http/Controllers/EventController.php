@@ -8,7 +8,12 @@ use Illuminate\Support\Facades\DB;
 
 class EventController extends Controller {
 
-    public function pasteventsnew() {
+    public function pastevents() {
+        $eventsPast = self::get_past_own_events();
+        return view('legacy.pasteventsnew', compact('eventsPast'));
+    }
+
+    public static function get_past_own_events() {
         $eventsPast = DB::select('SELECT * FROM events WHERE is_own_event = 1 AND date < (SELECT DATE_ADD(CURRENT_DATE, INTERVAL 0 DAY )) ORDER BY date DESC');
         foreach($eventsPast as $event) {
             $date = new \DateTime($event->date);
@@ -16,7 +21,7 @@ class EventController extends Controller {
             $event->attachments = DB::select('SELECT * FROM attachments WHERE event_id = ?', [$event->id]);
             $event->registrations = DB::select('SELECT * FROM registrations WHERE event_id = ? ORDER BY created_at DESC', [$event->id]);
         }
-        return view('legacy.pasteventsnew', compact('eventsPast'));
+        return $eventsPast;
     }
 
     /**
