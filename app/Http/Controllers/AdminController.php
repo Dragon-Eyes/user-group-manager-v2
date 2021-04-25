@@ -24,8 +24,9 @@ class AdminController extends Controller
                 ->get();
             $event->registrations = $registrations;
         }
+        $eventsPast = EventController::get_past_own_events();
         $content = ContentController::get_all();
-        return view('admin.dashboard', compact('events', 'content'));
+        return view('admin.dashboard', compact('events', 'eventsPast', 'content'));
     }
 
     public function eventcreate() {

@@ -5,10 +5,10 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-8">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight mb-2">Events</h2>
+            <div class="bg-yellow-50 overflow-hidden shadow-xl sm:rounded-lg p-4">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight mb-2">Zukünftige Events</h2>
                 <table class="text-left w-full">
                     <thead class="font-semibold, text-gray-800">
                         <tr>
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
+            <div class="bg-yellow-50 overflow-hidden shadow-xl sm:rounded-lg p-4">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight mb-2">Anmeldungen</h2>
                 <table class="text-left">
                     <thead class="font-semibold, text-gray-800">
@@ -68,6 +68,36 @@
                 </table>
             </div>
         </div>
+
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-4">
+            <div class="bg-green-50 overflow-hidden shadow-xl sm:rounded-lg p-4">
+                <h2 class="font-semibold text-xl text-gray-800 leading-tight mb-2">Frühere Events</h2>
+                <table class="text-left w-full">
+                    <thead class="font-semibold, text-gray-800">
+                    <tr>
+                        <th class="py-1">Datum</th>
+                        <th class="py-1">Titel</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($eventsPast as $event)
+                        <tr class="py-1">
+                            <td class="py-1">{{$event->dateText}}</td>
+                            <td class="py-1">{{$event->title}}</td>
+                            <td>
+                                {{--                                    <a href="/eventedit/{{$event->id}}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">{{__('Bearbeiten')}}</a>--}}
+                                <a href="/eventedit/{{$event->id}}" class="inline-flex items-center px-2 py-1 bg-gray-300 border border-transparent rounded-md font-semibold text-xs text-gray-800 tracking-widest hover:bg-gray-800 hover:text-gray-100 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">{{__('Bearbeiten')}}</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mt-6">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
                 <h2 class="font-semibold text-xl text-gray-800 leading-tight mb-2">Content</h2>

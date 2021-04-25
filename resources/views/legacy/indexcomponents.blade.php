@@ -67,14 +67,14 @@ function getBackgroundColor($choice) {
         </div>
     </div>
 
-    <?php if(true) : ?>
+    @if($content->alert)
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {!! $content->alert !!}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <?php endif; ?>
+    @endif
 
     {!! $content->intro !!}
 
