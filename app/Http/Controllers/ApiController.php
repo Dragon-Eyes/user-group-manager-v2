@@ -62,11 +62,11 @@ class ApiController extends Controller
     public static function get_by_id($id) {
         $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/event/" . $id);
         // not a good idea to send all fields!
-        $event = Event::find((int)$id);
+//        $event = Event::find((int)$id);
         // better be selective
-//        $event = Event::select('id', 'date', 'title', 'description', 'is_online', 'is_onsite', 'is_registration_open', 'updated_at')
-//            ->where('id', $id)
-//            ->get();
+        $event = Event::select('id', 'date', 'title', 'description', 'is_online', 'is_onsite', 'is_registration_open', 'updated_at')
+            ->where('id', $id)
+            ->get();
         if(!$event) {
             return [
                 "result" => "error",
