@@ -133,7 +133,7 @@
 
         const rectsPageviews = graphPageviews.selectAll('rect')
             .data(datasourcePageviews)
-            .attr('width', 10)
+            .attr('width', 2)
             .attr('height', d => graphHeightPageviews - yPageviews(d.pageviews))
             .attr('fill','blue')
             .attr('x', d => xPageviews(new Date(d.day)) - 2)
