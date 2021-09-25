@@ -2,7 +2,7 @@
 
 <?php
     define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
-    define("ROOT_WWW", 'https://' . $_SERVER['HTTP_HOST']);
+    define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
 
     function ue($string = "") {
         return urlencode($string);
@@ -303,7 +303,7 @@
 
     <div class="card eventBoxLight">
         <div class="card-body">
-            <h3 class="card-title" id="event2020fmk">22.-24.07.2021 (verschoben): FileMaker Konferenz</h3>
+            <h3 class="card-title" id="event2020fmk">22.-24.07.2021 (verschoben: 22.-24.07.2021): FileMaker Konferenz</h3>
             <h4>Veranstalter / Ort</h4>
             <p><a href="https://www.filemaker-konferenz.com" target="_blank">FMK, Malbun</a></p>
             <!--                <h4>Vorträge von FMZürich Mitgliedern</h4>-->

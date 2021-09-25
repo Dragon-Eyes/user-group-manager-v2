@@ -53,6 +53,7 @@
     />
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/124f92db94f3241542ea4942e/aeb4fca55c490992a439208d2.js");</script>
     <meta name="csrf-token" content="{{csrf_token()}}">
+    @livewireStyles
 </head>
 <?php
 // log
@@ -94,14 +95,20 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
+                        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Newsletter mit Stammtisch-Ankündigungen etc.">
                             <a class="nav-link" href="http://eepurl.com/gIw6zf" target="_blank">Newsletter</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Geschlossenes Forum für regelmässige Teilnehmer">
                             <a class="nav-link" href="<?= ROOT_WWW ?>/forum">Forum</a>
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Präsentationen, Demodateien etc.">
                             <a class="nav-link" href="https://gasser2.diskstation.me:5011" target="_blank">Ressourcen</a>
+                        </li>
+                        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Rest API">
+                            <a class="nav-link" href="<?= ROOT_WWW ?>/api/info" target="_blank">API</a>
+                        </li>
+                        <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Admin Login">
+                            <a class="nav-link" href="<?= ROOT_WWW ?>/admin" target="_blank">Orga</a>
                         </li>
                     </ul>
                 </div>
@@ -116,9 +123,9 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
     </div> <!-- end pagecontainercontent -->
     <div class="pagecontainerfooter">
         <div class="container mt-4">
-            <p>FM Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern.</p>
-            <p>fmzürich.ch basiert auf <a href="https://github.com/Dragon-Eyes/user-group-manager-v2" target="_blank">User-Group-Manager-v2</a> entwickelt von Dragon Eyes und lizensiert unter MIT License<br>
-                {mit Liebe, PHP {{ PHP_VERSION }}, Laravel {{ Illuminate\Foundation\Application::VERSION }} und Jetstream - bald auch die öffentlichen Seiten zudem mit Livewire und Tailwind}.</p>
+            <p>FM Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern.<br>
+            fmzürich.ch basiert auf <a href="https://github.com/Dragon-Eyes/user-group-manager-v2" target="_blank">User-Group-Manager-v2</a> entwickelt von Dragon Eyes mit PHP {{ PHP_VERSION }}; lizensiert unter MIT License.</p>
+{{--                {mit Liebe, PHP {{ PHP_VERSION }}, Laravel {{ Illuminate\Foundation\Application::VERSION }} und Jetstream - bald auch die öffentlichen Seiten zudem mit Livewire und Tailwind}.</p>--}}
         </div>
     </div>
 </div> <!-- end pagecontainer -->
@@ -130,5 +137,6 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
 <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
 <script src="https://cxo.ch/fmzurich_legacy_files/scripts/bootstrap.bundle.js"></script>
 <script src="https://cxo.ch/fmzurich_legacy_files/scripts/functions.js"></script>
+@livewireScripts
 </body>
 </html>

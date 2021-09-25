@@ -13,8 +13,15 @@ class Event extends Model
         'date',
         'title',
         'description',
-        'isOwnEvent',
-        'isOnline',
-        'isOnsite'
+        'is_own_event',
+        'is_online',
+        'is_onsite',
+        'is_registration_open',
+        'created_by',
+        'updated_by'
     ];
+
+/*    public static function get_events_own() {
+        return Event::all();
+    }*/
 }
