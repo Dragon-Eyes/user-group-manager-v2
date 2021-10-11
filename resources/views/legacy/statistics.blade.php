@@ -68,7 +68,7 @@
             .attr('width', x.bandwidth )
             .attr('height', 0)
             .attr('fill', function(d) {
-                if(d.event == "2019-12" || d.event == "2020-01"|| d.event == "2020-02" || d.event == "2020-08") {
+                if(d.event == "2019-12" || d.event == "2020-01"|| d.event == "2020-02" || d.event == "2020-08" || d.event == "2021-09") {
                     return "#0000dd";
                 }
                 if(d.event == "2020-04" || d.event == "2020-05" || d.event == "2020-11" || d.event == "2021-01" || d.event == "2021-02" || d.event == "2021-04") {
@@ -133,7 +133,7 @@
 
         const rectsPageviews = graphPageviews.selectAll('rect')
             .data(datasourcePageviews)
-            .attr('width', 10)
+            .attr('width', 2)
             .attr('height', d => graphHeightPageviews - yPageviews(d.pageviews))
             .attr('fill','blue')
             .attr('x', d => xPageviews(new Date(d.day)) - 2)
