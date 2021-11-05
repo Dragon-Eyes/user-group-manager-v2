@@ -6,7 +6,7 @@
                 <tr>
                     <td>{{$registration->name}}</td>
                     <td class="pl-3" style="white-space: pre-wrap;">{{$registration->comment}}</td>
-                    <td class="pl-4">{{$registration->placeText}}</td>
+{{--                    <td class="pl-4">{{$registration->placeText}}</td>--}}
                 </tr>
             @endforeach
         </table>
