@@ -91,7 +91,7 @@ function getBackgroundColor($choice) {
 {{--    </ul>--}}
     <p>Fragen, Anregungen o.ä.? <a class="e-l" data-ep1="stammtisch" data-ep2="fmzuerich" data-ep3="ch" href="#">Kontakt</a></p>
 
-    <h2 id="eventsFuture">Treffen</h2>
+    <h2 id="eventsFuture">Termine</h2>
     @foreach($eventsFuture as $event)
         <x-event :event="$event"></x-event>
     @endforeach
