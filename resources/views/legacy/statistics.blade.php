@@ -4,6 +4,7 @@
     define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
     $requestProtocol = $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ? 'http://' : 'https://';
     define("ROOT_WWW", $requestProtocol  . $_SERVER['HTTP_HOST']);
+    const SHOWPAGEVIEWS = false;
 ?>
 
 @section('content')
@@ -89,6 +90,7 @@
     </script>
 
     <!-- PAGEVIEWS -->
+    <?php if(SHOWPAGEVIEWS): ?>
 
     <div id="pageviews" class="canvas">
         <h2 class="mb-3">Pageviews pro Tag</h2>
@@ -160,4 +162,6 @@
             .attr('transform', 'rotate(-60)')
             .attr('text-anchor', 'end');
     </script>
+
+    <?php endif; ?>
 @endsection
