@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="robots" content="index, follow">
-    <title>FileMaker Zürich</title>
-    <meta name="description" content="Forum und Stammtisch zum Austausch unter FileMaker-Entwicklern."/>
+    <title>Claris Stammtisch</title>
+    <meta name="description" content="Forum und Stammtisch zum Austausch unter Claris-Entwicklern / FileMaker-Entwicklern."/>
 
     <?php
     use JetBrains\PhpStorm\Pure;
@@ -80,7 +80,7 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
     <div class="pagecontainerheader">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
             <div class="container">
-                <a class="navbar-brand" href="<?= ROOT_WWW ?>">FM Zürich</a>
+                <a class="navbar-brand" href="<?= ROOT_WWW ?>">Claris Stammtisch</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -123,8 +123,8 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
     </div> <!-- end pagecontainercontent -->
     <div class="pagecontainerfooter">
         <div class="container mt-4">
-            <p>FM Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern.<br>
-            fmzürich.ch basiert auf <a href="https://github.com/Dragon-Eyes/user-group-manager-v2" target="_blank">User-Group-Manager-v2</a> entwickelt von Dragon Eyes mit PHP {{ PHP_VERSION }}; lizensiert unter MIT License.</p>
+            <p>Claris Stammtisch / FM Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern / Claris-Programmierern.<br>
+            claris-stammtisch.ch / fmzürich.ch basiert auf <a href="https://github.com/Dragon-Eyes/user-group-manager-v2" target="_blank">User-Group-Manager-v2</a> entwickelt von Dragon Eyes mit PHP {{ PHP_VERSION }}; lizensiert unter MIT License.</p>
 {{--                {mit Liebe, PHP {{ PHP_VERSION }}, Laravel {{ Illuminate\Foundation\Application::VERSION }} und Jetstream - bald auch die öffentlichen Seiten zudem mit Livewire und Tailwind}.</p>--}}
         </div>
     </div>
