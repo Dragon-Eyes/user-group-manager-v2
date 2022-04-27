@@ -59,11 +59,11 @@ function getBackgroundColor($choice) {
 @section('content')
     <div class="jumbotron jumbotron-fluid text-center" style="background-color: <?php echo getBackgroundColor(getRandomNumber(3)) ?>; color: white; margin-top: 10px;">
         <div class="container-fluid">
-            <h1 class="display-4 animate__animated animate__rubberBand">Claris Stammtisch Schweiz</h1>
+            <h1 class="display-4 animate__animated animate__rubberBand">Claris Stammtisch Zürich</h1>
 {{--            <h1 class="display-4 animate__animated animate__swing">FileMaker Zürich</h1>--}}
 {{--            <h1 class="display-4 animate__animated animate__flip">FileMaker Zürich</h1>--}}
 {{--            <h1 class="display-4 animate__animated animate__heartBeat">FileMaker Zürich</h1>--}}
-            <p>aka FileMaker Zürich<br>Entwickler-Community<br>Der Stammtisch im Grossraum Zürich</p>
+            <p>ehemals "FileMaker Zürich"<br>Entwickler-Community</p>
         </div>
     </div>
 
