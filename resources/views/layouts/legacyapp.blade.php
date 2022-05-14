@@ -124,7 +124,7 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
     <div class="pagecontainerfooter">
         <div class="container mt-4">
             <p>Claris Stammtisch / FM Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern / Claris-Programmierern.<br>
-            claris-stammtisch.ch / fmzürich.ch basiert auf <a href="https://github.com/Dragon-Eyes/user-group-manager-v2" target="_blank">User-Group-Manager-v2</a> entwickelt von Dragon Eyes mit PHP {{ PHP_VERSION }}; lizensiert unter MIT License.</p>
+            claris-stammtisch.ch basiert auf <a href="https://github.com/Dragon-Eyes/user-group-manager-v2" target="_blank">User-Group-Manager-v2</a> entwickelt von Dragon Eyes mit PHP v{{ PHP_VERSION }} & Laravel v{{ Illuminate\Foundation\Application::VERSION }}; lizensiert unter MIT License.</p>
 {{--                {mit Liebe, PHP {{ PHP_VERSION }}, Laravel {{ Illuminate\Foundation\Application::VERSION }} und Jetstream - bald auch die öffentlichen Seiten zudem mit Livewire und Tailwind}.</p>--}}
         </div>
     </div>
