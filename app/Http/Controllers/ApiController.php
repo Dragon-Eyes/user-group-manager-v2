@@ -13,23 +13,19 @@ class ApiController extends Controller
         $log = \App\Http\Controllers\LogLegacyController::write('apirequest', "/info");
         return [
             "title" => "User Group Manager v2",
-            "description" => "API of the user group FileMaker Zürich",
+            "description" => "API of the user group Claris Stammtisch Zürich",
             "contact" => [
-                "name" => "FM Zürich",
-                "email" => "stammtisch@fmzuerich.ch"
+                "name" => "Claris Stammtisch Zürich",
+                "email" => "hallo@claris-stammtisch.ch"
             ],
             "license" => [
                 "name" => "MIT",
                 "url" => "https://github.com/Dragon-Eyes/user-group-manager-v2/blob/main/LICENSE"
             ],
-            "version" => "0.9.5",
+            "version" => "1.1.0",
             "servers" => [
                 [
-                    "url" => "https://test.fmzuerich.ch/api/",
-                    "description" => "Test server"
-                ],
-                [
-                    "url" => "https://fmzuerich.ch/api/",
+                    "url" => "https://claris-stammtisch.ch/api/",
                     "description" => "Production server"
                 ]
             ],
@@ -41,8 +37,8 @@ class ApiController extends Controller
                 "register"
             ],
             "templates" => [
-                "Postman collection" => "https://test.fmzuerich.ch/api_vorlagen/UserGroupManager.postman_collection.json",
-                "FileMaker file" => "https://test.fmzuerich.ch/api_vorlagen/UserGroupManager_API_Client.fmp12"
+                "Postman collection" => "https://claris-stammtisch.ch/api_vorlagen/UserGroupManager.postman_collection.json",
+                "FileMaker file" => "https://claris-stammtisch.ch/api_vorlagen/UserGroupManager_API_Client.fmp12"
             ]
         ];
     }
