@@ -96,7 +96,8 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Newsletter mit Stammtisch-Ankündigungen etc.">
-                            <a class="nav-link" href="http://eepurl.com/gIw6zf" target="_blank">Newsletter</a>
+{{--                            <a class="nav-link" href="http://eepurl.com/gIw6zf" target="_blank">Newsletter</a>--}}
+                            <a class="nav-link" href="https://seu2.cleverreach.com/f/321923-326621/" target="_blank">Newsletter</a>
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Geschlossenes Forum für regelmässige Teilnehmer">
                             <a class="nav-link" href="<?= ROOT_WWW ?>/forum">Forum</a>
