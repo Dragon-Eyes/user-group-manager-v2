@@ -6,7 +6,7 @@
                 <tr>
                     <td>{{$registration->name}}</td>
                     <td class="pl-3" style="white-space: pre-wrap;">{{$registration->comment}}</td>
-{{--                    <td class="pl-4">{{$registration->placeText}}</td>--}}
+                    <td class="pl-4">{{$registration->placeText}}</td>
                 </tr>
             @endforeach
         </table>
@@ -26,7 +26,10 @@
                     <button type="submit" class="btn btn-danger">anmelden</button>
                 </div>
             </div>
-            <div class="row" style="margin-top: 5px; margin-left: -6px; padding-left: 0;">
+            <div class="row" style="margin-top: 20px; margin-left: -6px; padding-left: 12px;">
+                <span>Falls Du virtuell teilnehmen möchtest, gib bitte Deine Email-Adresse an, da wir an diese die Einladung zum Teams-Meeting verschicken werden.</span>
+            </div>
+            <div class="row" style="margin-top: 5px; margin-left: -6px; margin-bottom: 10px; padding-left: 0;">
                 <div class="col">
                     @if($event->is_online)
                         <input type="radio" id="virtual" name="presence" value="virtual" checked wire:model="presence">
@@ -44,7 +47,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="email" class="form-control" name="email" placeholder="E-Mail Adresse" wire:model="email">
+                    <input type="email" class="form-control" name="email" placeholder="E-Mail Adresse *" wire:model="email">
                 </div>
             </div>
             <div class="row">
