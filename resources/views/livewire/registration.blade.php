@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="row" style="margin-top: 20px; margin-left: -6px; padding-left: 12px;">
-                <span>Falls Du virtuell teilnehmen möchtest, gib bitte Deine Email-Adresse an, da wir an diese die Einladung zum Teams-Meeting verschicken werden.</span>
+                <span>Falls Du virtuell teilnehmen möchtest, gib bitte Deine Email-Adresse an, da wir an diese den Link zum Besprechungsraum verschicken.</span>
             </div>
             <div class="row" style="margin-top: 5px; margin-left: -6px; margin-bottom: 10px; padding-left: 0;">
                 <div class="col">

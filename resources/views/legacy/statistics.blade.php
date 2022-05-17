@@ -75,6 +75,9 @@
                 if(d.event == "2020-04" || d.event == "2020-05" || d.event == "2020-11" || d.event == "2021-01" || d.event == "2021-02" || d.event == "2021-04") {
                     return "#aaaaff";
                 }
+                if(d.event == "2022-05") {
+                    return "#6666ee";
+                }
                 return "#999";
             })
             .attr('x', d => x(d.event))
