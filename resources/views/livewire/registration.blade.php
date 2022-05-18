@@ -26,10 +26,7 @@
                     <button type="submit" class="btn btn-danger">anmelden</button>
                 </div>
             </div>
-            <div class="row" style="margin-top: 20px; margin-left: -6px; padding-left: 12px;">
-                <span>Falls Du virtuell teilnehmen möchtest, gib bitte Deine Email-Adresse an, da wir an diese den Link zum Besprechungsraum verschicken.</span>
-            </div>
-            <div class="row" style="margin-top: 5px; margin-left: -6px; margin-bottom: 10px; padding-left: 0;">
+            <div class="row" style="margin-top: 20px; margin-left: -6px; margin-bottom: 10px; padding-left: 0;">
                 <div class="col">
                     @if($event->is_online)
                         <input type="radio" id="virtual" name="presence" value="virtual" checked wire:model="presence">
