@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@media screen {
+    .pagecontainercontent {
+        min-height: 80vh;
+    }
+    td {
+        vertical-align: top;
+    }
+
+    .textSmall {
+        font-size: 0.7em;
+    }
+
+    .eventNext, .eventBoxDark {
+        background-color: #dddddd;
+    }
+
+    .eventFmz, .eventBoxLight {
+        background-color: #eeeeee;
+    }
+
+    .participantNameLink {
+    }
+    .participantNameLink:hover {
+        font-style: italic;
+        color: red;
+        text-decoration: none;
+
+    }
+}
