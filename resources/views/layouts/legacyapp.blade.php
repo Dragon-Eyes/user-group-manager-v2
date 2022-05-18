@@ -13,15 +13,15 @@
 //    define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
 //    define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
     ?>
-    <meta property="og:url" content="https://fmzuerich.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
+    <meta property="og:url" content="https://claris-stammtisch.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Entwickler Stammtisch Zürich">
-    <meta property="og:description" content="Der neue FileMaker Stammtisch in / um Zürich. Jede / jeder FileMaker-Interessierte ist willkommen; die Neulinge bringen interessante Fragen und neue Ideen und die alten Hasen können mal zeigen, was sie (noch) können.">
+    <meta property="og:description" content="Der neue FileMaker / Claris Stammtisch in / um Zürich. Jede / jeder FileMaker-Interessierte ist willkommen; die Neulinge bringen interessante Fragen und neue Ideen und die alten Hasen können mal zeigen, was sie (noch) können.">
     <!-- 600x314 -->
-    <meta property="og:image" content="https://cxo.ch/fmzurich_legacy_files/assets/fmzuerich_600x314_pic_2.png">
-    <meta property="og:image" content="https://cxo.ch/fmzurich_legacy_files/assets/fmzuerich_600x314.png">
+{{--    <meta property="og:image" content="https://cxo.ch/fmzurich_legacy_files/assets/fmzuerich_600x314_pic_2.png">--}}
+{{--    <meta property="og:image" content="https://cxo.ch/fmzurich_legacy_files/assets/fmzuerich_600x314.png">--}}
 
-    <link rel="canonical" href="https://fmzuerich.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
+    <link rel="canonical" href="https://claris-stammtisch.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="styles/bootstrap.min.css"> -->
@@ -30,23 +30,25 @@
     <!--    <link rel="stylesheet" href="styles/fmzuerich.css">-->
     <link rel="stylesheet" href="https://cxo.ch/fmzurich_legacy_files/styles/fmzurich.css">
 
-    <link rel="shortcut icon" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich.ico">
-    <link rel="icon" sizes="16x16 32x32 64x64" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich.ico">
-    <link rel="icon" type="image/png" sizes="196x196" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-192.png">
-    <link rel="icon" type="image/png" sizes="160x160" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-160.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-96.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-64.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-16.png">
-    <link rel="apple-touch-icon" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-144.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-60.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-76.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://cxo.ch/fmzurich_legacy_files/assets/favicons/fmzuerich-180.png">
+    <link rel="shortcut icon" href="{{ asset('assets/favicons/favicon.ico') }}">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="{{ asset('assets/favicons/favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="196x196" href="{{ asset('assets/favicons/favicon-192.png') }}">
+    <link rel="icon" type="image/png" sizes="160x160" href="{{ asset('assets/favicons/favicon-160.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/favicons/favicon-96.png') }}">
+    <link rel="icon" type="image/png" sizes="64x64" href="{{ asset('assets/favicons/favicon-64.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/favicons/favicon-32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicons/favicon-16.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/favicons/favicon-57.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/favicons/favicon-114.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/favicons/favicon-72.png') }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ asset('assets/favicons/favicon-144.png') }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('assets/favicons/favicon-60.png') }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets/favicons/favicon-120.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets/favicons/favicon-76.png') }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ asset('assets/favicons/favicon-152.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/favicons/favicon-180.png') }}">
+
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
