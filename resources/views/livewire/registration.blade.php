@@ -26,7 +26,7 @@
                     <button type="submit" class="btn btn-danger">anmelden</button>
                 </div>
             </div>
-            <div class="row" style="margin-top: 20px; margin-left: -6px; margin-bottom: 10px; padding-left: 0;">
+            <div class="row" style="margin-top: 15px; margin-left: -6px; margin-bottom: 10px; padding-left: 0;">
                 <div class="col">
                     @if($event->is_online)
                         <input type="radio" id="virtual" name="presence" value="virtual" checked wire:model="presence">
@@ -44,7 +44,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="email" class="form-control" name="email" placeholder="E-Mail Adresse *" wire:model="email">
+                    <input type="email" class="form-control" name="email" placeholder="E-Mail Adresse" wire:model="email">
                 </div>
             </div>
             <div class="row">
