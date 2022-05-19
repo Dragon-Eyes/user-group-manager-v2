@@ -90,7 +90,8 @@ function getBackgroundColor($choice) {
 {{--        <li>Berater / Agentur-Entwickler</li>--}}
 {{--    </ul>--}}
     <p>Fragen, Anregungen o.ä.? <a class="e-l" data-ep1="hallo" data-ep2="claris-stammtisch" data-ep3="ch" href="#">Kontakt</a><br>
-    Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="https://seu2.cleverreach.com/f/321923-326621/" target="_blank">Anmeldung</a></p>
+{{--    Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="https://seu2.cleverreach.com/f/321923-326621/" target="_blank">Anmeldung</a></p>--}}
+    Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="https://7365e0cd.sibforms.com/serve/MUIEACXvVPf1KqAsJb6adG1HOfTcV41WxtYlD6yD_0UN-Q9YlHa-uP18jrn57joHGGbrui_UzyJrxbaSAy7c9eg8Y_ks3AdcMtx0623t4ae4mVaVdqt5ec9xTSmAEUVcC7NGpu46Aq_s-fSUFOoV9VILnwihJ4idRJ2dUlU36_jilaiY3aUVG1S4YaK4CrdIsEHv-qwqF0mi7_3I" target="_blank">Anmeldung</a></p>
 
     <h2 id="eventsFuture">Termine</h2>
     @foreach($eventsFuture as $event)

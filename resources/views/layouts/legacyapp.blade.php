@@ -100,7 +100,7 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Newsletter mit Stammtisch-Ankündigungen etc.">
 {{--                            <a class="nav-link" href="http://eepurl.com/gIw6zf" target="_blank">Newsletter</a>--}}
-                            <a class="nav-link" href="https://seu2.cleverreach.com/f/321923-326621/" target="_blank">Newsletter</a>
+                            <a class="nav-link" href="https://7365e0cd.sibforms.com/serve/MUIEACXvVPf1KqAsJb6adG1HOfTcV41WxtYlD6yD_0UN-Q9YlHa-uP18jrn57joHGGbrui_UzyJrxbaSAy7c9eg8Y_ks3AdcMtx0623t4ae4mVaVdqt5ec9xTSmAEUVcC7NGpu46Aq_s-fSUFOoV9VILnwihJ4idRJ2dUlU36_jilaiY3aUVG1S4YaK4CrdIsEHv-qwqF0mi7_3I" target="_blank">Newsletter</a>
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="bottom" title="Geschlossenes Forum für regelmässige Teilnehmer">
                             <a class="nav-link" href="<?= ROOT_WWW ?>/forum">Forum</a>
