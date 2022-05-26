@@ -42,6 +42,9 @@
                 <?php }
                 } ?>
             </table>
+            test
+            <img src="https://filemakerzuerich.rokka.io/dynamic/f36a207a7b057c4ceff49b9a72e1e395d535aeaf.jpg" style="max-width: 100%; margin-top: 25px;">
+            <p>10 FileMaker Problem Solvers am physischen Stammtisch in Villmergen @ CropFactory</p>
         </div>
     </div>
 

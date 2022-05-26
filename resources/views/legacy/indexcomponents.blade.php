@@ -106,6 +106,7 @@ function getBackgroundColor($choice) {
            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
     <div id="mc_embed_signup" class="onlyWide">
+        <p>Nach unerfreulichen Versuchen mit CleverReach und Sendinblue bleiben wir für unsere Einladungen doch bei Mailchimp.</p>
         <form action="https://claris-stammtisch.us5.list-manage.com/subscribe/post?u=124f92db94f3241542ea4942e&amp;id=733ebf3b0f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
                 <h2>Claris Stammtisch Zürich - Einladungen</h2>

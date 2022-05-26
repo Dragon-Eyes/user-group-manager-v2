@@ -76,7 +76,7 @@
                     return "#aaaaff";
                 }
                 if(d.event == "2022-05") {
-                    return "#6666ee";
+                    return "#333";
                 }
                 return "#999";
             })
