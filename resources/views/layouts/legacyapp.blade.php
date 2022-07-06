@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="robots" content="index, follow">
     <title>Claris Stammtisch</title>
-    <meta name="description" content="Forum und Stammtisch zum Austausch unter Claris-Entwicklern / FileMaker-Entwicklern."/>
+    <meta name="description" content="Forum und Stammtisch zum Austausch unter Claris-Entwicklern / FileMaker-Entwicklern mit regelmässigen Treffen zum Austausch und zur Anregung."/>
 
     <?php
     use JetBrains\PhpStorm\Pure;
@@ -127,7 +127,7 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
     </div> <!-- end pagecontainercontent -->
     <div class="pagecontainerfooter">
         <div class="container mt-4">
-            <p>Claris Stammtisch / FM Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern / Claris-Programmierern.<br>
+            <p>Claris Stammtisch Zürich / FileMaker Stammtisch Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern / Claris-Programmierern.<br>
                 Techniksponsor (Web-Applikation, URLs, Mailservice etc.): DragonEyes Software<br>
                 Organisation: Christoph Dunkake & Paul Merki</p>
         </div>
