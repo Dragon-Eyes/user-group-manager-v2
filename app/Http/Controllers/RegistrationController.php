@@ -21,7 +21,7 @@ class RegistrationController extends Controller {
         return $events;
     }
 
-    public static function getCountForEvent($event_id) :int {
+    public static function getCountForEvent(int $event_id) :int {
 //        public static function getCountForEvent(int|string $event_id) :int {
         $sql = "SELECT COUNT(*) AS COUNT FROM registrations";
         $sql .= " WHERE is_deleted = ?";
@@ -30,9 +30,9 @@ class RegistrationController extends Controller {
         return $result[0]->COUNT;
     }
 
-    public static function get_by_event($event_id) {
+    public static function get_by_event(int $event_id) {
 //        public static function get_by_event(int|string $event_id) {
-        $registrations = Registration::where('event_id', $event_id)->orderBy('created_at', 'desc')->get();
+        $registrations = Registration::where(['event_id' => $event_id, 'is_deleted' => 0])->orderBy('created_at', 'desc')->get();
         foreach($registrations as $registration) {
             $registration->placeText = $registration->is_virtual ? 'virtuell' : 'vor Ort';
         }
@@ -113,7 +113,9 @@ class RegistrationController extends Controller {
     {
         $registration = Registration::find($event_id);
         if($registration) {
-            $registration->delete();
+//            $registration->delete();
+            $registration->is_deleted = true;
+            $registration->save();
         }
         return redirect()->route('admin');
     }
