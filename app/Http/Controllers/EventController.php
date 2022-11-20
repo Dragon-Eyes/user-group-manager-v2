@@ -19,7 +19,7 @@ class EventController extends Controller {
             $date = new \DateTime($event->date);
             $event->dateText = $date->format('d.m.Y');
             $event->attachments = DB::select('SELECT * FROM attachments WHERE event_id = ?', [$event->id]);
-            $event->registrations = DB::select('SELECT * FROM registrations WHERE event_id = ? ORDER BY created_at DESC', [$event->id]);
+            $event->registrations = DB::select('SELECT * FROM registrations WHERE event_id = ? AND is_deleted = 0 ORDER BY created_at DESC', [$event->id]);
         }
         return $eventsPast;
     }
