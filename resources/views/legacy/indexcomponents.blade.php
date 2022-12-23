@@ -94,6 +94,7 @@ function getBackgroundColor($choice) {
     Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="http://eepurl.com/h0Us9f" target="_blank">Anmeldung</a></p>
 
     <iframe style="width: 400px; height: 232px;" src="https://www.noradsanta.org/countdownClock.html"></iframe>
+    <iframe style="width: 680px; height: 515px;" src="https://www.noradsanta.org/embed.html" allowFullScreen mozAllowFullScreen webkitAllowFullScreen></iframe>
 
     <h2 id="eventsFuture">Termine</h2>
     @foreach($eventsFuture as $event)
