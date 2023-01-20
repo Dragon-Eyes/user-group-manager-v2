@@ -49,6 +49,9 @@
         } elseif ($choice == 3) {
             // SG
             return 'rgb(1,153,52)';
+        } elseif ($choice == 4) {
+            // test
+            return 'rgb(255,255,255)';
         } else {
             return 'rgb(0,0,0)';
         }
@@ -95,7 +98,7 @@
             <h3 class="card-title">23.04.2021: FileMaker Stammtisch Zürich (Freitag)</h3>
             <h4>Agenda</h4>
             <ul>
-                <li>18:30 Uhr - Nutzung von Rest APIs am Beispiel FM Zürich (Abfrage Stammtisch Details und Anmeldung aus FileMaker Anwendung) mithilfe eines bereitgestellten Add-Ons [Christoph Dunkake]</li>
+                <li>17:30 Uhr - Nutzung von Rest APIs am Beispiel FM Zürich (Abfrage Stammtisch Details und Anmeldung aus FileMaker Anwendung) mithilfe eines bereitgestellten Add-Ons [Christoph Dunkake]</li>
                 <li>19:30 Uhr - tbd</li>
             </ul>
             <h4>Ort</h4>
