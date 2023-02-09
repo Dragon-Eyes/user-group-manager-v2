@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="robots" content="index, follow">
     <title>Claris Stammtisch</title>
-    <meta name="description" content="Forum und Stammtisch zum Austausch unter Claris-Entwicklern / FileMaker-Entwicklern mit regelmässigen Treffen zum Austausch und zur Anregung."/>
+    <meta name="description" content="Forum und Stammtisch zum Austausch unter Claris-Entwicklern / FileMaker-Entwicklern im Grossraum Zürich mit regelmässigen Treffen zum Austausch und zur Anregung."/>
 
     <?php
     use JetBrains\PhpStorm\Pure;
@@ -15,7 +15,7 @@
     ?>
     <meta property="og:url" content="https://claris-stammtisch.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Entwickler Stammtisch Zürich">
+    <meta property="og:title" content="Claris Entwickler Stammtisch Zürich">
     <meta property="og:description" content="Der neue FileMaker / Claris Stammtisch in / um Zürich. Jede / jeder FileMaker-Interessierte ist willkommen; die Neulinge bringen interessante Fragen und neue Ideen und die alten Hasen können mal zeigen, was sie (noch) können.">
     <!-- 600x314 -->
 {{--    <meta property="og:image" content="https://cxo.ch/fmzurich_legacy_files/assets/fmzuerich_600x314_pic_2.png">--}}
