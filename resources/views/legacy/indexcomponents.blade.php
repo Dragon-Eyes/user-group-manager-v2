@@ -68,9 +68,9 @@ function getBackgroundColor($choice) {
     </div>
 
     @if($content->alert)
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {!! $content->alert !!}<br>
-        <div id="countdown"><span id="countdown-days">15</span> Tage, <span id="countdown-hours">4</span> Stunden, <span id="countdown-minutes">18</span> Minuten, <span id="countdown-seconds">22</span> Sekunden</div>
+    <div id="indexalert" class="alert alert-danger alert-dismissible fade show" role="alert">
+        {!! $content->alert !!}
+        <span id="indexalertcountdown"></span>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -140,16 +140,47 @@ function getBackgroundColor($choice) {
     </div>
 
     <script>
-        const countdown = document.getElementById('countdown');
-        const countdownDays = document.getElementById('countdown-days');
-        const countdownHours = document.getElementById('countdown-hours');
-        const countdownMinutes = document.getElementById('countdown-minutes');
-        const countdownSeconds = document.getElementById('countdown-seconds');
+        const indexalertcountdown = document.getElementById('indexalertcountdown');
 
+        // const countdown = document.getElementById('countdown');
+        // const countdownDays = document.getElementById('countdown-days');
+        // const countdownHours = document.getElementById('countdown-hours');
+        // const countdownMinutes = document.getElementById('countdown-minutes');
+        // const countdownSeconds = document.getElementById('countdown-seconds');
 
+        const countdownTo = "{{$content->countdown}}";
+        // console.log(countdownTo);
+        const countdownToDate = new Date(countdownTo);
+        // console.log(countdownToDate);
 
+        function countdownUpdate() {
+            const currentDate = new Date();
+            const countdownDiff = countdownToDate - currentDate;
 
-        console.log(countdownDays.innerText);
+            if (countdownDiff > 0) {
+                // console.log(countdownDiff);
+                const countdownDays = Math.floor(countdownDiff / 1000 / 60 / 60 / 24);
+                // console.log(countdownDays);
+                const countdownHours = Math.floor(countdownDiff / 1000 / 60 / 60) % 24;
+                const countdownMinutes = Math.floor(countdownDiff / 1000 / 60) % 60;
+                const countdownSeconds = Math.floor(countdownDiff / 1000) % 60;
+                const countdownText = `
+                    <br>
+                    <div id="countdown">
+                        <span id="countdown-days">${countdownDays}</span> Tage,
+                        <span id="countdown-hours">${countdownHours}</span> Stunden,
+                        <span id="countdown-minutes">${countdownMinutes}</span> Minuten,
+                        <span id="countdown-seconds">${countdownSeconds}</span> Sekunden
+                    </div>
+                `;
+                indexalertcountdown.innerHTML = countdownText;
+            } else {
+                clearInterval(countdownInterval);
+            }
+        }
+
+        const countdownInterval = setInterval(countdownUpdate, 1000);
+        // countdownUpdate();
     </script>
 
     <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';/*
