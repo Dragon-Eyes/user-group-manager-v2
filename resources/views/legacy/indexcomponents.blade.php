@@ -69,7 +69,8 @@ function getBackgroundColor($choice) {
 
     @if($content->alert)
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {!! $content->alert !!}
+        {!! $content->alert !!}<br>
+        <div id="countdown"><span id="countdown-days">15</span> Tage, <span id="countdown-hours">4</span> Stunden, <span id="countdown-minutes">18</span> Minuten, <span id="countdown-seconds">22</span> Sekunden</div>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
@@ -137,6 +138,20 @@ function getBackgroundColor($choice) {
             </div>
         </form>
     </div>
+
+    <script>
+        const countdown = document.getElementById('countdown');
+        const countdownDays = document.getElementById('countdown-days');
+        const countdownHours = document.getElementById('countdown-hours');
+        const countdownMinutes = document.getElementById('countdown-minutes');
+        const countdownSeconds = document.getElementById('countdown-seconds');
+
+
+
+
+        console.log(countdownDays.innerText);
+    </script>
+
     <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';/*
  * Translated default messages for the $ validation plugin.
  * Locale: DE

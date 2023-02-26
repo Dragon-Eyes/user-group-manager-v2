@@ -36,6 +36,7 @@ class ContentController extends Controller
         $content->alert = $request->input('alert');
         $content->intro = $request->input('intro');
         $content->forum = $request->input('forum');
+        $content->countdown = $request->input('countdown');
         return $content->save();
     }
 

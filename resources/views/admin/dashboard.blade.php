@@ -106,6 +106,7 @@
                     @csrf
                     <input type="hidden" name="forum" value="{{$content->forum}}">
                     <input type="hidden" name="intro" value="{{$content->intro}}">
+                    <input type="hidden" name="intro" value="{{$content->countdown}}">
                     <div class="mt-4">
                         <x-jet-label for="alert" value="{{ __('Alert') }}" />
                         <textarea id="alert" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" name="alert">{{$content->alert}}</textarea>
@@ -122,6 +123,7 @@
                     @csrf
                     <input type="hidden" name="alert" value="{{$content->alert}}">
                     <input type="hidden" name="forum" value="{{$content->forum}}">
+                    <input type="hidden" name="intro" value="{{$content->countdown}}">
                     <div class="mt-4">
                         <x-jet-label for="intro" value="{{ __('Intro') }}" />
                         <textarea id="intro" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" name="intro">{{$content->intro}}</textarea>
@@ -138,9 +140,27 @@
                     @csrf
                     <input type="hidden" name="alert" value="{{$content->alert}}">
                     <input type="hidden" name="intro" value="{{$content->intro}}">
+                    <input type="hidden" name="intro" value="{{$content->countdown}}">
                     <div class="mt-4">
                         <x-jet-label for="forum" value="{{ __('Forum') }}" />
                         <textarea id="forum" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm" name="forum">{{$content->forum}}</textarea>
+                    </div>
+                    <div class="flex items-center justify-end mt-4">
+                        <x-jet-button class="ml-4">
+                            {{ __('Speichern') }}
+                        </x-jet-button>
+                    </div>
+                </form>
+
+                <x-jet-validation-errors class="mb-4" />
+                <form method="POST" action="{{ route('contentsave') }}">
+                    @csrf
+                    <input type="hidden" name="alert" value="{{$content->alert}}">
+                    <input type="hidden" name="intro" value="{{$content->intro}}">
+                    <input type="hidden" name="forum" value="{{$content->forum}}">
+                    <div class="mt-4">
+                        <x-jet-label for="countdown" value="{{ __('Countdown') }}" />
+                        <input type="datetime-local" id="countdown" name="countdown" value="{{$content->countdown}}">
                     </div>
                     <div class="flex items-center justify-end mt-4">
                         <x-jet-button class="ml-4">

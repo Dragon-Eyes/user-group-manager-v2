@@ -12,6 +12,7 @@ class Content extends Model
     protected $fillable = [
         'alert',
         'intro',
-        'forum'
+        'forum',
+        'countdown',
     ];
 }
