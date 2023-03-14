@@ -102,7 +102,9 @@ function getBackgroundColor($choice) {
         </div>
     </div>
     @foreach($eventsFuture as $event)
-        <x-event :event="$event"></x-event>
+        @if($event->is_claris == true)
+            <x-event :event="$event"></x-event>
+        @endif
     @endforeach
 
     <!-- Begin Mailchimp Signup Form -->
