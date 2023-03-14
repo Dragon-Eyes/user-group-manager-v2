@@ -45,6 +45,11 @@
                         <input type="checkbox" id="is_registration_open" name="is_registration_open" :value="old('is_registration_open')">
                     </div>
 
+                    <div class="mt-4">
+                        <x-jet-label for="is_claris" value="{{ __('Thema Claris') }}" />
+                        <input type="checkbox" id="is_claris" name="is_claris" :value="old('is_claris')">
+                    </div>
+
                     <div class="flex items-center justify-end mt-4">
                         <x-jet-button class="ml-4">
                             {{ __('Speichern') }}

@@ -89,6 +89,7 @@ class EventController extends Controller {
         $event->is_online = $request->has('is_online') ? 1 : 0;
         $event->is_onsite = $request->has('is_onsite') ? 1 : 0;
         $event->is_registration_open = $request->has('is_registration_open') ? 1 : 0;
+        $event->is_claris = $request->has('is_claris') ? 1 : 0;
         $event->created_by = auth()->id();
         return $event->save();
     }
@@ -106,6 +107,7 @@ class EventController extends Controller {
         $event->is_online = $request->has('is_online') ? 1 : 0;
         $event->is_onsite = $request->has('is_onsite') ? 1 : 0;
         $event->is_registration_open = $request->has('is_registration_open') ? 1 : 0;
+        $event->is_claris = $request->has('is_claris') ? 1 : 0;
         $event->updated_by = auth()->id();
         return $event->save();
     }

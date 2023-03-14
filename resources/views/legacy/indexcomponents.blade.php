@@ -94,14 +94,20 @@ function getBackgroundColor($choice) {
 {{--    Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="https://seu2.cleverreach.com/f/321923-326621/" target="_blank">Anmeldung</a></p>--}}
     Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="http://eepurl.com/h0Us9f" target="_blank">Anmeldung</a></p>
 
-    <h2 id="eventsFuture">Termine</h2>
+    <div style="display: flex; align-items: center; justify-content: space-between">
+        <h2 id="eventsFuture">Termine</h2>
+        <div>
+            <input type="checkbox" id="alltech" name="alltech" value="true">
+            <label style="padding-top: 10px" for="alltech">alle Technologien</label>
+        </div>
+    </div>
     @foreach($eventsFuture as $event)
         <x-event :event="$event"></x-event>
     @endforeach
 
     <!-- Begin Mailchimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
+    <style>
         #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:600px;}
         /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
