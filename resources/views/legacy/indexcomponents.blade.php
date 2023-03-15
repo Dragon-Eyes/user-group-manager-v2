@@ -85,7 +85,7 @@ function getBackgroundColor($choice) {
     <div style="display: flex; align-items: center; justify-content: space-between">
         <h2 id="eventsFuture">Termine</h2>
         <div id="scopeSwitch">
-            <input type="checkbox" id="alltech" name="alltech" value="true">
+            <input type="checkbox" id="alltech" name="alltech" value="true" onclick="switchScope()">
             <label style="padding-top: 10px" for="alltech">alle Technologien</label>
         </div>
     </div>
@@ -150,7 +150,7 @@ function getBackgroundColor($choice) {
         const eventBlockAll = document.getElementById('events-all');
         let eventScope = 'claris';
 
-        document.getElementById('scopeSwitch').addEventListener('click', switchScope);
+        // document.getElementById('scopeSwitch').addEventListener('click', switchScope);
 
         function switchScope() {
             if(eventScope === 'claris') {
