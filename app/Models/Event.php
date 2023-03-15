@@ -17,6 +17,7 @@ class Event extends Model
         'is_online',
         'is_onsite',
         'is_registration_open',
+        'is_claris',
         'created_by',
         'updated_by'
     ];
