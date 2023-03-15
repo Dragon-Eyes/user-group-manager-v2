@@ -79,33 +79,31 @@ function getBackgroundColor($choice) {
 
     {!! $content->intro !!}
 
-{{--    <blockquote>FileMaker ist ein grossartiges Tool um mit geringem Aufwand überzeugende Software-Systeme zu erarbeiten.<br>--}}
-{{--        Im mittlerweile jährlichen Versionsrhythmus stellt Claris Entwicklern neue Möglichkeiten zur Verfügung. Um diese Möglichkeiten zu nutzen und obsolete Praktiken auszumerzen, ist es jedoch unerlässlich permanent an seinen Fähigkeiten zu arbeiten.<br>--}}
-{{--        Deshalb haben wir den Zürcher FileMaker Stammtisch, nach mehreren Jahren des Dornröschenschlafes, 2020 wiederauferstehen lassen.</blockquote>--}}
-{{--    <p>Für alle FileMaker-Interessierten</p>--}}
-{{--    <ul>--}}
-{{--        <li>Low Code Neulinge</li>--}}
-{{--        <li>Hobby-Programmierer</li>--}}
-{{--        <li>Indie Hacker</li>--}}
-{{--        <li>Inhouse-Entwickler</li>--}}
-{{--        <li>Berater / Agentur-Entwickler</li>--}}
-{{--    </ul>--}}
     <p>Fragen, Anregungen o.ä.? <a class="e-l" data-ep1="hallo" data-ep2="claris-stammtisch" data-ep3="ch" href="#">Kontakt</a><br>
-{{--    Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="https://seu2.cleverreach.com/f/321923-326621/" target="_blank">Anmeldung</a></p>--}}
     Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="http://eepurl.com/h0Us9f" target="_blank">Anmeldung</a></p>
 
     <div style="display: flex; align-items: center; justify-content: space-between">
         <h2 id="eventsFuture">Termine</h2>
-        <div>
+        <div id="scopeSwitch">
             <input type="checkbox" id="alltech" name="alltech" value="true">
             <label style="padding-top: 10px" for="alltech">alle Technologien</label>
         </div>
     </div>
-    @foreach($eventsFuture as $event)
-        @if($event->is_claris == true)
+
+
+    <div id="events-claris">
+        @foreach($eventsFuture as $event)
+            @if($event->is_claris == true)
+                <x-event :event="$event"></x-event>
+            @endif
+        @endforeach
+    </div>
+
+    <div id="events-all" style="display: none">
+        @foreach($eventsFuture as $event)
             <x-event :event="$event"></x-event>
-        @endif
-    @endforeach
+        @endforeach
+    </div>
 
     <!-- Begin Mailchimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
@@ -148,27 +146,44 @@ function getBackgroundColor($choice) {
     </div>
 
     <script>
+        const eventBlockClaris = document.getElementById('events-claris');
+        const eventBlockAll = document.getElementById('events-all');
+        let eventScope = 'claris';
+
+        document.getElementById('scopeSwitch').addEventListener('click', switchScope);
+
+        function switchScope() {
+            if(eventScope === 'claris') {
+                eventsShowAll();
+                eventScope = 'all';
+            } else {
+                eventsShowClaris();
+                eventScope = 'claris';
+            }
+        }
+
+        function eventsShowAll() {
+            eventBlockClaris.style.display = "none";
+            eventBlockAll.style.display = "block";
+        }
+
+        function eventsShowClaris() {
+            eventBlockClaris.style.display = "block";
+            eventBlockAll.style.display = "none";
+        }
+    </script>
+
+    <script>
         const indexalertcountdown = document.getElementById('indexalertcountdown');
-
-        // const countdown = document.getElementById('countdown');
-        // const countdownDays = document.getElementById('countdown-days');
-        // const countdownHours = document.getElementById('countdown-hours');
-        // const countdownMinutes = document.getElementById('countdown-minutes');
-        // const countdownSeconds = document.getElementById('countdown-seconds');
-
         const countdownTo = "{{$content->countdown}}";
-        // console.log(countdownTo);
         const countdownToDate = new Date(countdownTo);
-        // console.log(countdownToDate);
 
         function countdownUpdate() {
             const currentDate = new Date();
             const countdownDiff = countdownToDate - currentDate;
 
             if (countdownDiff > 0) {
-                // console.log(countdownDiff);
                 const countdownDays = Math.floor(countdownDiff / 1000 / 60 / 60 / 24);
-                // console.log(countdownDays);
                 const countdownHours = Math.floor(countdownDiff / 1000 / 60 / 60) % 24;
                 const countdownMinutes = Math.floor(countdownDiff / 1000 / 60) % 60;
                 const countdownSeconds = Math.floor(countdownDiff / 1000) % 60;
@@ -188,7 +203,6 @@ function getBackgroundColor($choice) {
         }
 
         const countdownInterval = setInterval(countdownUpdate, 1000);
-        // countdownUpdate();
     </script>
 
     <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';/*
