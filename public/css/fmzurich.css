@@ -16,6 +16,10 @@
     }
 
     .eventFmz, .eventBoxLight {
+        background-color: #ddeeff;
+    }
+
+    .eventFmz, .eventBoxSuperLight {
         background-color: #eeeeee;
     }
 
