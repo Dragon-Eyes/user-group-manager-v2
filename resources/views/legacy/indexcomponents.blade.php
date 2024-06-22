@@ -79,7 +79,7 @@ function getBackgroundColor($choice) {
 
     {!! $content->intro !!}
 
-    <p>Fragen, Anregungen o.ä.? <a class="e-l" data-ep1="hallo" data-ep2="claris-stammtisch" data-ep3="ch" href="#">Kontakt</a><br>
+    <p>Fragen, Anregungen o.ä.? <a class="e-l" data-ep1="hallo" data-ep2="claris-stammtisch" data-ep3="ch" href="#">Kontakt</a><br>Zusätzlich steht Euch nun auch eine <a href="https://www.linkedin.com/groups/9854383/" target="_blank">LinkedIn-Gruppe</a> zur Verfügung!<br>
     Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="http://eepurl.com/h0Us9f" target="_blank">Anmeldung</a></p>
 
     <div style="display: flex; align-items: center; justify-content: space-between">
