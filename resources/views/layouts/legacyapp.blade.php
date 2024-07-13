@@ -129,7 +129,7 @@ $log = \App\Http\Controllers\LogLegacyController::write('pageview', $page);
         <div class="container mt-4">
             <p>Claris Stammtisch Zürich / FileMaker Stammtisch Zürich ist <strong>kein</strong> offizieller Kommunikationskanal von Claris Inc., sondern eine nicht kommerzielle Initiative von FileMaker-Benutzern / Claris-Programmierern.<br>
                 Techniksponsor (Web-Applikation, URLs, Mailservice etc.): DragonEyes Software<br>
-                Organisation: Christoph Dunkake & Paul Merki</p>
+                Organisation: Christoph Dunkake</p>
         </div>
     </div>
 </div> <!-- end pagecontainer -->
