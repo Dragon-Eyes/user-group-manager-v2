@@ -79,8 +79,8 @@ function getBackgroundColor($choice) {
 
     {!! $content->intro !!}
 
-    <p>Fragen, Anregungen o.ä.? <a class="e-l" data-ep1="hallo" data-ep2="claris-stammtisch" data-ep3="ch" href="#">Kontakt</a><br>Zusätzlich steht Euch nun auch eine <a href="https://www.linkedin.com/groups/9854383/" target="_blank">LinkedIn-Gruppe</a> zur Verfügung!<br>
-    Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="http://eepurl.com/h0Us9f" target="_blank">Anmeldung</a></p>
+    <p>Fragen, Anregungen o.ä.? <a class="e-l" data-ep1="hallo" data-ep2="claris-stammtisch" data-ep3="ch" href="#">Kontakt</a><!--<br>Zusätzlich steht Euch nun auch eine <a href="https://www.linkedin.com/groups/9854383/" target="_blank">LinkedIn-Gruppe</a> zur Verfügung!<br>
+    Wenn Du Einladungen zu den Stammtischen per Mail erhalten möchtest: <a href="http://eepurl.com/h0Us9f" target="_blank">Anmeldung</a>--></p>
 
     <div style="display: flex; align-items: center; justify-content: space-between">
         <h2 id="eventsFuture">Termine</h2>
@@ -112,6 +112,7 @@ function getBackgroundColor($choice) {
         /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
     </style>
+    <!--
     <div id="mc_embed_signup" class="onlyWide">
         <form action="https://claris-stammtisch.us5.list-manage.com/subscribe/post?u=124f92db94f3241542ea4942e&amp;id=733ebf3b0f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
@@ -134,6 +135,7 @@ function getBackgroundColor($choice) {
                     <div class="response" id="mce-error-response" style="display:none"></div>
                     <div class="response" id="mce-success-response" style="display:none"></div>
                 </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <!--
                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_124f92db94f3241542ea4942e_733ebf3b0f" tabindex="-1" value=""></div>
                 <div class="optionalParent">
                     <div class="clear foot">
@@ -144,6 +146,7 @@ function getBackgroundColor($choice) {
             </div>
         </form>
     </div>
+    -->
 
     <script>
         const eventBlockClaris = document.getElementById('events-claris');
