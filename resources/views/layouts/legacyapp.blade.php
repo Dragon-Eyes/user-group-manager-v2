@@ -13,15 +13,15 @@
 //    define("ROOT_FILE", substr(__DIR__, 0, strpos(__DIR__, '/private')));
 //    define("ROOT_WWW", 'http://' . $_SERVER['HTTP_HOST']);
     ?>
-    <meta property="og:url" content="https://claris-stammtisch.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
+    <meta property="og:url" content="https://filemaker-stammtisch.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Claris Entwickler Stammtisch Zürich">
+    <meta property="og:title" content="FileMaker Entwickler Stammtisch Zürich">
     <meta property="og:description" content="Der neue FileMaker / Claris Stammtisch in / um Zürich. Jede / jeder FileMaker-Interessierte ist willkommen; die Neulinge bringen interessante Fragen und neue Ideen und die alten Hasen können mal zeigen, was sie (noch) können.">
     <!-- 600x314 -->
 {{--    <meta property="og:image" content="https://cxo.ch/fmzurich_legacy_files/assets/fmzuerich_600x314_pic_2.png">--}}
 {{--    <meta property="og:image" content="https://cxo.ch/fmzurich_legacy_files/assets/fmzuerich_600x314.png">--}}
 
-    <link rel="canonical" href="https://claris-stammtisch.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
+    <link rel="canonical" href="https://filemaker-stammtisch.ch<?= $page == 'index' ? '' : '/' . $page; ?>">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="styles/bootstrap.min.css"> -->
